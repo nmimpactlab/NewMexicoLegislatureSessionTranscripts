@@ -19,9 +19,11 @@ A comprehensive, searchable database of New Mexico Legislature committee hearing
 
 - **Total Sessions**: 3,294 committee hearings indexed
 - **Bills Tracked**: 1,452 unique bills
-- **Speakers Indexed**: 78,199 speaker mentions
+- **Speakers Indexed**: 380 speakers (with 3+ mentions)*
 - **Committees**: 68 legislative committees
 - **Date Range**: 2021-2025
+
+\* *Note: Due to OCR quality in source transcripts, some speaker names may appear with spelling variations. See [DATA_QUALITY.md](DATA_QUALITY.md) for details.*
 
 ## Data Structure
 
