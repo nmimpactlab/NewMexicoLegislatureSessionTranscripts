@@ -86,23 +86,51 @@ def extract_speakers(content):
     """
     Extract speaker names from transcript content
     Looks for patterns like "Representative Smith", "Senator Jones", etc.
+    Uses strict patterns and filtering to avoid false positives.
     """
     speakers = set()
 
-    # Patterns for speaker identification
+    # Common words that are NOT names (blacklist for filtering false positives)
+    blacklist = {
+        'customer', 'chamber', 'chambers', 'committee', 'member', 'members',
+        'speaker', 'chair', 'chairman', 'chairwoman', 'chairperson',
+        'representative', 'senator', 'delegate', 'mister', 'madam',
+        'dunking', 'surrounding', 'term', 'patrol', 'session',
+        'thank', 'thanks', 'welcome', 'morning', 'afternoon', 'evening',
+        'question', 'questions', 'comment', 'comments', 'motion',
+        'bill', 'bills', 'vote', 'votes', 'floor', 'gallery',
+        'public', 'audience', 'room', 'meeting', 'day', 'time',
+        'point', 'order', 'minute', 'minutes', 'second', 'seconds',
+        'good', 'great', 'next', 'first', 'last', 'end', 'start',
+        'please', 'present', 'absent', 'here', 'there', 'all',
+        'issue', 'matter', 'subject', 'topic', 'item', 'agenda'
+    }
+
+    # More strict patterns - require proper title and name structure
     patterns = [
-        r'(?:Representative|Rep\.|Senator|Sen\.)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)',
-        r'(?:Mr\.|Ms\.|Mrs\.|Madam)\s+([A-Z][a-z]+)',
-        r'Chairman\s+([A-Z][a-z]+)',
-        r'Chairwoman\s+([A-Z][a-z]+)',
+        # Representative/Senator + First + Last name
+        r'(?:Representative|Rep\.)\s+([A-Z][a-z]+)\s+([A-Z][a-z]+)',
+        r'(?:Senator|Sen\.)\s+([A-Z][a-z]+)\s+([A-Z][a-z]+)',
+        # Chairman/Chairwoman + Last name (more reliable)
+        r'(?:Chairman|Chairwoman)\s+([A-Z][a-z]{3,})',
     ]
 
     for pattern in patterns:
-        matches = re.finditer(pattern, content, re.IGNORECASE)
+        matches = re.finditer(pattern, content)
         for match in matches:
-            speaker = match.group(1).strip()
-            if speaker and len(speaker) > 2:  # Filter out very short names
-                speakers.add(speaker)
+            if len(match.groups()) == 2:
+                # First and last name
+                first, last = match.groups()
+                if first.lower() not in blacklist and last.lower() not in blacklist:
+                    full_name = f"{first} {last}"
+                    # Additional validation: both names should be at least 3 chars
+                    if len(first) >= 3 and len(last) >= 3:
+                        speakers.add(full_name)
+            else:
+                # Single name (like Chairman Smith)
+                name = match.group(1).strip()
+                if name.lower() not in blacklist and len(name) >= 3:
+                    speakers.add(name)
 
     return list(speakers)
 
