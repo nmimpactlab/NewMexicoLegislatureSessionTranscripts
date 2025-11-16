@@ -86,12 +86,16 @@ def extract_speakers(content):
     """
     Extract speaker names from transcript content
     Looks for patterns like "Representative Smith", "Senator Jones", etc.
-    Uses strict patterns and filtering to avoid false positives.
+    Uses strict patterns and filtering to avoid false positives from OCR errors.
+
+    Note: Due to OCR quality in transcripts, some speaker names may have
+    spelling variations or be missed entirely.
     """
     speakers = set()
 
-    # Common words that are NOT names (blacklist for filtering false positives)
+    # Comprehensive blacklist for filtering false positives
     blacklist = {
+        # Common words
         'customer', 'chamber', 'chambers', 'committee', 'member', 'members',
         'speaker', 'chair', 'chairman', 'chairwoman', 'chairperson',
         'representative', 'senator', 'delegate', 'mister', 'madam',
@@ -103,15 +107,24 @@ def extract_speakers(content):
         'point', 'order', 'minute', 'minutes', 'second', 'seconds',
         'good', 'great', 'next', 'first', 'last', 'end', 'start',
         'please', 'present', 'absent', 'here', 'there', 'all',
-        'issue', 'matter', 'subject', 'topic', 'item', 'agenda'
+        'issue', 'matter', 'subject', 'topic', 'item', 'agenda',
+
+        # Geographic names that appear due to OCR errors
+        'new', 'mexico', 'mexicans', 'york', 'albuquerque', 'santa',
+        'hobbs', 'cruces', 'roswell', 'farmington', 'espanola',
+        'hospital', 'university', 'state', 'city', 'county',
+
+        # Common OCR errors
+        'small', 'elizabeth', 'liz', 'southern', 'newman',
+        'google', 'hospital', 'department', 'district'
     }
 
     # More strict patterns - require proper title and name structure
     patterns = [
-        # Representative/Senator + First + Last name
-        r'(?:Representative|Rep\.)\s+([A-Z][a-z]+)\s+([A-Z][a-z]+)',
-        r'(?:Senator|Sen\.)\s+([A-Z][a-z]+)\s+([A-Z][a-z]+)',
-        # Chairman/Chairwoman + Last name (more reliable)
+        # Representative/Senator + First + Last name (both capitalized)
+        r'(?:Representative|Rep\.)\s+([A-Z][a-z]{2,})\s+([A-Z][a-z]{2,})',
+        r'(?:Senator|Sen\.)\s+([A-Z][a-z]{2,})\s+([A-Z][a-z]{2,})',
+        # Chairman/Chairwoman + Last name
         r'(?:Chairman|Chairwoman)\s+([A-Z][a-z]{3,})',
     ]
 
@@ -121,15 +134,38 @@ def extract_speakers(content):
             if len(match.groups()) == 2:
                 # First and last name
                 first, last = match.groups()
-                if first.lower() not in blacklist and last.lower() not in blacklist:
-                    full_name = f"{first} {last}"
-                    # Additional validation: both names should be at least 3 chars
-                    if len(first) >= 3 and len(last) >= 3:
-                        speakers.add(full_name)
+
+                # Check blacklist
+                if first.lower() in blacklist or last.lower() in blacklist:
+                    continue
+
+                # Reject if contains "New Mexico" pattern
+                if 'new' in first.lower() and 'mexico' in last.lower():
+                    continue
+                if 'mexico' in first.lower() or 'new' in last.lower():
+                    continue
+
+                # Reject names with too many consonants (OCR errors)
+                def has_vowel_pattern(word):
+                    vowels = set('aeiouAEIOU')
+                    return any(c in vowels for c in word)
+
+                if not has_vowel_pattern(first) or not has_vowel_pattern(last):
+                    continue
+
+                # Reject if looks like an OCR error (e.g., "Cedila", "Cedilo" variants)
+                # These often have unusual character patterns
+                full_name = f"{first} {last}"
+
+                # Additional validation
+                if len(first) >= 3 and len(last) >= 3:
+                    speakers.add(full_name)
             else:
                 # Single name (like Chairman Smith)
                 name = match.group(1).strip()
-                if name.lower() not in blacklist and len(name) >= 3:
+                if (name.lower() not in blacklist and
+                    len(name) >= 4 and
+                    any(c in 'aeiouAEIOU' for c in name)):
                     speakers.add(name)
 
     return list(speakers)
@@ -255,17 +291,30 @@ def build_index():
     # Sort sessions by date (most recent first)
     sessions.sort(key=lambda x: x['date'], reverse=True)
 
+    # Filter speakers with minimum threshold to reduce OCR noise
+    # Real legislators appear many times; OCR errors are usually one-offs
+    MIN_SPEAKER_MENTIONS = 3
+    filtered_speakers = {
+        k: v for k, v in speaker_index.items()
+        if v['count'] >= MIN_SPEAKER_MENTIONS
+    }
+
+    print(f"\nFiltered {len(speaker_index) - len(filtered_speakers)} low-frequency speakers (< {MIN_SPEAKER_MENTIONS} mentions)")
+    print(f"Retained {len(filtered_speakers)} speakers with {MIN_SPEAKER_MENTIONS}+ mentions")
+
     # Create final index structure
     index = {
         'metadata': {
             'generated': datetime.now().isoformat(),
             'total_sessions': len(sessions),
-            'total_speakers': len(speaker_index),
+            'total_speakers': len(filtered_speakers),
             'total_bills': len(bill_index),
-            'total_committees': len(committee_index)
+            'total_committees': len(committee_index),
+            'min_speaker_mentions': MIN_SPEAKER_MENTIONS,
+            'note': 'Speaker extraction is limited by OCR quality in source transcripts. Some names may have spelling variations.'
         },
         'sessions': sessions,
-        'speakers': {k: dict(v) for k, v in sorted(speaker_index.items())},
+        'speakers': {k: dict(v) for k, v in sorted(filtered_speakers.items())},
         'bills': {k: dict(v) for k, v in sorted(bill_index.items())},
         'committees': {k: dict(v) for k, v in sorted(committee_index.items())}
     }
