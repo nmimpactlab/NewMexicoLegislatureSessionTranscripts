@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Mexico Legislature Session Transcripts - Searchable Database</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 2rem 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .search-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        button {
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        select {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+
+        .results-section {
+            margin: 2rem 0;
+        }
+
+        .results-header {
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .results-count {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .sort-controls {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .results-list {
+            background: white;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .session-card {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+
+        .session-card:hover {
+            background: #f9f9f9;
+        }
+
+        .session-card:last-child {
+            border-bottom: none;
+        }
+
+        .session-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .session-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .session-date {
+            color: #666;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .session-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .session-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #e8f4f8;
+            color: #2980b9;
+            border-radius: 12px;
+            font-size: 0.85rem;
+        }
+
+        .tag.bill {
+            background: #fef5e7;
+            color: #d68910;
+        }
+
+        .tag.speaker {
+            background: #ebf5fb;
+            color: #21618c;
+        }
+
+        .excerpt {
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            background: #f9f9f9;
+            border-left: 3px solid #3498db;
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .tab-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        .tab {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #666;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            color: #3498db;
+            border-bottom-color: #3498db;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .list-view {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .list-item {
+            padding: 0.75rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .list-item:hover {
+            background: #f9f9f9;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .session-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .filters {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>New Mexico Legislature Session Transcripts</h1>
+            <p class="subtitle">Searchable database of legislative committee hearings and sessions</p>
+            <div style="margin-top: 1rem;">
+                <a href="analytics.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; background: rgba(255,255,255,0.2); border-radius: 4px; display: inline-block;">
+                    View Analytics Dashboard →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="stats" id="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalSessions">-</div>
+                <div class="stat-label">Total Sessions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalBills">-</div>
+                <div class="stat-label">Bills Discussed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalSpeakers">-</div>
+                <div class="stat-label">Speakers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalCommittees">-</div>
+                <div class="stat-label">Committees</div>
+            </div>
+        </div>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search by keyword, speaker name, bill number, or committee...">
+                <button onclick="performSearch()">Search</button>
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="committeeFilter">Committee</label>
+                    <select id="committeeFilter" onchange="performSearch()">
+                        <option value="">All Committees</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="yearFilter">Year</label>
+                    <select id="yearFilter" onchange="performSearch()">
+                        <option value="">All Years</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="billFilter">Bill</label>
+                    <select id="billFilter" onchange="performSearch()">
+                        <option value="">All Bills</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="speakerFilter">Speaker</label>
+                    <select id="speakerFilter" onchange="performSearch()">
+                        <option value="">All Speakers</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-container">
+            <button class="tab active" onclick="switchTab('sessions')">Sessions</button>
+            <button class="tab" onclick="switchTab('bills')">Bills</button>
+            <button class="tab" onclick="switchTab('speakers')">Speakers</button>
+            <button class="tab" onclick="switchTab('committees')">Committees</button>
+        </div>
+
+        <div id="sessionsTab" class="tab-content active">
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <div class="results-count" id="resultsCount">0 results</div>
+                    <div class="sort-controls">
+                        <label for="sortBy">Sort by:</label>
+                        <select id="sortBy" onchange="performSearch()">
+                            <option value="date-desc">Date (Newest First)</option>
+                            <option value="date-asc">Date (Oldest First)</option>
+                            <option value="committee">Committee</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="results-list" id="resultsList"></div>
+            </div>
+        </div>
+
+        <div id="billsTab" class="tab-content">
+            <div class="list-view" id="billsList"></div>
+        </div>
+
+        <div id="speakersTab" class="tab-content">
+            <div class="list-view" id="speakersList"></div>
+        </div>
+
+        <div id="committeesTab" class="tab-content">
+            <div class="list-view" id="committeesList"></div>
+        </div>
+    </div>
+
+    <script>
+        let indexData = null;
+        let allSessions = [];
+
+        // Load index data
+        async function loadIndex() {
+            try {
+                const response = await fetch('index.json');
+                indexData = await response.json();
+                allSessions = indexData.sessions;
+
+                // Update stats
+                document.getElementById('totalSessions').textContent = indexData.metadata.total_sessions.toLocaleString();
+                document.getElementById('totalBills').textContent = indexData.metadata.total_bills.toLocaleString();
+                document.getElementById('totalSpeakers').textContent = indexData.metadata.total_speakers.toLocaleString();
+                document.getElementById('totalCommittees').textContent = indexData.metadata.total_committees.toLocaleString();
+
+                // Populate filters
+                populateFilters();
+
+                // Populate lists
+                populateBillsList();
+                populateSpeakersList();
+                populateCommitteesList();
+
+                // Show all sessions by default
+                performSearch();
+
+            } catch (error) {
+                console.error('Error loading index:', error);
+                document.getElementById('resultsList').innerHTML = '<div class="no-results">Error loading data. Please try again.</div>';
+            }
+        }
+
+        function populateFilters() {
+            // Populate committee filter
+            const committees = Object.keys(indexData.committees).sort();
+            const committeeSelect = document.getElementById('committeeFilter');
+            committees.forEach(committee => {
+                const option = document.createElement('option');
+                option.value = committee;
+                option.textContent = committee;
+                committeeSelect.appendChild(option);
+            });
+
+            // Populate year filter
+            const years = [...new Set(allSessions.map(s => s.date.split('-')[0]))].sort().reverse();
+            const yearSelect = document.getElementById('yearFilter');
+            years.forEach(year => {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearSelect.appendChild(option);
+            });
+
+            // Populate bill filter (top 100 most mentioned)
+            const bills = Object.entries(indexData.bills)
+                .sort((a, b) => b[1].count - a[1].count)
+                .slice(0, 100);
+            const billSelect = document.getElementById('billFilter');
+            bills.forEach(([bill, data]) => {
+                const option = document.createElement('option');
+                option.value = bill;
+                option.textContent = `${bill} (${data.count} mentions)`;
+                billSelect.appendChild(option);
+            });
+
+            // Populate speaker filter (top 100 most active)
+            const speakers = Object.entries(indexData.speakers)
+                .sort((a, b) => b[1].count - a[1].count)
+                .slice(0, 100);
+            const speakerSelect = document.getElementById('speakerFilter');
+            speakers.forEach(([speaker, data]) => {
+                const option = document.createElement('option');
+                option.value = speaker;
+                option.textContent = `${speaker} (${data.count} appearances)`;
+                speakerSelect.appendChild(option);
+            });
+        }
+
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const committeeFilter = document.getElementById('committeeFilter').value;
+            const yearFilter = document.getElementById('yearFilter').value;
+            const billFilter = document.getElementById('billFilter').value;
+            const speakerFilter = document.getElementById('speakerFilter').value;
+            const sortBy = document.getElementById('sortBy').value;
+
+            // Filter sessions
+            let results = allSessions.filter(session => {
+                // Apply committee filter
+                if (committeeFilter && session.committee !== committeeFilter) return false;
+
+                // Apply year filter
+                if (yearFilter && !session.date.startsWith(yearFilter)) return false;
+
+                // Apply bill filter
+                if (billFilter && !session.bills.includes(billFilter)) return false;
+
+                // Apply speaker filter
+                if (speakerFilter && !session.speakers.includes(speakerFilter)) return false;
+
+                // Apply search term
+                if (searchTerm) {
+                    const searchableText = [
+                        session.committee,
+                        session.chamber,
+                        session.date,
+                        session.excerpt,
+                        ...session.speakers,
+                        ...session.bills
+                    ].join(' ').toLowerCase();
+
+                    if (!searchableText.includes(searchTerm)) return false;
+                }
+
+                return true;
+            });
+
+            // Sort results
+            results.sort((a, b) => {
+                switch (sortBy) {
+                    case 'date-desc':
+                        return b.date.localeCompare(a.date);
+                    case 'date-asc':
+                        return a.date.localeCompare(b.date);
+                    case 'committee':
+                        return a.committee.localeCompare(b.committee);
+                    default:
+                        return 0;
+                }
+            });
+
+            // Display results
+            displayResults(results);
+        }
+
+        function displayResults(results) {
+            const resultsSection = document.getElementById('resultsSection');
+            const resultsCount = document.getElementById('resultsCount');
+            const resultsList = document.getElementById('resultsList');
+
+            resultsSection.style.display = 'block';
+            resultsCount.textContent = `${results.length.toLocaleString()} result${results.length !== 1 ? 's' : ''}`;
+
+            if (results.length === 0) {
+                resultsList.innerHTML = '<div class="no-results">No sessions found matching your criteria.</div>';
+                return;
+            }
+
+            resultsList.innerHTML = results.map(session => `
+                <div class="session-card">
+                    <div class="session-header">
+                        <div class="session-title">${session.chamber} - ${session.committee}</div>
+                        <div class="session-date">${formatDate(session.date)}</div>
+                    </div>
+                    <div class="session-meta">
+                        <span><strong>Day:</strong> ${session.day_of_week}</span>
+                        <span><strong>Time:</strong> ${session.start_time} - ${session.end_time}</span>
+                    </div>
+                    ${session.bills.length > 0 ? `
+                        <div class="session-tags">
+                            <strong>Bills:</strong>
+                            ${session.bills.slice(0, 10).map(bill => `<span class="tag bill">${bill}</span>`).join('')}
+                            ${session.bills.length > 10 ? `<span class="tag bill">+${session.bills.length - 10} more</span>` : ''}
+                        </div>
+                    ` : ''}
+                    ${session.speakers.length > 0 ? `
+                        <div class="session-tags">
+                            <strong>Speakers:</strong>
+                            ${session.speakers.slice(0, 5).map(speaker => `<span class="tag speaker">${speaker}</span>`).join('')}
+                            ${session.speakers.length > 5 ? `<span class="tag speaker">+${session.speakers.length - 5} more</span>` : ''}
+                        </div>
+                    ` : ''}
+                    ${session.excerpt ? `
+                        <div class="excerpt">${session.excerpt}...</div>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        function switchTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(`${tabName}Tab`).classList.add('active');
+        }
+
+        function populateBillsList() {
+            const billsList = document.getElementById('billsList');
+            const bills = Object.entries(indexData.bills)
+                .sort((a, b) => b[1].count - a[1].count);
+
+            billsList.innerHTML = `
+                <h2>All Bills (${bills.length})</h2>
+                ${bills.map(([bill, data]) => `
+                    <div class="list-item">
+                        <div>
+                            <strong>${bill}</strong>
+                            <span style="color: #666; margin-left: 1rem;">${data.count} mentions in ${data.sessions.length} sessions</span>
+                        </div>
+                        <button onclick="filterByBill('${bill}')">View Sessions</button>
+                    </div>
+                `).join('')}
+            `;
+        }
+
+        function populateSpeakersList() {
+            const speakersList = document.getElementById('speakersList');
+            const speakers = Object.entries(indexData.speakers)
+                .sort((a, b) => b[1].count - a[1].count);
+
+            speakersList.innerHTML = `
+                <h2>All Speakers (${speakers.length})</h2>
+                ${speakers.map(([speaker, data]) => `
+                    <div class="list-item">
+                        <div>
+                            <strong>${speaker}</strong>
+                            <span style="color: #666; margin-left: 1rem;">${data.count} appearances in ${data.sessions.length} sessions</span>
+                        </div>
+                        <button onclick="filterBySpeaker('${speaker}')">View Sessions</button>
+                    </div>
+                `).join('')}
+            `;
+        }
+
+        function populateCommitteesList() {
+            const committeesList = document.getElementById('committeesList');
+            const committees = Object.entries(indexData.committees)
+                .sort((a, b) => b[1].count - a[1].count);
+
+            committeesList.innerHTML = `
+                <h2>All Committees (${committees.length})</h2>
+                ${committees.map(([committee, data]) => `
+                    <div class="list-item">
+                        <div>
+                            <strong>${committee}</strong>
+                            <span style="color: #666; margin-left: 1rem;">${data.sessions.length} sessions</span>
+                        </div>
+                        <button onclick="filterByCommittee('${committee}')">View Sessions</button>
+                    </div>
+                `).join('')}
+            `;
+        }
+
+        function filterByBill(bill) {
+            document.getElementById('billFilter').value = bill;
+            switchTabToSessions();
+            performSearch();
+        }
+
+        function filterBySpeaker(speaker) {
+            document.getElementById('speakerFilter').value = speaker;
+            switchTabToSessions();
+            performSearch();
+        }
+
+        function filterByCommittee(committee) {
+            document.getElementById('committeeFilter').value = committee;
+            switchTabToSessions();
+            performSearch();
+        }
+
+        function switchTabToSessions() {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab')[0].classList.add('active');
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById('sessionsTab').classList.add('active');
+        }
+
+        // Allow search on Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Load data on page load
+        loadIndex();
+    </script>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - NM Legislature Transcripts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 2rem 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .nav {
+            margin-top: 1rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .nav a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .chart-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .chart-card h2 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .insights {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .insight-item {
+            padding: 1rem;
+            border-left: 4px solid #3498db;
+            margin-bottom: 1rem;
+            background: #f9f9f9;
+        }
+
+        @media (max-width: 768px) {
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Analytics Dashboard</h1>
+            <div class="nav">
+                <a href="index.html">← Back to Search</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="insights" id="insights">
+            <h2>Key Insights</h2>
+            <div id="insightsList">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    Loading analytics...
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-grid">
+            <div class="chart-card">
+                <h2>Sessions by Year</h2>
+                <div class="chart-container">
+                    <canvas id="sessionsYearChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h2>Top 10 Committees by Sessions</h2>
+                <div class="chart-container">
+                    <canvas id="committeesChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h2>Top 10 Most Discussed Bills</h2>
+                <div class="chart-container">
+                    <canvas id="billsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h2>Top 10 Most Active Speakers</h2>
+                <div class="chart-container">
+                    <canvas id="speakersChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h2>Sessions by Month</h2>
+                <div class="chart-container">
+                    <canvas id="monthlyChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h2>Sessions by Day of Week</h2>
+                <div class="chart-container">
+                    <canvas id="dayOfWeekChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let indexData = null;
+
+        async function loadIndex() {
+            try {
+                const response = await fetch('index.json');
+                indexData = await response.json();
+                generateInsights();
+                generateCharts();
+            } catch (error) {
+                console.error('Error loading index:', error);
+                document.getElementById('insightsList').innerHTML = '<div class="no-results">Error loading data. Please try again.</div>';
+            }
+        }
+
+        function generateInsights() {
+            const sessions = indexData.sessions;
+            const bills = indexData.bills;
+            const speakers = indexData.speakers;
+            const committees = indexData.committees;
+
+            // Calculate insights
+            const totalSessions = sessions.length;
+            const dateRange = {
+                earliest: sessions[sessions.length - 1].date,
+                latest: sessions[0].date
+            };
+
+            const topBill = Object.entries(bills).sort((a, b) => b[1].count - a[1].count)[0];
+            const topSpeaker = Object.entries(speakers).sort((a, b) => b[1].count - a[1].count)[0];
+            const topCommittee = Object.entries(committees).sort((a, b) => b[1].count - a[1].count)[0];
+
+            // Sessions per year
+            const yearCounts = {};
+            sessions.forEach(s => {
+                const year = s.date.split('-')[0];
+                yearCounts[year] = (yearCounts[year] || 0) + 1;
+            });
+            const mostActiveYear = Object.entries(yearCounts).sort((a, b) => b[1] - a[1])[0];
+
+            document.getElementById('insightsList').innerHTML = `
+                <div class="insight-item">
+                    <strong>Total Coverage:</strong> ${totalSessions.toLocaleString()} legislative sessions from ${dateRange.earliest} to ${dateRange.latest}
+                </div>
+                <div class="insight-item">
+                    <strong>Most Active Year:</strong> ${mostActiveYear[0]} with ${mostActiveYear[1].toLocaleString()} sessions
+                </div>
+                <div class="insight-item">
+                    <strong>Most Discussed Bill:</strong> ${topBill[0]} mentioned ${topBill[1].count.toLocaleString()} times across ${topBill[1].sessions.length} sessions
+                </div>
+                <div class="insight-item">
+                    <strong>Most Active Committee:</strong> ${topCommittee[0]} with ${topCommittee[1].count.toLocaleString()} sessions
+                </div>
+                <div class="insight-item">
+                    <strong>Most Frequent Speaker:</strong> ${topSpeaker[0]} with ${topSpeaker[1].count.toLocaleString()} mentions
+                </div>
+            `;
+        }
+
+        function generateCharts() {
+            generateSessionsByYearChart();
+            generateCommitteesChart();
+            generateBillsChart();
+            generateSpeakersChart();
+            generateMonthlyChart();
+            generateDayOfWeekChart();
+        }
+
+        function generateSessionsByYearChart() {
+            const sessions = indexData.sessions;
+            const yearCounts = {};
+
+            sessions.forEach(s => {
+                const year = s.date.split('-')[0];
+                yearCounts[year] = (yearCounts[year] || 0) + 1;
+            });
+
+            const years = Object.keys(yearCounts).sort();
+            const counts = years.map(y => yearCounts[y]);
+
+            new Chart(document.getElementById('sessionsYearChart'), {
+                type: 'bar',
+                data: {
+                    labels: years,
+                    datasets: [{
+                        label: 'Sessions',
+                        data: counts,
+                        backgroundColor: '#3498db'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function generateCommitteesChart() {
+            const committees = Object.entries(indexData.committees)
+                .sort((a, b) => b[1].count - a[1].count)
+                .slice(0, 10);
+
+            new Chart(document.getElementById('committeesChart'), {
+                type: 'horizontalBar',
+                data: {
+                    labels: committees.map(c => c[0]),
+                    datasets: [{
+                        label: 'Sessions',
+                        data: committees.map(c => c[1].count),
+                        backgroundColor: '#2ecc71'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function generateBillsChart() {
+            const bills = Object.entries(indexData.bills)
+                .sort((a, b) => b[1].count - a[1].count)
+                .slice(0, 10);
+
+            new Chart(document.getElementById('billsChart'), {
+                type: 'bar',
+                data: {
+                    labels: bills.map(b => b[0]),
+                    datasets: [{
+                        label: 'Mentions',
+                        data: bills.map(b => b[1].count),
+                        backgroundColor: '#e74c3c'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function generateSpeakersChart() {
+            const speakers = Object.entries(indexData.speakers)
+                .sort((a, b) => b[1].count - a[1].count)
+                .slice(0, 10);
+
+            new Chart(document.getElementById('speakersChart'), {
+                type: 'bar',
+                data: {
+                    labels: speakers.map(s => s[0]),
+                    datasets: [{
+                        label: 'Mentions',
+                        data: speakers.map(s => s[1].count),
+                        backgroundColor: '#9b59b6'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function generateMonthlyChart() {
+            const sessions = indexData.sessions;
+            const monthCounts = {};
+
+            sessions.forEach(s => {
+                const month = s.date.split('-')[1];
+                monthCounts[month] = (monthCounts[month] || 0) + 1;
+            });
+
+            const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const counts = monthNames.map((_, i) => monthCounts[String(i + 1).padStart(2, '0')] || 0);
+
+            new Chart(document.getElementById('monthlyChart'), {
+                type: 'line',
+                data: {
+                    labels: monthNames,
+                    datasets: [{
+                        label: 'Sessions',
+                        data: counts,
+                        borderColor: '#f39c12',
+                        backgroundColor: 'rgba(243, 156, 18, 0.1)',
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function generateDayOfWeekChart() {
+            const sessions = indexData.sessions;
+            const dayCounts = {};
+
+            sessions.forEach(s => {
+                const day = s.day_of_week;
+                dayCounts[day] = (dayCounts[day] || 0) + 1;
+            });
+
+            const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+            const counts = days.map(d => dayCounts[d] || 0);
+
+            new Chart(document.getElementById('dayOfWeekChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: days,
+                    datasets: [{
+                        data: counts,
+                        backgroundColor: [
+                            '#3498db',
+                            '#2ecc71',
+                            '#e74c3c',
+                            '#f39c12',
+                            '#9b59b6',
+                            '#1abc9c',
+                            '#34495e'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        }
+
+        loadIndex();
+    </script>
+</body>
+</html>
