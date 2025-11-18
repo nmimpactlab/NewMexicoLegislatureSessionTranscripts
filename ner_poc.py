@@ -158,6 +158,21 @@ class WaveExtractor:
             'twenty', 'thirty', 'forty', 'fifty', 'hundred', 'thousand',
             # Common legislative phrases
             'house', 'senate', 'floor', 'chamber', 'quorum', 'present',
+            # Pronouns (these get extracted as "names" but aren't)
+            'he', 'she', 'him', 'her', 'his', 'hers', 'them', 'their',
+            'we', 'us', 'our', 'ours', 'i', 'me', 'my', 'mine',
+            # Common words that slip through
+            'yes', 'no', 'yeah', 'yep', 'nope', 'okay', 'ok',
+            'if', 'when', 'while', 'until', 'unless',
+            'because', 'since', 'although', 'though', 'however',
+            'therefore', 'thus', 'hence', 'meanwhile', 'otherwise',
+            'also', 'too', 'either', 'neither', 'both',
+            'new', 'old', 'next', 'last', 'first', 'second',
+            'same', 'different', 'other', 'another', 'each', 'every',
+            'said', 'says', 'saying', 'told', 'asked', 'asked',
+            'made', 'make', 'makes', 'making',
+            'ready', 'done', 'finished', 'complete',
+            'speaker', 'designate', 'ranking',
         }
 
         filtered = set()
@@ -292,6 +307,9 @@ class WaveExtractor:
             'and', 'or', 'the', 'of', 'to', 'in', 'on', 'at', 'by', 'for',
             'with', 'from', 'thank', 'members', 'representative', 'chair',
             'chairman', 'committee',
+            # Single-word context markers that appear after names
+            'up', 'down', 'out', 'off', 'as', 'said', 'asked', 'did',
+            'was', 'were', 'is', 'are', 'has', 'had', 'have',
         }
 
         # Words that shouldn't appear at start of a name (after title)
@@ -328,15 +346,58 @@ class WaveExtractor:
                 rejected['common_phrase'].append(name)
                 continue
 
-            # Check 4b: Contains title words within the name
+            # Check 4b: Single-word names that are actually common words/pronouns
+            # Re-check against domain words for single-word names
+            if len(words) == 1:
+                # Import domain words from Wave 3 logic
+                domain_blocklist = {
+                    'he', 'she', 'him', 'her', 'his', 'hers', 'them', 'their',
+                    'we', 'us', 'our', 'ours', 'i', 'me', 'my', 'mine',
+                    'yes', 'no', 'yeah', 'yep', 'nope', 'okay', 'ok', 'so',
+                    'if', 'when', 'while', 'until', 'unless', 'yesterday',
+                    'today', 'tomorrow', 'new', 'old', 'next', 'last',
+                    'said', 'says', 'asked', 'told', 'made', 'make',
+                    'ready', 'done', 'speaker', 'designate', 'ranking',
+                    'but', 'there', 'here', 'hi', 'hello', 'hey',
+                    'good', 'great', 'fine', 'well', 'very',
+                }
+                if name_lower in domain_blocklist:
+                    rejected['common_word'].append(name)
+                    continue
+
+            # Check 4c: Contains title words within the name
             if any(title_word in words_lower for title_word in title_words_blacklist):
                 rejected['contains_title'].append(name)
                 continue
 
-            # Check 5: Ends with blacklisted word
+            # Check 5: Ends with blacklisted word or phrase
             if words and words[-1].lower() in end_blacklist:
                 rejected['bad_ending'].append(name)
                 continue
+
+            # Check 5b: Ends with common two-word phrases like "Thank You"
+            if len(words) >= 2:
+                last_two = f"{words[-2]} {words[-1]}".lower()
+                bad_endings_two_word = {
+                    'thank you', 'so now', 'next we', 'please thank',
+                    'you talked', 'you can', 'you have', 'you recall',
+                    'that goes', 'will oversee', 'the establish'
+                }
+                if last_two in bad_endings_two_word:
+                    rejected['bad_ending_phrase'].append(name)
+                    continue
+
+            # Check 5c: Ends with three-word phrases like "Are You Ready"
+            if len(words) >= 3:
+                last_three = f"{words[-3]} {words[-2]} {words[-1]}".lower()
+                bad_endings_three_word = {
+                    'are you ready', 'can you hear', 'do you want',
+                    'did you want', 'would you like', 'if you will',
+                    'if you could', 'thank you very', 'thank you madame',
+                }
+                if last_three in bad_endings_three_word:
+                    rejected['bad_ending_phrase'].append(name)
+                    continue
 
             # Check 6: Starts with blacklisted word
             if words and words[0].lower() in start_blacklist:
