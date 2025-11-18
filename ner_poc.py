@@ -184,7 +184,10 @@ class WaveExtractor:
 
         Strategy: Look for patterns like "Representative [Name]" or "Senator [Name]"
         This is more precise than general capitalized word extraction.
-        Examples: "Representative Chatfield", "Senator Smith"
+
+        No word count limit - captures compound names, full names, etc.
+        Examples: "Representative Chatfield", "Representative Roybal Caballero",
+                  "Dr. Mary Garcia-Smith"
         """
         self.print_wave_header(4, "Title-Based Name Extraction")
 
@@ -197,12 +200,15 @@ class WaveExtractor:
         ]
 
         # Build pattern: (TITLE) (NAME)
-        # Name can be: 1-3 words, either Title Case or lowercase (due to OCR)
-        # Limit to 1-3 words to capture first/last names or compound names
+        # Name can be multiple words (1-4 for safety) but capture generously
+        # Match both Title Case and lowercase (due to OCR errors)
         title_pattern = '|'.join(re.escape(title) for title in titles)
-        # Match: Title + 1-3 words (can start with upper or lower case due to OCR errors)
-        # Word pattern: starts with letter, has vowels, reasonable length
-        pattern = rf'\b(?:{title_pattern})\s+([A-Za-z][a-z]+(?:\s+[A-Za-z][a-z]+){{0,2}})\b'
+
+        # Match: Title + 1 to 4 words
+        # Allow hyphens and apostrophes within names (O'Brien, Garcia-Smith)
+        # Allow both uppercase and lowercase starts (OCR errors: "representative brown")
+        # Max 4 words balances capturing full names vs. capturing too much context
+        pattern = rf'\b(?:{title_pattern})\s+([A-Za-z][a-z]+(?:[\s\-\'][A-Za-z][a-z]+){{0,3}})\b'
 
         matches = re.findall(pattern, self.text, re.IGNORECASE)
 
@@ -269,7 +275,16 @@ class WaveExtractor:
             'mr chair', 'madam chair', 'mr chairman', 'madam chairman',
             'chair thank you', 'chairman thank you', 'mr thank',
             'chair members', 'chairman members', 'chair members of',
-            'chairman members of',
+            'chairman members of', 'chairman thank you very',
+            'as you', 'you can', 'you have', 'you recall',
+        }
+
+        # Title words that shouldn't appear WITHIN the captured name
+        # (It's ok for them to precede the name, but not be part of it)
+        title_words_blacklist = {
+            'chairman', 'chairwoman', 'chair', 'representative', 'senator',
+            'governor', 'secretary', 'director', 'commissioner',
+            'mister', 'mr', 'ms', 'mrs', 'miss', 'madam', 'dr', 'doctor',
         }
 
         # Words that shouldn't appear at end of a name
@@ -290,6 +305,8 @@ class WaveExtractor:
 
         for name, count in name_counts.items():
             name_lower = name.lower().strip()
+            words = name.split()
+            words_lower = [w.lower() for w in words]
 
             # Check 1: Must contain vowel
             if not re.search(r'[AEIOU]', name, re.IGNORECASE):
@@ -302,7 +319,6 @@ class WaveExtractor:
                 continue
 
             # Check 3: Not all single letters
-            words = name.split()
             if all(len(word) == 1 for word in words):
                 rejected['single_letters'].append(name)
                 continue
@@ -310,6 +326,11 @@ class WaveExtractor:
             # Check 4: Common phrase blacklist
             if name_lower in phrase_blacklist:
                 rejected['common_phrase'].append(name)
+                continue
+
+            # Check 4b: Contains title words within the name
+            if any(title_word in words_lower for title_word in title_words_blacklist):
+                rejected['contains_title'].append(name)
                 continue
 
             # Check 5: Ends with blacklisted word
@@ -338,17 +359,24 @@ class WaveExtractor:
 
             # Check 9: Traditional name pattern - at least one word should look like a name
             # (start with capital, have mix of vowels/consonants, length > 2)
+            # Be permissive: allow multi-word names, just ensure at least ONE word looks name-like
             has_name_like_word = False
+            name_like_count = 0
             for word in words:
-                if (len(word) > 2 and
-                    word[0].isupper() and
-                    re.search(r'[aeiou]', word, re.IGNORECASE) and
-                    word.lower() not in stop_words and
-                    word.lower() not in start_blacklist and
-                    word.lower() not in end_blacklist):
-                    has_name_like_word = True
-                    break
+                # Skip very short words, apostrophes, hyphens (O', -Smith)
+                clean_word = word.strip("'-")
+                if not clean_word or len(clean_word) < 2:
+                    continue
 
+                if (word[0].isupper() and
+                    re.search(r'[aeiou]', clean_word, re.IGNORECASE) and
+                    clean_word.lower() not in stop_words and
+                    clean_word.lower() not in start_blacklist and
+                    clean_word.lower() not in end_blacklist):
+                    name_like_count += 1
+                    has_name_like_word = True
+
+            # Must have at least one name-like word (be permissive about multi-word names)
             if not has_name_like_word:
                 rejected['no_name_pattern'].append(name)
                 continue
