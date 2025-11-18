@@ -41,3 +41,7 @@ test_*.json
 extracted_names_clean.*
 extracted_names_full.*
 *_extraction_log.txt
+
+# Downloadable archive files
+*.tar.gz
+*.zip
