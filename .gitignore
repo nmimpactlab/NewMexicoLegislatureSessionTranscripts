@@ -34,3 +34,10 @@ wheels/
 # Local development
 .env
 *.log
+
+# Extraction test/intermediate files
+test_*.csv
+test_*.json
+extracted_names_clean.*
+extracted_names_full.*
+*_extraction_log.txt
