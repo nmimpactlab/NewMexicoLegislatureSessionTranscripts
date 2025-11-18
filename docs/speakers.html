@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speakers Directory - NM Legislature Transcripts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 2rem 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .controls {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            min-width: 250px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-group label {
+            font-weight: 500;
+            color: #555;
+        }
+
+        select {
+            padding: 0.5rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .download-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #27ae60;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #229954;
+        }
+
+        .speakers-table {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #f8f9fa;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #555;
+            border-bottom: 2px solid #dee2e6;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th:hover {
+            background: #e9ecef;
+        }
+
+        th::after {
+            content: ' ↕';
+            opacity: 0.3;
+        }
+
+        th.sorted-asc::after {
+            content: ' ↑';
+            opacity: 1;
+        }
+
+        th.sorted-desc::after {
+            content: ' ↓';
+            opacity: 1;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .confidence-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .confidence-high {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .confidence-medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .confidence-low {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .variants {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #999;
+        }
+
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #3498db;
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .info-box h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box p {
+            color: #555;
+            margin: 0.25rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Speakers Directory</h1>
+            <p class="subtitle">Extracted names from New Mexico Legislature session transcripts</p>
+            <div class="nav-links">
+                <a href="index.html">← Back to Search</a>
+                <a href="analytics.html">Analytics Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="total-speakers">-</div>
+                <div class="stat-label">Total Speakers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="high-confidence">-</div>
+                <div class="stat-label">High Confidence (≥10)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="medium-confidence">-</div>
+                <div class="stat-label">Medium Confidence (3-9)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="low-confidence">-</div>
+                <div class="stat-label">Low Confidence (1-2)</div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>About This Data</h3>
+            <p><strong>Source:</strong> 1,435 legislative session transcripts (139M characters)</p>
+            <p><strong>Extraction Method:</strong> 7-wave progressive name extraction with OCR error handling</p>
+            <p><strong>Confidence Levels:</strong> Based on frequency of mentions across transcripts</p>
+            <p><strong>Note:</strong> Low-confidence entries may include rare speakers or false positives. High/medium confidence entries are highly reliable.</p>
+        </div>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search by name...">
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="confidence-filter">Confidence:</label>
+                    <select id="confidence-filter">
+                        <option value="all">All Levels</option>
+                        <option value="high" selected>High (≥10)</option>
+                        <option value="medium">Medium (3-9)</option>
+                        <option value="low">Low (1-2)</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="sort-by">Sort by:</label>
+                    <select id="sort-by">
+                        <option value="frequency-desc" selected>Frequency (High to Low)</option>
+                        <option value="frequency-asc">Frequency (Low to High)</option>
+                        <option value="name-asc">Name (A to Z)</option>
+                        <option value="name-desc">Name (Z to A)</option>
+                    </select>
+                </div>
+
+                <div class="download-links">
+                    <a href="speakers_extracted.csv" class="download-btn" download>📥 Download CSV</a>
+                    <a href="speakers_extracted.json" class="download-btn" download>📥 Download JSON</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="speakers-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th data-sort="name">Name</th>
+                        <th data-sort="frequency">Frequency</th>
+                        <th data-sort="confidence">Confidence</th>
+                        <th>Variants</th>
+                    </tr>
+                </thead>
+                <tbody id="speakers-body">
+                    <tr>
+                        <td colspan="4" class="loading">Loading speaker data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="results-count" style="text-align: center; margin: 2rem 0; color: #666;"></div>
+    </div>
+
+    <script>
+        let speakersData = [];
+        let filteredData = [];
+
+        // Load speaker data
+        fetch('speakers_extracted.json')
+            .then(response => response.json())
+            .then(data => {
+                speakersData = data.entities || [];
+
+                // Update stats
+                document.getElementById('total-speakers').textContent = data.summary_statistics.high_confidence + data.summary_statistics.medium_confidence + data.summary_statistics.low_confidence;
+                document.getElementById('high-confidence').textContent = data.summary_statistics.high_confidence;
+                document.getElementById('medium-confidence').textContent = data.summary_statistics.medium_confidence;
+                document.getElementById('low-confidence').textContent = data.summary_statistics.low_confidence;
+
+                // Initial render
+                applyFilters();
+            })
+            .catch(error => {
+                console.error('Error loading speaker data:', error);
+                document.getElementById('speakers-body').innerHTML = '<tr><td colspan="4" class="no-results">Error loading data. Please refresh the page.</td></tr>';
+            });
+
+        // Apply filters and search
+        function applyFilters() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const confidenceFilter = document.getElementById('confidence-filter').value;
+            const sortBy = document.getElementById('sort-by').value;
+
+            // Filter data
+            filteredData = speakersData.filter(speaker => {
+                // Search filter
+                if (searchTerm && !speaker.name.toLowerCase().includes(searchTerm)) {
+                    return false;
+                }
+
+                // Confidence filter
+                if (confidenceFilter !== 'all' && speaker.confidence_level !== confidenceFilter) {
+                    return false;
+                }
+
+                return true;
+            });
+
+            // Sort data
+            filteredData.sort((a, b) => {
+                switch (sortBy) {
+                    case 'frequency-desc':
+                        return b.frequency - a.frequency;
+                    case 'frequency-asc':
+                        return a.frequency - b.frequency;
+                    case 'name-asc':
+                        return a.name.localeCompare(b.name);
+                    case 'name-desc':
+                        return b.name.localeCompare(a.name);
+                    default:
+                        return 0;
+                }
+            });
+
+            renderTable();
+        }
+
+        // Render table
+        function renderTable() {
+            const tbody = document.getElementById('speakers-body');
+            const resultsCount = document.getElementById('results-count');
+
+            if (filteredData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" class="no-results">No speakers found matching your filters.</td></tr>';
+                resultsCount.textContent = '';
+                return;
+            }
+
+            const rows = filteredData.map(speaker => {
+                const confidenceClass = `confidence-${speaker.confidence_level}`;
+                const confidenceLabel = speaker.confidence_level.charAt(0).toUpperCase() + speaker.confidence_level.slice(1);
+                const variantsText = speaker.variants.length > 0 ? speaker.variants.slice(0, 3).join(', ') + (speaker.variants.length > 3 ? '...' : '') : '-';
+
+                return `
+                    <tr>
+                        <td><strong>${speaker.name}</strong></td>
+                        <td>${speaker.frequency}</td>
+                        <td><span class="confidence-badge ${confidenceClass}">${confidenceLabel}</span></td>
+                        <td class="variants">${variantsText}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            tbody.innerHTML = rows;
+            resultsCount.textContent = `Showing ${filteredData.length} of ${speakersData.length} speakers`;
+        }
+
+        // Event listeners
+        document.getElementById('search-input').addEventListener('input', applyFilters);
+        document.getElementById('confidence-filter').addEventListener('change', applyFilters);
+        document.getElementById('sort-by').addEventListener('change', applyFilters);
+
+        // Table header sorting
+        document.querySelectorAll('th[data-sort]').forEach(th => {
+            th.addEventListener('click', () => {
+                const sortField = th.dataset.sort;
+                const sortBy = document.getElementById('sort-by');
+
+                // Determine sort direction
+                if (sortField === 'name') {
+                    sortBy.value = sortBy.value === 'name-asc' ? 'name-desc' : 'name-asc';
+                } else if (sortField === 'frequency') {
+                    sortBy.value = sortBy.value === 'frequency-desc' ? 'frequency-asc' : 'frequency-desc';
+                }
+
+                applyFilters();
+            });
+        });
+    </script>
+</body>
+</html>
