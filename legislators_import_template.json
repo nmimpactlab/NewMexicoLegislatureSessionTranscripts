@@ -1,0 +1,29 @@
+{
+  "instructions": "Fill in this template with verified legislator data from official sources",
+  "sources": [
+    "https://www.nmlegis.gov/members/Legislator_List?T=R (current)",
+    "https://www.nmlegis.gov/Members/Former_Legislator_List (archive)",
+    "https://ballotpedia.org/New_Mexico_State_Legislature"
+  ],
+  "template": [
+    {
+      "full_name": "John Doe",
+      "last_name": "Doe",
+      "first_name": "John",
+      "chamber": "House or Senate",
+      "party": "Democratic, Republican, or other",
+      "district": "District number",
+      "years_served": "2020-2024",
+      "committees": [
+        "Education",
+        "Finance"
+      ],
+      "leadership_positions": [
+        "Speaker",
+        "Majority Leader",
+        "etc."
+      ],
+      "notes": "Additional information"
+    }
+  ]
+}
