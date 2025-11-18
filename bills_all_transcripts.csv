@@ -1,0 +1,2607 @@
+bill_id,bill_type,full_name,frequency,num_transcripts,variants
+HB 2,HB,House Bill,279,279,"HB
+2; HB 2; HB2; House Bill
+2; House Bill 2"
+SB 3,SB,Senate Bill,64,64,"SB
+3; SB 3; SB3; Senate Bill
+3; Senate Bill 3"
+SB 17,SB,Senate Bill,41,41,"SB
+17; SB 17; Senate Bill
+17; Senate Bill 17; Senate bill
+17"
+HB 1,HB,House Bill,40,40,"HB 1; HB1; House Bill
+1; House Bill 1; house Bill 1"
+SB 2,SB,Senate Bill,39,39,"SB 2; SB2; Senate Bill
+2; Senate Bill 2; Senate bill 2"
+SB 9,SB,Senate Bill,37,37,"SB
+9; SB 9; SB9; Senate Bill
+9; Senate Bill 9"
+SB 1,SB,Senate Bill,36,36,"SB
+1; SB 1; SB1; Senate Bill
+1; Senate Bill 1"
+HB 63,HB,House Bill,31,31,"HB
+63; HB 63; House Bill
+63; House Bill 63"
+HB 171,HB,House Bill,31,31,"HB 171; House Bill
+171; House Bill 171; house Bill
+171; house Bill 171"
+HB 137,HB,House Bill,30,30,"HB
+137; HB 137; House Bill
+137; House Bill 137; House bill 137"
+HB 47,HB,House Bill,30,30,"HB
+47; HB 47; House Bill
+47; House Bill 47; House bill 47"
+HB 5,HB,House Bill,30,30,"HB
+5; HB 5; HB5; House Bill
+5; House Bill 5"
+HB 128,HB,House Bill,29,29,"HB
+128; HB 128; House Bill
+128; House Bill 128; hb 128"
+HB 130,HB,House Bill,29,29,"HB
+130; HB 130; House Bill
+130; House Bill 130; house Bill
+130"
+HB 3,HB,House Bill,27,27,"HB
+3; HB 3; HB3; House Bill
+3; House Bill 3"
+SB 169,SB,Senate Bill,27,27,"SB
+169; SB 169; Senate Bill
+169; Senate Bill 169; Senate bill
+169"
+HB 11,HB,House Bill,27,27,"HB
+11; HB 11; House Bill
+11; House Bill 11; House bill
+11"
+SB 4,SB,Senate Bill,26,26,"SB 4; SB4; Senate Bill
+4; Senate Bill 4"
+SB 5,SB,Senate Bill,26,26,"SB
+5; SB 5; Senate Bill
+5; Senate Bill 5; Senate bill 5"
+SB 159,SB,Senate Bill,26,26,"SB
+159; Senate Bill
+159; Senate Bill 159; Senate bill 159"
+SB 26,SB,Senate Bill,26,26,"SB
+26; SB 26; Senate Bill
+26; Senate Bill 26; Senate bill
+26"
+HB 4,HB,House Bill,26,26,"HB
+4; HB 4; HB4; House Bill
+4; House Bill 4"
+HB 253,HB,House Bill,26,26,"HB
+253; HB 253; House Bill
+253; House Bill 253; house Bill
+253"
+SB 21,SB,Senate Bill,26,26,"SB
+21; SB 21; Senate Bill
+21; Senate Bill 21; Senate bill
+21"
+HB 6,HB,House Bill,26,26,"HB
+6; HB 6; HB6; House Bill
+6; House Bill 6"
+HB 41,HB,House Bill,25,25,"HB
+41; HB 41; House Bill
+41; House Bill 41; house Bill 41"
+SB 13,SB,Senate Bill,25,25,"SB
+13; SB 13; Senate Bill
+13; Senate Bill 13; Senate bill
+13"
+SB 42,SB,Senate Bill,25,25,"SB 42; Senate Bill
+42; Senate Bill 42; Senate bill
+42"
+HB 8,HB,House Bill,24,24,"HB
+8; HB 8; HB8; House Bill
+8; House Bill 8"
+SB 170,SB,Senate Bill,24,24,"SB
+170; SB 170; Senate Bill
+170; Senate Bill 170"
+HB 195,HB,House Bill,24,24,"HB 195; House Bill
+195; House Bill 195; house Bill 195"
+HB 10,HB,House Bill,24,24,"HB
+10; HB 10; House Bill
+10; House Bill 10"
+HB 252,HB,House Bill,24,24,"HB
+252; HB 252; House Bill
+252; House Bill 252; house Bill
+252"
+HB 71,HB,House Bill,24,24,"HB
+71; HB 71; House Bill
+71; House Bill 71; house Bill 71"
+HB 145,HB,House Bill,23,23,"HB 145; House Bill
+145; House Bill 145"
+SB 82,SB,Senate Bill,23,23,"SB 82; Senate Bill
+82; Senate Bill 82"
+HB 19,HB,House Bill,23,23,"HB
+19; HB 19; HB19; House Bill
+19; House Bill 19"
+SB 72,SB,Senate Bill,23,23,"SB
+72; SB 72; Senate Bill
+72; Senate Bill 72; Senate bill 72"
+SB 137,SB,Senate Bill,22,22,"SB
+137; SB 137; Senate Bill
+137; Senate Bill 137; Senate bill
+137"
+SB 12,SB,Senate Bill,22,22,"SB 12; Senate Bill
+12; Senate Bill 12; Senate bill
+12; Senate bill 12"
+SB 15,SB,Senate Bill,22,22,"SB
+15; SB 15; Senate Bill
+15; Senate Bill 15"
+HB 14,HB,House Bill,22,22,"HB
+14; HB 14; House Bill
+14; House Bill 14; house Bill 14"
+HB 12,HB,House Bill,21,21,"HB
+12; HB 12; House Bill
+12; House Bill 12; house Bill 12"
+HB 212,HB,House Bill,20,20,"HB
+212; HB 212; House Bill
+212; House Bill 212; House bill
+212"
+HB 140,HB,House Bill,20,20,"HB
+140; HB 140; House Bill
+140; House Bill 140; hb
+140"
+SB 161,SB,Senate Bill,20,20,"SB 161; Senate Bill
+161; Senate Bill 161; Senate bill 161"
+SB 88,SB,Senate Bill,20,20,"SB 88; Senate Bill
+88; Senate Bill 88; Senate bill 88"
+SM 5,SM,Senate Memorial,20,20,"SM
+5; SM 5; SM5; Senate Memorial
+5; Senate Memorial 5"
+HB 298,HB,House Bill,20,20,"HB
+298; HB 298; House Bill
+298; House Bill 298; house Bill
+298"
+SB 31,SB,Senate Bill,20,20,"SB 31; Senate Bill
+31; Senate Bill 31; Senate bill 31"
+SB 175,SB,Senate Bill,19,19,"SB
+175; SB 175; Senate Bill
+175; Senate Bill 175"
+HB 33,HB,House Bill,19,19,"HB
+33; HB 33; House Bill
+33; House Bill 33; house Bill
+33"
+HB 93,HB,House Bill,19,19,"HB
+93; HB 93; House Bill
+93; House Bill 93; house Bill 93"
+HB 98,HB,House Bill,19,19,"HB 98; House Bill
+98; House Bill 98; House bill 98; house Bill
+98"
+HB 91,HB,House Bill,19,19,"HB
+91; HB 91; House Bill
+91; House Bill 91; house Bill 91"
+HB 181,HB,House Bill,19,19,"HB 181; House Bill
+181; House Bill 181; house Bill 181"
+SB 33,SB,Senate Bill,19,19,"SB
+33; SB 33; Senate Bill
+33; Senate Bill 33; Senate bill 33"
+HB 211,HB,House Bill,19,19,"HB 211; House Bill
+211; House Bill 211; house Bill 211"
+SB 53,SB,Senate Bill,19,19,"SB 53; Senate Bill
+53; Senate Bill 53"
+HB 117,HB,House Bill,19,19,"HB 117; House Bill
+117; House Bill 117"
+SB 201,SB,Senate Bill,18,18,"SB
+201; SB 201; Senate Bill
+201; Senate Bill 201; Senate bill 201"
+HB 233,HB,House Bill,18,18,"HB
+233; HB 233; House Bill
+233; House Bill 233; hb
+233"
+SB 280,SB,Senate Bill,18,18,"SB
+280; SB 280; Senate Bill
+280; Senate Bill 280"
+SB 48,SB,Senate Bill,18,18,"SB
+48; SB 48; Senate Bill
+48; Senate Bill 48; Senate bill 48"
+HB 207,HB,House Bill,18,18,"HB 207; House Bill
+207; House Bill 207; House bill 207; house Bill
+207"
+HB 143,HB,House Bill,18,18,"HB
+143; HB 143; House Bill
+143; House Bill 143; House bill
+143"
+HB 66,HB,House Bill,18,18,"HB
+66; HB 66; House Bill
+66; House Bill 66; house Bill 66"
+SB 127,SB,Senate Bill,18,18,"Senate Bill
+127; Senate Bill 127"
+SB 11,SB,Senate Bill,18,18,"SB
+11; SB 11; Senate Bill
+11; Senate Bill 11; Senate bill
+11"
+SB 16,SB,Senate Bill,18,18,"SB
+16; SB 16; Senate Bill
+16; Senate Bill 16; Senate bill
+16"
+HB 269,HB,House Bill,17,17,"HB
+269; HB 269; House Bill
+269; House Bill 269; house Bill 269"
+SB 6,SB,Senate Bill,17,17,"SB 6; Senate Bill
+6; Senate Bill 6; Senate bill 6"
+SB 14,SB,Senate Bill,17,17,"SB 14; Senate Bill
+14; Senate Bill 14"
+HB 7,HB,House Bill,17,17,"HB
+7; HB 7; HB7; House Bill
+7; House Bill 7"
+SB 142,SB,Senate Bill,17,17,"SB 142; Senate Bill
+142; Senate Bill 142"
+HB 20,HB,House Bill,17,17,"HB
+20; HB 20; HB20; House Bill
+20; House Bill 20"
+HB 183,HB,House Bill,17,17,"House Bill
+183; House Bill 183"
+SB 45,SB,Senate Bill,17,17,"SB 45; Senate Bill
+45; Senate Bill 45"
+HB 251,HB,House Bill,17,17,"HB 251; House Bill
+251; House Bill 251; house Bill
+251; house Bill 251"
+HB 214,HB,House Bill,17,17,"HB
+214; HB 214; House Bill
+214; House Bill 214; House bill
+214"
+SB 47,SB,Senate Bill,17,17,"SB 47; Senate Bill
+47; Senate Bill 47"
+SB 36,SB,Senate Bill,17,17,"SB
+36; SB 36; Senate Bill
+36; Senate Bill 36; Senate bill
+36"
+SB 275,SB,Senate Bill,17,17,"SB 275; Senate Bill
+275; Senate Bill 275; Senate bill 275"
+SB 163,SB,Senate Bill,17,17,"SB
+163; SB 163; Senate Bill
+163; Senate Bill 163; Senate bill
+163"
+SB 75,SB,Senate Bill,17,17,"SB
+75; Senate Bill
+75; Senate Bill 75; Senate bill 75"
+SB 8,SB,Senate Bill,17,17,"SB 8; Senate Bill
+8; Senate Bill 8"
+SB 417,SB,Senate Bill,17,17,"SB
+417; SB 417; SB417; Senate Bill
+417; Senate Bill 417"
+HB 22,HB,House Bill,16,16,"HB
+22; HB 22; House Bill
+22; House Bill 22; house Bill 22"
+SB 23,SB,Senate Bill,16,16,"SB
+23; SB 23; Senate Bill
+23; Senate Bill 23"
+SB 64,SB,Senate Bill,16,16,"SB 64; Senate Bill
+64; Senate Bill 64"
+HB 206,HB,House Bill,16,16,"HB 206; House Bill
+206; House Bill 206; house Bill
+206"
+HB 284,HB,House Bill,16,16,"HB
+284; HB 284; House Bill
+284; House Bill 284"
+SB 37,SB,Senate Bill,16,16,"SB
+37; SB 37; Senate Bill
+37; Senate Bill 37"
+SB 112,SB,Senate Bill,16,16,"SB
+112; SB 112; Senate Bill
+112; Senate Bill 112"
+HB 308,HB,House Bill,16,16,"HB
+308; HB 308; House Bill
+308; House Bill 308; house bill 308"
+HB 295,HB,House Bill,16,16,"HB
+295; HB 295; House Bill
+295; House Bill 295"
+HB 129,HB,House Bill,16,16,"HB 129; House Bill
+129; House Bill 129; house Bill
+129; house Bill 129"
+HB 255,HB,House Bill,16,16,"HB
+255; HB 255; House Bill
+255; House Bill 255; house Bill 255"
+SB 41,SB,Senate Bill,16,16,"SB
+41; SB 41; Senate Bill
+41; Senate Bill 41"
+SB 7,SB,Senate Bill,16,16,"SB
+7; SB 7; SB7; Senate Bill
+7; Senate Bill 7"
+HB 54,HB,House Bill,16,16,"HB
+54; HB 54; House Bill
+54; House Bill 54; house Bill
+54"
+SB 19,SB,Senate Bill,16,16,"SB 19; Senate Bill
+19; Senate Bill 19; Senate bill 19"
+HB 161,HB,House Bill,15,15,"HB
+161; HB 161; House Bill
+161; House Bill 161; House bill 161"
+HB 120,HB,House Bill,15,15,"House Bill
+120; House Bill 120; house Bill 120; house bill
+120"
+HB 157,HB,House Bill,15,15,"HB
+157; HB 157; House Bill
+157; House Bill 157"
+SB 115,SB,Senate Bill,15,15,"SB
+115; SB 115; Senate Bill
+115; Senate Bill 115"
+HB 131,HB,House Bill,15,15,"HB
+131; HB 131; House Bill
+131; House Bill 131; House bill
+131"
+SB 126,SB,Senate Bill,15,15,"Senate Bill
+126; Senate Bill 126"
+HB 357,HB,House Bill,15,15,"HB 357; House Bill
+357; House Bill 357; house Bill 357"
+HB 196,HB,House Bill,15,15,"HB 196; House Bill
+196; House Bill 196; house Bill
+196; house Bill 196"
+HB 9,HB,House Bill,15,15,"HB
+9; HB 9; HB9; House Bill
+9; House Bill 9"
+HB 175,HB,House Bill,15,15,"HB 175; House Bill
+175; House Bill 175; house Bill
+175; house bill
+175"
+HB 156,HB,House Bill,15,15,"House Bill
+156; House Bill 156; house Bill
+156; house Bill 156"
+HB 13,HB,House Bill,15,15,"HB
+13; HB 13; House Bill
+13; House Bill 13"
+SB 39,SB,Senate Bill,15,15,"SB 39; Senate Bill
+39; Senate Bill 39"
+HB 65,HB,House Bill,15,15,"HB 65; House Bill
+65; House Bill 65; house Bill
+65"
+HB 69,HB,House Bill,15,15,"HB 69; House Bill
+69; House Bill 69; house Bill 69"
+SB 70,SB,Senate Bill,15,15,"Senate Bill
+70; Senate Bill 70; Senate bill 70"
+SB 131,SB,Senate Bill,15,15,"SB
+131; SB 131; Senate Bill
+131; Senate Bill 131; Senate bill
+131"
+HB 178,HB,House Bill,15,15,"HB
+178; HB 178; House Bill
+178; House Bill 178; house Bill 178"
+SB 109,SB,Senate Bill,15,15,"SB 109; Senate Bill
+109; Senate Bill 109; Senate bill 109"
+HB 15,HB,House Bill,14,14,"HB 15; House Bill
+15; House Bill 15"
+HB 167,HB,House Bill,14,14,"HB
+167; HB 167; House Bill
+167; House Bill 167; House bill 167"
+SB 58,SB,Senate Bill,14,14,"SB
+58; SB 58; Senate Bill
+58; Senate Bill 58"
+HB 21,HB,House Bill,14,14,"HB
+21; House Bill
+21; House Bill 21; house Bill
+21; house bill 21"
+SB 376,SB,Senate Bill,14,14,"Senate Bill
+376; Senate Bill 376; Senate bill 376"
+HB 193,HB,House Bill,14,14,"HB 193; House Bill
+193; House Bill 193; house Bill
+193; house Bill 193"
+SB 220,SB,Senate Bill,14,14,"SB 220; Senate Bill
+220; Senate Bill 220; Senate bill 220"
+SB 216,SB,Senate Bill,14,14,"SB
+216; SB 216; Senate Bill
+216; Senate Bill 216; Senate bill 216"
+SB 10,SB,Senate Bill,14,14,"SB 10; Senate Bill
+10; Senate Bill 10"
+HB 192,HB,House Bill,14,14,"HB 192; House Bill
+192; House Bill 192; house Bill 192"
+HB 281,HB,House Bill,14,14,"HB
+281; HB 281; House Bill
+281; House Bill 281; house Bill 281"
+HB 197,HB,House Bill,14,14,"HB 197; House Bill
+197; House Bill 197"
+SB 357,SB,Senate Bill,14,14,"SB
+357; SB 357; Senate Bill
+357; Senate Bill 357; Senate bill 357"
+HB 159,HB,House Bill,14,14,"HB 159; House Bill
+159; House Bill 159"
+HB 395,HB,House Bill,14,14,"HB
+395; HB 395; House Bill
+395; House Bill 395; house Bill
+395"
+HB 24,HB,House Bill,14,14,"HB
+24; HB 24; House Bill
+24; House Bill 24; house bill 24"
+HB 203,HB,House Bill,14,14,"HB 203; House Bill
+203; House Bill 203"
+HB 78,HB,House Bill,14,14,"HB 78; House Bill
+78; House Bill 78; House bill 78; house Bill
+78"
+HB 458,HB,House Bill,13,13,"HB 458; House Bill
+458; House Bill 458; house Bill 458"
+HB 17,HB,House Bill,13,13,"HB
+17; HB 17; House Bill
+17; House Bill 17"
+HB 75,HB,House Bill,13,13,"HB
+75; HB 75; House Bill
+75; House Bill 75; hb
+75"
+HB 113,HB,House Bill,13,13,"HB
+113; HB 113; House Bill
+113; House Bill 113"
+HB 219,HB,House Bill,13,13,"HB 219; House Bill
+219; House Bill 219"
+HB 209,HB,House Bill,13,13,"House Bill
+209; House Bill 209; house Bill 209; house bill 209"
+SB 119,SB,Senate Bill,13,13,"Senate Bill
+119; Senate Bill 119; Senate bill 119"
+HB 199,HB,House Bill,13,13,"HB
+199; HB 199; House Bill
+199; House Bill 199; house Bill
+199"
+SB 236,SB,Senate Bill,13,13,"SENATE Bill 236; Senate Bill
+236; Senate Bill 236; Senate bill 236"
+SB 76,SB,Senate Bill,13,13,"SB
+76; Senate Bill
+76; Senate Bill 76"
+HB 151,HB,House Bill,13,13,"HB 151; House Bill
+151; House Bill 151; hb 151; house Bill
+151"
+SB 219,SB,Senate Bill,13,13,"SB
+219; SB 219; Senate Bill
+219; Senate Bill 219"
+HB 102,HB,House Bill,13,13,"HB 102; House Bill
+102; House Bill 102; house Bill
+102; house Bill 102"
+HB 449,HB,House Bill,13,13,"House Bill
+449; House Bill 449; house Bill 449"
+SB 92,SB,Senate Bill,13,13,"SB 92; Senate Bill
+92; Senate Bill 92"
+HB 99,HB,House Bill,13,13,"HB 99; House Bill
+99; House Bill 99; house Bill 99"
+SB 18,SB,Senate Bill,13,13,"SB 18; Senate Bill
+18; Senate Bill 18"
+HB 405,HB,House Bill,13,13,"HB 405; House Bill
+405; House Bill 405; house bill 405"
+SB 96,SB,Senate Bill,13,13,"SB 96; Senate Bill
+96; Senate Bill 96; Senate bill
+96; Senate bill 96"
+SB 383,SB,Senate Bill,13,13,"SB 383; Senate Bill
+383; Senate Bill 383; Senate bill 383"
+SB 345,SB,Senate Bill,13,13,"SB
+345; SB 345; Senate Bill
+345; Senate Bill 345; Senate bill 345"
+SB 113,SB,Senate Bill,13,13,"Senate Bill
+113; Senate Bill 113"
+HB 352,HB,House Bill,13,13,"House Bill
+352; House Bill 352; house Bill 352"
+SB 353,SB,Senate Bill,13,13,"Senate Bill
+353; Senate Bill 353; Senate bill 353"
+HB 101,HB,House Bill,13,13,"HB
+101; HB 101; House Bill
+101; House Bill 101"
+HB 158,HB,House Bill,12,12,HB 158; House Bill 158
+HB 134,HB,House Bill,12,12,"HB
+134; HB 134; House Bill
+134; House Bill 134; house Bill
+134"
+HB 174,HB,House Bill,12,12,"HB 174; House Bill
+174; House Bill 174; House bill 174"
+HB 303,HB,House Bill,12,12,"HB 303; House Bill
+303; House Bill 303; House bill 303; hb
+303"
+HB 165,HB,House Bill,12,12,"HB 165; House Bill
+165; House Bill 165; house Bill
+165; house Bill 165"
+HB 36,HB,House Bill,12,12,"HB
+36; HB 36; House Bill
+36; House Bill 36; house Bill 36"
+SB 327,SB,Senate Bill,12,12,"SB 327; Senate Bill
+327; Senate Bill 327; Senate bill 327"
+SB 495,SB,Senate Bill,12,12,"Senate Bill
+495; Senate Bill 495; Senate bill
+495"
+SB 116,SB,Senate Bill,12,12,"SB
+116; SB 116; Senate Bill
+116; Senate Bill 116"
+HB 28,HB,House Bill,12,12,"HB
+28; HB 28; House Bill
+28; House Bill 28; house Bill
+28"
+SB 108,SB,Senate Bill,12,12,"SB
+108; SB 108; Senate Bill
+108; Senate Bill 108"
+HB 50,HB,House Bill,12,12,"HB
+50; HB 50; House Bill
+50; House Bill 50; hb 50"
+HB 239,HB,House Bill,12,12,"HB 239; House Bill
+239; House Bill 239; house Bill 239"
+HB 149,HB,House Bill,12,12,"House Bill
+149; House Bill 149; house Bill
+149; house Bill 149"
+SB 401,SB,Senate Bill,12,12,"SB
+401; SB 401; Senate Bill
+401; Senate Bill 401; Senate bill 401"
+SB 535,SB,Senate Bill,12,12,"SB 535; Senate Bill
+535; Senate Bill 535"
+HB 191,HB,House Bill,12,12,"HB
+191; HB 191; House Bill
+191; House Bill 191; house Bill 191"
+HB 291,HB,House Bill,12,12,"HB 291; House Bill
+291; House Bill 291"
+HB 182,HB,House Bill,12,12,"House Bill
+182; House Bill 182"
+SB 101,SB,Senate Bill,12,12,"SB
+101; SB 101; Senate Bill
+101; Senate Bill 101"
+SB 83,SB,Senate Bill,12,12,"SB
+83; SB 83; Senate Bill
+83; Senate Bill 83; Senate bill
+83"
+SB 78,SB,Senate Bill,12,12,"SB 78; Senate Bill
+78; Senate Bill 78; Senate bill 78"
+HB 64,HB,House Bill,12,12,"HB 64; House Bill
+64; House Bill 64; house Bill
+64; house Bill 64"
+SB 100,SB,Senate Bill,12,12,"Senate Bill
+100; Senate Bill 100"
+SB 302,SB,Senate Bill,12,12,"SB
+302; Senate Bill
+302; Senate Bill 302; Senate bill 302"
+SB 118,SB,Senate Bill,12,12,"Senate Bill
+118; Senate Bill 118"
+SB 199,SB,Senate Bill,12,12,"Senate Bill
+199; Senate Bill 199"
+SB 73,SB,Senate Bill,12,12,"SB 73; Senate Bill
+73; Senate Bill 73; Senate bill 73"
+SB 146,SB,Senate Bill,12,12,"Senate Bill
+146; Senate Bill 146"
+SB 249,SB,Senate Bill,12,12,"Senate Bill
+249; Senate Bill 249; Senate bill 249"
+SB 252,SB,Senate Bill,12,12,"SB 252; Senate Bill
+252; Senate Bill 252; Senate bill 252"
+SB 135,SB,Senate Bill,12,12,"SB
+135; SB 135; Senate Bill
+135; Senate Bill 135"
+HB 218,HB,House Bill,12,12,"HB 218; House Bill
+218; House Bill 218"
+HB 260,HB,House Bill,12,12,"HB 260; House Bill
+260; House Bill 260; house Bill
+260; house Bill 260"
+HB 403,HB,House Bill,12,12,"HB
+403; HB 403; House Bill
+403; House Bill 403"
+SB 120,SB,Senate Bill,12,12,"SB
+120; SB 120; Senate Bill
+120; Senate Bill 120"
+HB 343,HB,House Bill,12,12,"HB 343; House Bill
+343; House Bill 343"
+SB 124,SB,Senate Bill,12,12,"Senate Bill
+124; Senate Bill 124"
+SB 507,SB,Senate Bill,12,12,"SB 507; Senate Bill
+507; Senate Bill 507"
+SB 274,SB,Senate Bill,12,12,"Senate Bill
+274; Senate Bill 274"
+HB 487,HB,House Bill,11,11,"House Bill
+487; House Bill 487; house bill 487"
+HB 289,HB,House Bill,11,11,"HB
+289; HB 289; House Bill
+289; House Bill 289; house Bill 289"
+HB 553,HB,House Bill,11,11,"HB
+553; HB 553; House Bill
+553; House Bill 553; house bill 553"
+HB 270,HB,House Bill,11,11,"HB
+270; HB 270; House Bill
+270; House Bill 270; House bill 270"
+SB 481,SB,Senate Bill,11,11,"SB
+481; SB 481; Senate Bill
+481; Senate Bill 481"
+SB 290,SB,Senate Bill,11,11,"Senate Bill
+290; Senate Bill 290; Senate bill 290"
+SB 217,SB,Senate Bill,11,11,"Senate Bill
+217; Senate Bill 217"
+SB 49,SB,Senate Bill,11,11,"SB
+49; SB 49; Senate Bill 49; Senate bill 49"
+SB 133,SB,Senate Bill,11,11,"SB 133; Senate Bill
+133; Senate Bill 133"
+SB 343,SB,Senate Bill,11,11,"SB 343; Senate Bill
+343; Senate Bill 343; Senate bill 343"
+HB 323,HB,House Bill,11,11,"HB 323; House Bill
+323; House Bill 323"
+HB 155,HB,House Bill,11,11,"HB 155; House Bill
+155; House Bill 155; House bill 155"
+HB 56,HB,House Bill,11,11,"HB
+56; HB 56; House Bill
+56; House Bill 56"
+HB 296,HB,House Bill,11,11,"HB 296; House Bill
+296; House Bill 296"
+HB 220,HB,House Bill,11,11,"HB 220; House Bill
+220; House Bill 220"
+SB 22,SB,Senate Bill,11,11,"SB
+22; SB 22; Senate Bill
+22; Senate Bill 22"
+HB 427,HB,House Bill,11,11,"HB
+427; HB 427; House Bill
+427; House Bill 427; house bill
+427"
+HB 439,HB,House Bill,11,11,"HB
+439; HB 439; House Bill
+439; House Bill 439; house bill 439"
+HB 249,HB,House Bill,11,11,"HB 249; House Bill
+249; House Bill 249; house Bill
+249; house bill 249"
+HB 571,HB,House Bill,11,11,"HB 571; House Bill
+571; House Bill 571; house bill 571"
+HB 160,HB,House Bill,11,11,"HB 160; House Bill
+160; House Bill 160"
+SB 54,SB,Senate Bill,11,11,"SB
+54; SB 54; Senate Bill
+54; Senate Bill 54; Senate bill
+54"
+SB 122,SB,Senate Bill,11,11,"SB 122; Senate Bill
+122; Senate Bill 122; Senate bill
+122"
+HB 548,HB,House Bill,11,11,"HB
+548; HB 548; House Bill
+548; House Bill 548; house Bill
+548"
+HB 417,HB,House Bill,11,11,"HB
+417; HB 417; House Bill
+417; House Bill 417; house Bill
+417"
+SB 242,SB,Senate Bill,11,11,"SB
+242; SB 242; Senate Bill
+242; Senate Bill 242; Senate bill 242"
+SB 480,SB,Senate Bill,11,11,"Senate Bill
+480; Senate Bill 480; Senate bill 480"
+HB 297,HB,House Bill,11,11,"House Bill
+297; House Bill 297; house Bill
+297"
+HB 205,HB,House Bill,11,11,"HB
+205; HB 205; House Bill
+205; House Bill 205; House bill 205"
+SB 30,SB,Senate Bill,11,11,"SB
+30; SB 30; Senate Bill
+30; Senate Bill 30"
+SB 425,SB,Senate Bill,11,11,"Senate Bill
+425; Senate Bill 425"
+HB 35,HB,House Bill,11,11,"HB
+35; HB 35; House Bill
+35; House Bill 35; house Bill 35"
+HB 104,HB,House Bill,11,11,"HB
+104; HB 104; House Bill
+104; House Bill 104; house Bill 104"
+SB 283,SB,Senate Bill,11,11,"SB 283; Senate Bill
+283; Senate Bill 283"
+SB 57,SB,Senate Bill,11,11,"SB
+57; SB 57; Senate Bill
+57; Senate Bill 57"
+HJR 2,HJR,House Joint Resolution,11,11,"HJR 2; HJR2; House Joint Resolution 2; House Joint resolution
+2; House joint resolution 2"
+HB 340,HB,House Bill,11,11,House Bill 340
+HB 493,HB,House Bill,10,10,"House Bill
+493; House Bill 493"
+SB 377,SB,Senate Bill,10,10,"SB 377; Senate Bill
+377; Senate Bill 377"
+SB 241,SB,Senate Bill,10,10,"SB
+241; SB 241; Senate Bill
+241; Senate Bill 241; Senate bill 241"
+HB 148,HB,House Bill,10,10,"HB 148; House Bill
+148; House Bill 148; house Bill
+148; house Bill 148"
+HB 232,HB,House Bill,10,10,"House Bill
+232; House Bill 232; house Bill
+232; house Bill 232; house bill
+232"
+HB 236,HB,House Bill,10,10,"HB 236; House Bill
+236; House Bill 236; house Bill
+236; house Bill 236"
+HB 444,HB,House Bill,10,10,"HB 444; House Bill
+444; House Bill 444"
+HB 73,HB,House Bill,10,10,"HB 73; HB73; House Bill
+73; House Bill 73; house Bill 73"
+SB 387,SB,Senate Bill,10,10,SB 387; Senate Bill 387; Senate bill 387
+HB 433,HB,House Bill,10,10,"House Bill
+433; House Bill 433"
+HB 240,HB,House Bill,10,10,"House Bill
+240; House Bill 240; house Bill 240"
+SB 153,SB,Senate Bill,10,10,"SB 153; Senate Bill
+153; Senate Bill 153"
+HB 79,HB,House Bill,10,10,"HB
+79; HB 79; House Bill
+79; House Bill 79; house bill
+79"
+HB 346,HB,House Bill,10,10,"HB
+346; HB 346; House Bill
+346; House Bill 346"
+HB 348,HB,House Bill,10,10,"HB
+348; HB 348; House Bill
+348; House Bill 348"
+HB 361,HB,House Bill,10,10,"HB 361; House Bill
+361; House Bill 361; House bill 361"
+HB 133,HB,House Bill,10,10,"HB
+133; HB 133; House Bill
+133; House Bill 133; house Bill 133"
+HB 402,HB,House Bill,10,10,"HB 402; House Bill
+402; House Bill 402"
+SB 278,SB,Senate Bill,10,10,"Senate Bill
+278; Senate Bill 278"
+SB 318,SB,Senate Bill,10,10,"SB 318; Senate Bill
+318; Senate Bill 318"
+SB 128,SB,Senate Bill,10,10,"SB
+128; SB 128; Senate Bill
+128; Senate Bill 128"
+SB 267,SB,Senate Bill,10,10,"SB 267; Senate Bill
+267; Senate Bill 267; Senate bill
+267; Senate bill 267"
+SB 148,SB,Senate Bill,10,10,"SB 148; Senate Bill
+148; Senate Bill 148"
+SB 152,SB,Senate Bill,10,10,"Senate Bill
+152; Senate Bill 152; Senate bill 152"
+SB 221,SB,Senate Bill,10,10,"Senate Bill
+221; Senate Bill 221; Senate bill 221"
+SB 239,SB,Senate Bill,10,10,"Senate Bill
+239; Senate Bill 239; Senate bill 239"
+SB 59,SB,Senate Bill,10,10,"SB 59; Senate Bill
+59; Senate Bill 59; Senate bill 59"
+SB 81,SB,Senate Bill,10,10,"SB 81; Senate Bill
+81; Senate Bill 81; Senate bill
+81"
+SB 123,SB,Senate Bill,10,10,"SB
+123; SB 123; Senate Bill
+123; Senate Bill 123"
+SB 315,SB,Senate Bill,10,10,"SB 315; Senate Bill
+315; Senate Bill 315; Senate bill 315"
+SB 176,SB,Senate Bill,10,10,"SB
+176; SB 176; Senate Bill
+176; Senate Bill 176"
+HB 67,HB,House Bill,10,10,"HB 67; House Bill
+67; House Bill 67"
+HB 532,HB,House Bill,10,10,"House Bill
+532; House Bill 532"
+HB 89,HB,House Bill,10,10,"HB 89; HB89; House Bill
+89; House Bill 89; house Bill 89"
+SB 155,SB,Senate Bill,10,10,"Senate Bill
+155; Senate Bill 155"
+HB 230,HB,House Bill,10,10,"HB
+230; HB 230; House Bill
+230; House Bill 230; house Bill
+230"
+HB 243,HB,House Bill,10,10,"HB
+243; HB 243; House Bill
+243; House Bill 243; house Bill 243"
+HB 34,HB,House Bill,10,10,"HB
+34; HB 34; House Bill
+34; House Bill 34; house Bill 34"
+SB 66,SB,Senate Bill,10,10,"SB 66; Senate Bill
+66; Senate Bill 66; Senate bill
+66"
+HB 431,HB,House Bill,10,10,"HB 431; House Bill
+431; House Bill 431"
+SB 375,SB,Senate Bill,10,10,"SB
+375; Senate Bill 375; Senate bill 375"
+HB 244,HB,House Bill,10,10,"House Bill
+244; House Bill 244; house bill 244"
+SB 423,SB,Senate Bill,9,9,"SB 423; Senate Bill
+423; Senate Bill 423; Senate bill 423"
+SB 197,SB,Senate Bill,9,9,"SB 197; Senate Bill
+197; Senate Bill 197"
+HB 457,HB,House Bill,9,9,"HB
+457; HB 457; House Bill
+457; House Bill 457"
+HB 519,HB,House Bill,9,9,"HB
+519; HB 519; House Bill
+519; House Bill 519"
+HB 112,HB,House Bill,9,9,"HB
+112; HB 112; House Bill
+112; House Bill 112"
+HB 135,HB,House Bill,9,9,"HB 135; House Bill
+135; House Bill 135; house Bill 135"
+HB 29,HB,House Bill,9,9,"House Bill
+29; House Bill 29; house Bill 29; house bill 29"
+HB 336,HB,House Bill,9,9,"House Bill
+336; House Bill 336"
+SB 151,SB,Senate Bill,9,9,SB 151; Senate Bill 151
+HB 68,HB,House Bill,9,9,"HB 68; House Bill
+68; House Bill 68; house Bill
+68; house Bill 68"
+HB 394,HB,House Bill,9,9,"HB
+394; HB 394; House Bill
+394; House Bill 394"
+HB 154,HB,House Bill,9,9,"House Bill
+154; House Bill 154; house Bill
+154; house Bill 154; house bill 154"
+HB 49,HB,House Bill,9,9,"HB 49; House Bill
+49; House Bill 49; house Bill 49; house bill 49"
+HB 368,HB,House Bill,9,9,"HB 368; House Bill
+368; House Bill 368"
+HB 330,HB,House Bill,9,9,"HB
+330; HB 330; House Bill
+330; House Bill 330"
+HM 34,HM,House Memorial,9,9,"House Memorial
+34; House Memorial 34; house Memorial 34"
+HB 398,HB,House Bill,9,9,"House Bill
+398; House Bill 398"
+SB 303,SB,Senate Bill,9,9,"SB 303; Senate Bill
+303; Senate Bill 303"
+SB 129,SB,Senate Bill,9,9,"SB 129; Senate Bill
+129; Senate Bill 129"
+HB 26,HB,House Bill,9,9,"HB 26; House Bill
+26; House Bill 26; house Bill
+26; house Bill 26"
+HB 228,HB,House Bill,9,9,"HB 228; House Bill
+228; House Bill 228"
+HB 456,HB,House Bill,9,9,"House Bill
+456; House Bill 456"
+SB 52,SB,Senate Bill,9,9,"Senate Bill
+52; Senate Bill 52"
+SB 364,SB,Senate Bill,9,9,"SB 364; Senate Bill
+364; Senate Bill 364"
+SB 20,SB,Senate Bill,9,9,"SB
+20; SB 20; Senate Bill
+20; Senate Bill 20; Senate bill 20"
+SB 162,SB,Senate Bill,9,9,SB 162; Senate Bill 162
+HB 198,HB,House Bill,9,9,"HB 198; House Bill
+198; House Bill 198"
+HB 48,HB,House Bill,9,9,"HB 48; House Bill
+48; House Bill 48; house Bill
+48; house Bill 48"
+HB 27,HB,House Bill,9,9,"HB
+27; HB 27; House Bill
+27; House Bill 27; house Bill 27"
+HB 365,HB,House Bill,9,9,"HB
+365; HB 365; House Bill
+365; House Bill 365; house bill
+365"
+HM 2,HM,House Memorial,9,9,"HM 2; House Memorial
+2; House Memorial 2"
+SJR 11,SJR,Senate Joint Resolution,9,9,"SJR
+11; SJR 11; Senate Joint Resolution
+11; Senate Joint Resolution 11; Senate Joint resolution 11"
+HB 242,HB,House Bill,9,9,"HB
+242; HB 242; House Bill
+242; House Bill 242; house Bill
+242"
+HB 217,HB,House Bill,9,9,"HB 217; House Bill
+217; House Bill 217; house Bill 217"
+HB 46,HB,House Bill,9,9,"HB
+46; HB 46; House Bill
+46; House Bill 46; house Bill 46"
+HB 77,HB,House Bill,9,9,"HB
+77; HB 77; House Bill
+77; House Bill 77"
+SB 105,SB,Senate Bill,9,9,"SB
+105; Senate Bill
+105; Senate Bill 105"
+HM 53,HM,House Memorial,9,9,"HM 53; House Memorial
+53; House Memorial 53; house Memorial 53"
+HB 72,HB,House Bill,9,9,"HB 72; House Bill
+72; House Bill 72"
+HB 106,HB,House Bill,9,9,"HB 106; House Bill
+106; House Bill 106; house Bill 106"
+SB 166,SB,Senate Bill,9,9,"SB
+166; SB 166; Senate Bill
+166; Senate Bill 166; Senate bill 166"
+SB 254,SB,Senate Bill,9,9,SB 254; Senate Bill 254
+HB 468,HB,House Bill,9,9,"House Bill
+468; House Bill 468; house bill
+468"
+HB 16,HB,House Bill,9,9,"HB 16; House Bill
+16; House Bill 16; house Bill 16"
+HB 169,HB,House Bill,9,9,"HB
+169; HB 169; House Bill
+169; House Bill 169"
+SB 299,SB,Senate Bill,9,9,"SB 299; Senate Bill
+299; Senate Bill 299; Senate bill
+299; Senate bill 299"
+SB 85,SB,Senate Bill,9,9,"SB
+85; SB 85; Senate Bill
+85; Senate Bill 85"
+HB 518,HB,House Bill,9,9,"HB
+518; HB 518; House Bill
+518; House Bill 518; house Bill 518"
+HB 172,HB,House Bill,9,9,"HB 172; House Bill
+172; House Bill 172"
+HB 30,HB,House Bill,8,8,"HB 30; Hb 30; House Bill
+30; House Bill 30"
+HB 125,HB,House Bill,8,8,"HB 125; House Bill
+125; House Bill 125"
+HB 453,HB,House Bill,8,8,"HB
+453; HB 453; House Bill
+453; House Bill 453; house Bill 453"
+HB 448,HB,House Bill,8,8,"HB 448; House Bill
+448; House Bill 448; house Bill 448"
+HB 52,HB,House Bill,8,8,"HB 52; House Bill
+52; House Bill 52"
+SB 317,SB,Senate Bill,8,8,"SB
+317; SB 317; Senate Bill 317; Senate bill 317"
+HB 42,HB,House Bill,8,8,"HB
+42; HB 42; House Bill 42"
+SB 93,SB,Senate Bill,8,8,"SB
+93; SB 93; Senate Bill
+93; Senate Bill 93"
+HB 177,HB,House Bill,8,8,"HB
+177; HB 177; House Bill
+177; House Bill 177; house Bill 177"
+HB 82,HB,House Bill,8,8,"HB
+82; HB 82; House Bill
+82; House Bill 82"
+HB 315,HB,House Bill,8,8,"HB 315; House Bill
+315; House Bill 315"
+SB 300,SB,Senate Bill,8,8,"Senate Bill
+300; Senate Bill 300"
+HB 271,HB,House Bill,8,8,"House Bill 271; house Bill
+271; house Bill 271"
+HB 288,HB,House Bill,8,8,"HB 288; House Bill
+288; House Bill 288; house Bill
+288; house Bill 288"
+HB 40,HB,House Bill,8,8,"HB 40; House Bill
+40; House Bill 40"
+HB 426,HB,House Bill,8,8,"HB
+426; HB 426; House Bill
+426; House Bill 426"
+HB 111,HB,House Bill,8,8,"HB 111; House Bill
+111; House Bill 111"
+HB 494,HB,House Bill,8,8,"HB 494; House Bill
+494; House Bill 494"
+HJR 1,HJR,House Joint Resolution,8,8,"HJR1; House Joint Resolution
+1; House Joint Resolution 1; House Joint resolution 1"
+SB 144,SB,Senate Bill,8,8,"SB 144; Senate Bill
+144; Senate Bill 144"
+HB 339,HB,House Bill,8,8,"HB
+339; HB 339; House Bill
+339; House Bill 339; House bill 339"
+SB 230,SB,Senate Bill,8,8,"SB 230; Senate Bill
+230; Senate Bill 230; Senate bill
+230; Senate bill 230"
+HB 226,HB,House Bill,8,8,"HB
+226; HB 226; House Bill 226; house Bill 226"
+SB 212,SB,Senate Bill,8,8,"SB
+212; SB 212; Senate Bill
+212; Senate Bill 212"
+SB 259,SB,Senate Bill,8,8,"SB
+259; SB 259; Senate Bill
+259; Senate Bill 259; Senate bill 259"
+HB 586,HB,House Bill,8,8,"HB 586; House Bill
+586; House Bill 586"
+HB 32,HB,House Bill,8,8,"HB
+32; HB 32; House Bill
+32; House Bill 32; house bill
+32"
+HB 238,HB,House Bill,8,8,"HB 238; House Bill
+238; House Bill 238"
+SJR 3,SJR,Senate Joint Resolution,8,8,"SJR 3; SJR3; Senate Joint resolution
+3; Senate Joint resolution 3; Senate joint resolution 3"
+SB 235,SB,Senate Bill,8,8,"SB 235; Senate Bill
+235; Senate Bill 235"
+SB 38,SB,Senate Bill,8,8,"SB
+38; SB 38; Senate Bill
+38; Senate Bill 38; Senate bill 38"
+HB 213,HB,House Bill,8,8,"HB
+213; HB 213; House Bill
+213; House Bill 213; hb 213"
+HB 81,HB,House Bill,8,8,"HB
+81; HB 81; House Bill
+81; House Bill 81; house Bill
+81"
+HB 74,HB,House Bill,8,8,"HB 74; House Bill
+74; House Bill 74"
+HB 76,HB,House Bill,8,8,"HB 76; House Bill 76; house Bill
+76"
+HB 116,HB,House Bill,8,8,"House Bill
+116; House Bill 116; house Bill
+116"
+HB 505,HB,House Bill,8,8,"HB 505; House Bill
+505; House Bill 505; house Bill 505"
+SB 168,SB,Senate Bill,8,8,"SB 168; Senate Bill
+168; Senate Bill 168; Senate bill 168"
+HB 302,HB,House Bill,8,8,"HB 302; House Bill
+302; House Bill 302; house Bill
+302; house Bill 302"
+HB 84,HB,House Bill,8,8,"HB
+84; HB 84; House Bill
+84; House Bill 84"
+HB 87,HB,House Bill,8,8,"House Bill
+87; House Bill 87"
+HB 38,HB,House Bill,8,8,"HB 38; House Bill
+38; House Bill 38"
+HB 124,HB,House Bill,8,8,"HB
+124; House Bill 124"
+HB 31,HB,House Bill,8,8,"HB 31; House Bill
+31; House Bill 31"
+SB 271,SB,Senate Bill,8,8,"Senate Bill
+271; Senate Bill 271; Senate bill 271"
+HB 477,HB,House Bill,8,8,"House Bill
+477; House Bill 477; house bill 477"
+HB 43,HB,House Bill,7,7,HB 43; House Bill 43
+HB 222,HB,House Bill,7,7,"HB
+222; House Bill
+222; House Bill 222; hb
+222"
+SM 2,SM,Senate Memorial,7,7,SM2; Senate Memorial 2
+HB 60,HB,House Bill,7,7,"HB
+60; HB 60; House Bill
+60; House Bill 60; house Bill
+60"
+HB 280,HB,House Bill,7,7,"House Bill 280; house Bill
+280"
+SB 378,SB,Senate Bill,7,7,"Senate Bill
+378; Senate Bill 378"
+HB 70,HB,House Bill,7,7,"HB 70; HB70; House Bill
+70; House Bill 70; house bill 70"
+HB 58,HB,House Bill,7,7,"HB
+58; HB 58; House Bill
+58; House Bill 58"
+HB 57,HB,House Bill,7,7,"HB 57; House Bill
+57; House Bill 57; house Bill
+57"
+SB 210,SB,Senate Bill,7,7,"SB 210; Senate Bill
+210; Senate Bill 210"
+SB 27,SB,Senate Bill,7,7,"Senate Bill
+27; Senate Bill 27"
+HB 307,HB,House Bill,7,7,"HB
+307; HB 307; House Bill
+307; House Bill 307"
+HB 268,HB,House Bill,7,7,HB 268; House Bill 268
+HB 97,HB,House Bill,7,7,"HB
+97; HB 97; House Bill
+97; House Bill 97"
+HB 95,HB,House Bill,7,7,"HB
+95; HB 95; House Bill
+95; House Bill 95; house Bill 95"
+SB 158,SB,Senate Bill,7,7,"Senate Bill
+158; Senate Bill 158"
+SB 179,SB,Senate Bill,7,7,Senate Bill 179
+SB 232,SB,Senate Bill,7,7,"SB 232; Senate Bill
+232; Senate Bill 232"
+SB 65,SB,Senate Bill,7,7,"SB 65; Senate Bill
+65; Senate Bill 65"
+SB 226,SB,Senate Bill,7,7,"Senate Bill
+226; Senate Bill 226"
+SB 510,SB,Senate Bill,7,7,"Senate Bill
+510; Senate Bill 510"
+HB 364,HB,House Bill,7,7,"House Bill
+364; House Bill 364"
+SB 40,SB,Senate Bill,7,7,"SB 40; Senate Bill
+40; Senate Bill 40"
+HB 194,HB,House Bill,7,7,"HB 194; House Bill
+194; House Bill 194; House bill 194"
+SB 167,SB,Senate Bill,7,7,"SB 167; Senate Bill
+167; Senate Bill 167"
+SB 411,SB,Senate Bill,7,7,"SB 411; Senate Bill
+411; Senate Bill 411"
+HB 419,HB,House Bill,7,7,"HB
+419; HB 419; House Bill
+419; House Bill 419; house bill 419"
+HB 570,HB,House Bill,7,7,HB 570; House Bill 570
+HM 29,HM,House Memorial,7,7,"HM 29; House Memorial
+29; House Memorial 29"
+HB 293,HB,House Bill,7,7,"HB
+293; House Bill
+293; House Bill 293; house Bill
+293; house Bill 293"
+HB 258,HB,House Bill,7,7,"HB 258; House Bill
+258; House Bill 258; house Bill
+258"
+HB 304,HB,House Bill,7,7,"HB
+304; HB 304; House Bill 304; house Bill 304"
+HB 180,HB,House Bill,7,7,"HB
+180; HB 180; House Bill
+180; House Bill 180; house Bill
+180"
+SB 443,SB,Senate Bill,7,7,SB 443; Senate Bill 443
+SB 77,SB,Senate Bill,7,7,"SB 77; Senate Bill
+77; Senate Bill 77"
+HB 618,HB,House Bill,7,7,"House Bill
+618; House Bill 618"
+HB 554,HB,House Bill,7,7,House Bill 554; house bill 554
+HB 153,HB,House Bill,7,7,"HB
+153; HB 153; House Bill
+153; House Bill 153; house Bill 153"
+HB 411,HB,House Bill,7,7,"House Bill
+411; House Bill 411"
+HB 103,HB,House Bill,7,7,"HB 103; House Bill
+103; House Bill 103; house Bill 103"
+HB 259,HB,House Bill,7,7,"HB
+259; HB 259; House Bill
+259; House Bill 259"
+HB 51,HB,House Bill,7,7,"HB
+51; HB 51; House Bill
+51; House Bill 51"
+HM 31,HM,House Memorial,7,7,"House Memorial
+31; House Memorial 31; house Memorial 31; house memorial 31"
+HB 438,HB,House Bill,7,7,"House Bill
+438; House Bill 438; House bill
+438; house bill 438"
+HB 372,HB,House Bill,7,7,"HB 372; House Bill
+372; House Bill 372; house Bill
+372"
+HB 371,HB,House Bill,7,7,"HB
+371; HB 371; House Bill
+371; House Bill 371"
+SB 63,SB,Senate Bill,7,7,"Senate Bill
+63; Senate Bill 63; Senate bill 63"
+HM 57,HM,House Memorial,7,7,"House Memorial
+57; House Memorial 57; House memorial
+57; house Memorial 57"
+HB 190,HB,House Bill,7,7,"HB 190; House Bill
+190; House Bill 190; house Bill 190"
+SB 450,SB,Senate Bill,6,6,"SB 450; Senate Bill
+450; Senate Bill 450"
+HB 90,HB,House Bill,6,6,"HB
+90; HB 90; House Bill 90; house Bill
+90"
+HB 139,HB,House Bill,6,6,HB 139; House Bill 139; house Bill 139
+SB 106,SB,Senate Bill,6,6,"Senate Bill
+106; Senate Bill 106"
+HB 276,HB,House Bill,6,6,"House Bill
+276; House Bill 276; house bill 276"
+SB 180,SB,Senate Bill,6,6,"SB 180; Senate Bill
+180; Senate Bill 180"
+HB 311,HB,House Bill,6,6,"HB
+311; HB 311; House Bill
+311; House Bill 311"
+HB 88,HB,House Bill,6,6,"House Bill
+88; House Bill 88; house Bill
+88; house Bill 88"
+HB 333,HB,House Bill,6,6,"HB
+333; HB 333; House Bill
+333; House Bill 333; house Bill
+333"
+HB 138,HB,House Bill,6,6,"HB 138; House Bill
+138; House Bill 138; house bill 138"
+SB 165,SB,Senate Bill,6,6,"Senate Bill
+165; Senate Bill 165; Senate bill
+165; Senate bill 165"
+SB 160,SB,Senate Bill,6,6,"SB 160; Senate Bill
+160; Senate Bill 160"
+HM 59,HM,House Memorial,6,6,House Memorial 59; house memorial 59
+HB 469,HB,House Bill,6,6,"HB 469; House Bill
+469; House Bill 469"
+HB 37,HB,House Bill,6,6,HB 37; House Bill 37
+HB 179,HB,House Bill,6,6,"HB 179; House Bill
+179; House Bill 179; house Bill
+179"
+SB 29,SB,Senate Bill,6,6,"SB
+29; SB 29; Senate Bill
+29; Senate Bill 29; Senate bill 29"
+HB 185,HB,House Bill,6,6,"HB
+185; HB 185; House Bill
+185; House Bill 185; house Bill 185"
+SB 281,SB,Senate Bill,6,6,"SB 281; Senate Bill
+281; Senate Bill 281"
+HB 247,HB,House Bill,6,6,"HB
+247; HB 247; House Bill
+247; House Bill 247; house Bill 247"
+SB 51,SB,Senate Bill,6,6,"Senate Bill
+51; Senate Bill 51"
+SB 218,SB,Senate Bill,6,6,"SB
+218; SB 218; Senate Bill
+218; Senate Bill 218"
+SB 107,SB,Senate Bill,6,6,"SB 107; Senate Bill
+107; Senate Bill 107"
+HB 375,HB,House Bill,6,6,"HB
+375; House Bill
+375; House Bill 375; house Bill 375"
+HM 32,HM,House Memorial,6,6,"House Memorial
+32; House Memorial 32; house memorial
+32"
+SJR 6,SJR,Senate Joint Resolution,6,6,"SJR 6; SJR6; Senate Joint Resolution
+6; Senate Joint Resolution 6; Senate joint resolution 6"
+SM 19,SM,Senate Memorial,6,6,"Senate Memorial
+19; Senate Memorial 19"
+SB 246,SB,Senate Bill,6,6,"SB 246; Senate Bill
+246; Senate Bill 246"
+SJR 1,SJR,Senate Joint Resolution,6,6,SJR1; Senate Joint Resolution 1
+HB 533,HB,House Bill,6,6,"HB
+533; HB 533; House Bill
+533; House Bill 533; house Bill 533"
+SB 305,SB,Senate Bill,6,6,"SB 305; Senate Bill
+305; Senate Bill 305; Senate bill 305"
+SB 189,SB,Senate Bill,6,6,SB 189; Senate Bill 189
+HB 461,HB,House Bill,6,6,HB 461; House Bill 461
+HB 39,HB,House Bill,6,6,"HB 39; House Bill
+39; House Bill 39; house bill 39"
+HB 186,HB,House Bill,6,6,"HB
+186; HB 186; House Bill
+186; House Bill 186; house Bill 186"
+HB 163,HB,House Bill,6,6,"HB 163; House Bill
+163; House Bill 163; house Bill
+163; house Bill 163"
+HB 344,HB,House Bill,6,6,HB 344; House Bill 344
+SB 335,SB,Senate Bill,6,6,"Senate Bill
+335; Senate Bill 335; Senate bill 335"
+HB 287,HB,House Bill,6,6,"House Bill
+287; House Bill 287; house Bill 287"
+HB 290,HB,House Bill,6,6,"HB 290; House Bill
+290; House Bill 290; house Bill 290"
+HB 86,HB,House Bill,6,6,"HB 86; House Bill
+86; House Bill 86"
+HB 413,HB,House Bill,6,6,"House Bill
+413; House Bill 413"
+SB 505,SB,Senate Bill,6,6,"SB 505; Senate Bill
+505; Senate Bill 505"
+HB 316,HB,House Bill,6,6,"HB 316; House Bill 316; hb
+316; house Bill
+316"
+HB 275,HB,House Bill,6,6,"HB 275; House Bill
+275; House Bill 275; hb
+275"
+HB 292,HB,House Bill,6,6,"House Bill
+292; House Bill 292; house bill
+292"
+HB 450,HB,House Bill,6,6,"HB 450; House Bill
+450; House Bill 450"
+HB 23,HB,House Bill,6,6,"HB 23; House Bill
+23; House Bill 23"
+HM 40,HM,House Memorial,6,6,"HM
+40; HM 40; House Memorial
+40; House Memorial 40; house Memorial
+40"
+HB 250,HB,House Bill,6,6,HB 250; House Bill 250; house Bill 250
+HJR 11,HJR,House Joint Resolution,6,6,"HJR 11; House Joint Resolution
+11; House Joint Resolution 11; House Joint resolution 11"
+HM 45,HM,House Memorial,6,6,"House Memorial
+45; House Memorial 45"
+HM 12,HM,House Memorial,6,6,"House Memorial
+12; House Memorial 12; House memorial 12; hm
+12; house Memorial
+12"
+HM 20,HM,House Memorial,6,6,"House Memorial
+20; House Memorial 20; house Memorial
+20"
+HM 33,HM,House Memorial,5,5,"HM 33; House Memorial 33; hm
+33; hm 33; house memorial
+33"
+HB 109,HB,House Bill,5,5,"HB
+109; HB 109; House Bill
+109; House Bill 109"
+HB 210,HB,House Bill,5,5,"House Bill
+210; House Bill 210; house Bill 210"
+HB 576,HB,House Bill,5,5,"House Bill
+576; House Bill 576"
+HB 301,HB,House Bill,5,5,"House Bill 301; house Bill
+301; house Bill 301"
+HB 141,HB,House Bill,5,5,"HB 141; House Bill
+141; House Bill 141; house Bill 141"
+HB 147,HB,House Bill,5,5,"HB
+147; HB 147; House Bill
+147; House Bill 147"
+HB 286,HB,House Bill,5,5,"House Bill
+286; House Bill 286"
+HB 152,HB,House Bill,5,5,House Bill 152; house Bill 152
+HB 234,HB,House Bill,5,5,"HB
+234; HB 234; House Bill
+234; House Bill 234"
+SB 145,SB,Senate Bill,5,5,"SB 145; Senate Bill
+145; Senate Bill 145"
+HB 201,HB,House Bill,5,5,"HB 201; House Bill
+201; House Bill 201; house Bill 201"
+HB 164,HB,House Bill,5,5,"House Bill
+164; House Bill 164; house Bill 164; house bill
+164; house bill 164"
+HB 392,HB,House Bill,5,5,HB 392; House Bill 392
+HB 246,HB,House Bill,5,5,"HB
+246; HB 246; House Bill
+246; House Bill 246; house bill 246"
+HB 61,HB,House Bill,5,5,"HB
+61; HB 61; House Bill
+61; House Bill 61; house Bill 61"
+HB 59,HB,House Bill,5,5,"HB
+59; HB 59; HB59; House Bill
+59; House Bill 59"
+HM 52,HM,House Memorial,5,5,House Memorial 52
+HB 80,HB,House Bill,5,5,"HB
+80; HB 80; House Bill
+80; House Bill 80"
+HB 241,HB,House Bill,5,5,"HB 241; House Bill
+241; House Bill 241; house Bill 241"
+HB 325,HB,House Bill,5,5,"HB 325; House Bill
+325; House Bill 325"
+HB 215,HB,House Bill,5,5,"HB
+215; HB 215; House Bill
+215; House Bill 215"
+SB 56,SB,Senate Bill,5,5,"SB 56; Senate Bill
+56; Senate Bill 56"
+SB 86,SB,Senate Bill,5,5,"SB 86; Senate Bill
+86; Senate Bill 86"
+SB 60,SB,Senate Bill,5,5,"SB
+60; SB 60; Senate Bill
+60; Senate Bill 60"
+HM 10,HM,House Memorial,5,5,"Hm
+10; House Memorial
+10; House Memorial 10"
+SM 3,SM,Senate Memorial,5,5,"Senate Memorial
+3; Senate Memorial 3"
+SM 14,SM,Senate Memorial,5,5,"Senate Memorial
+14; Senate Memorial 14"
+SB 143,SB,Senate Bill,5,5,"SB 143; Senate Bill
+143; Senate Bill 143"
+SB 186,SB,Senate Bill,5,5,"SB
+186; SB 186; Senate Bill 186; Senate bill
+186"
+SB 213,SB,Senate Bill,5,5,"Senate Bill
+213; Senate Bill 213"
+SB 227,SB,Senate Bill,5,5,Senate Bill 227
+SB 304,SB,Senate Bill,5,5,"SB 304; Senate Bill
+304; Senate Bill 304"
+SB 233,SB,Senate Bill,5,5,"Senate Bill 233; Senate bill
+233"
+SB 69,SB,Senate Bill,5,5,SB 69; Senate Bill 69
+SB 398,SB,Senate Bill,5,5,"Senate Bill
+398; Senate Bill 398"
+SB 24,SB,Senate Bill,5,5,SB 24; Senate Bill 24
+HB 326,HB,House Bill,5,5,"HB
+326; HB 326; House Bill
+326; House Bill 326"
+SB 68,SB,Senate Bill,5,5,SB 68; Senate Bill 68
+SB 171,SB,Senate Bill,5,5,"Senate Bill
+171; Senate Bill 171; Senate bill 171"
+SB 125,SB,Senate Bill,5,5,SB 125; Senate Bill 125
+SB 117,SB,Senate Bill,5,5,"SB
+117; SB 117; Senate Bill
+117; Senate Bill 117"
+HB 277,HB,House Bill,5,5,"House Bill
+277; House Bill 277"
+SB 102,SB,Senate Bill,5,5,"Senate Bill
+102; Senate Bill 102"
+HM 43,HM,House Memorial,5,5,House Memorial 43; house Memorial 43
+SB 247,SB,Senate Bill,5,5,"SB 247; Senate Bill
+247; Senate Bill 247"
+SB 426,SB,Senate Bill,5,5,Senate Bill 426
+SM 68,SM,Senate Memorial,5,5,Senate Memorial 68
+SB 434,SB,Senate Bill,5,5,"SB 434; Senate Bill
+434; Senate Bill 434"
+SB 552,SB,Senate Bill,5,5,"SB
+552; SB 552; Senate Bill 552"
+SJR 15,SJR,Senate Joint Resolution,5,5,"SJR 15; Senate Joint Resolution
+15; Senate Joint Resolution 15; Senate joint resolution 15"
+HJR 5,HJR,House Joint Resolution,5,5,"HJR
+5; HJR 5; House Joint Resolution 5; House joint resolution 5; house joint resolution 5"
+HB 354,HB,House Bill,5,5,HB 354; House Bill 354
+HB 366,HB,House Bill,5,5,"HB 366; House Bill
+366; House Bill 366; house bill 366"
+HB 53,HB,House Bill,5,5,"HB 53; House Bill
+53; House Bill 53; house Bill 53"
+HM 56,HM,House Memorial,5,5,"House Memorial
+56; House Memorial 56"
+HB 225,HB,House Bill,5,5,"House Bill
+225; House Bill 225; house Bill 225"
+SB 203,SB,Senate Bill,5,5,"Senate Bill
+203; Senate Bill 203"
+SB 61,SB,Senate Bill,5,5,SB 61; Senate Bill 61
+SB 250,SB,Senate Bill,5,5,"SB
+250; SB 250; Senate Bill
+250; Senate Bill 250; Senate bill
+250"
+HB 443,HB,House Bill,5,5,"House Bill
+443; House Bill 443; House bill 443; house Bill
+443; house Bill 443"
+HB 369,HB,House Bill,5,5,House Bill 369
+HB 62,HB,House Bill,5,5,HB 62; House Bill 62
+HB 428,HB,House Bill,5,5,"HB 428; House Bill
+428; House Bill 428"
+HB 442,HB,House Bill,5,5,HB 442; House Bill 442
+HB 216,HB,House Bill,5,5,"House Bill 216; house Bill
+216; house Bill 216"
+SB 279,SB,Senate Bill,5,5,"SB
+279; SB 279; Senate Bill
+279; Senate Bill 279"
+HB 282,HB,House Bill,5,5,"House Bill
+282; House Bill 282; house Bill 282"
+HM 35,HM,House Memorial,5,5,"House Memorial
+35; House Memorial 35; house Memorial 35"
+HM 37,HM,House Memorial,5,5,"House Memorial
+37; House Memorial 37"
+HM 46,HM,House Memorial,5,5,"House Memorial
+46; House Memorial 46"
+HB 245,HB,House Bill,5,5,"HB 245; House Bill
+245; House Bill 245"
+HJR 12,HJR,House Joint Resolution,5,5,"HJR 12; House Joint Resolution 12; House Joint resolution 12; House joint Resolution 12; house joint resolution
+12"
+SB 456,SB,Senate Bill,5,5,"Senate Bill
+456; Senate Bill 456"
+HB 600,HB,House Bill,5,5,"HB 600; House Bill
+600; House Bill 600"
+HJR 10,HJR,House Joint Resolution,5,5,HJR 10; House Joint Resolution 10; House Joint resolution 10
+HM 5,HM,House Memorial,5,5,"HM 5; House Memorial
+5; House Memorial 5; house Memorial 5"
+HB 310,HB,House Bill,5,5,"HB
+310; HB 310; House Bill
+310; House Bill 310"
+HJR 3,HJR,House Joint Resolution,5,5,"HJR
+3; HJR 3; HJR3; House Joint Resolution
+3; House Joint Resolution 3"
+HB 265,HB,House Bill,5,5,"HB 265; House Bill
+265; House Bill 265"
+HB 146,HB,House Bill,5,5,House Bill 146
+HB 162,HB,House Bill,5,5,"HB
+162; House Bill 162"
+HB 184,HB,House Bill,5,5,"HB
+184; HB 184; House Bill 184; house Bill 184"
+HM 50,HM,House Memorial,5,5,"HM
+50; House Memorial
+50; House Memorial 50; House memorial
+50"
+HB 200,HB,House Bill,5,5,"HB 200; House Bill
+200; House Bill 200"
+SB 276,SB,Senate Bill,5,5,"Senate Bill
+276; Senate Bill 276; Senate bill
+276; Senate bill 276"
+SM 9,SM,Senate Memorial,5,5,Senate Memorial 9
+HM 25,HM,House Memorial,4,4,House Memorial 25
+HB 345,HB,House Bill,4,4,House Bill 345
+HB 229,HB,House Bill,4,4,"House Bill
+229; House Bill 229"
+HB 108,HB,House Bill,4,4,"HB
+108; HB 108; House Bill
+108; House Bill 108; house bill
+108"
+HB 92,HB,House Bill,4,4,"HB 92; House Bill
+92; House Bill 92"
+HB 261,HB,House Bill,4,4,"House Bill
+261; House Bill 261; house Bill 261"
+HB 421,HB,House Bill,4,4,"HB 421; House Bill
+421; House Bill 421"
+HB 370,HB,House Bill,4,4,"HB
+370; HB 370; House Bill
+370; House Bill 370"
+HB 335,HB,House Bill,4,4,"HB
+335; HB 335; House Bill
+335; House Bill 335"
+HB 410,HB,House Bill,4,4,"HB
+410; HB 410; House Bill
+410; House Bill 410"
+HB 227,HB,House Bill,4,4,HB 227; House Bill 227
+HB 415,HB,House Bill,4,4,HB 415; House Bill 415
+SB 178,SB,Senate Bill,4,4,"SB
+178; SB 178; Senate Bill 178; Senate bill 178"
+HB 546,HB,House Bill,4,4,"HB 546; House Bill
+546; House Bill 546"
+SB 418,SB,Senate Bill,4,4,"SB
+418; SB 418; Senate Bill 418; Senate bill 418"
+SB 156,SB,Senate Bill,4,4,"SB
+156; SB 156; Senate Bill
+156; Senate Bill 156"
+SB 264,SB,Senate Bill,4,4,SB 264; Senate Bill 264
+SB 358,SB,Senate Bill,4,4,"SB
+358; SB 358; Senate Bill
+358; Senate Bill 358"
+SB 98,SB,Senate Bill,4,4,"Senate Bill
+98; Senate Bill 98"
+SB 99,SB,Senate Bill,4,4,"SB
+99; SB 99; Senate Bill 99"
+SB 231,SB,Senate Bill,4,4,"Senate Bill
+231; Senate Bill 231"
+SB 240,SB,Senate Bill,4,4,Senate Bill 240
+SB 471,SB,Senate Bill,4,4,"SB
+471; Senate Bill 471; Senate bill
+471"
+SM 16,SM,Senate Memorial,4,4,SM 16; Senate Memorial 16
+SB 277,SB,Senate Bill,4,4,Senate Bill 277
+SB 248,SB,Senate Bill,4,4,"SB 248; Senate Bill
+248; Senate Bill 248"
+HB 446,HB,House Bill,4,4,"HB
+446; HB 446; House Bill
+446; House Bill 446"
+SB 111,SB,Senate Bill,4,4,SB 111; Senate Bill 111
+SB 225,SB,Senate Bill,4,4,Senate Bill 225
+SB 184,SB,Senate Bill,4,4,SB 184; Senate Bill 184
+SB 202,SB,Senate Bill,4,4,Senate Bill 202
+SB 188,SB,Senate Bill,4,4,"Senate Bill
+188; Senate Bill 188"
+SB 251,SB,Senate Bill,4,4,Senate Bill 251; Senate bill 251
+SB 512,SB,Senate Bill,4,4,SB 512; Senate Bill 512
+SB 89,SB,Senate Bill,4,4,SB 89; Senate Bill 89
+SB 91,SB,Senate Bill,4,4,"SB
+91; SB 91; Senate Bill 91"
+HB 118,HB,House Bill,4,4,"HB
+118; HB 118; House Bill
+118; House Bill 118"
+SB 174,SB,Senate Bill,4,4,"SB 174; Senate Bill
+174; Senate Bill 174; Senate bill 174"
+SB 138,SB,Senate Bill,4,4,"Senate Bill
+138; Senate Bill 138"
+HB 272,HB,House Bill,4,4,"House Bill
+272; House Bill 272"
+HB 188,HB,House Bill,4,4,"HB
+188; HB 188; House Bill
+188; House Bill 188"
+HM 3,HM,House Memorial,4,4,"House Memorial 3; House memorial 3; house Memorial
+3; house Memorial 3"
+SB 258,SB,Senate Bill,4,4,"SB
+258; SB 258; Senate Bill
+258; Senate Bill 258"
+SB 268,SB,Senate Bill,4,4,SB 268; Senate Bill 268; Senate bill 268
+SB 380,SB,Senate Bill,4,4,"SB 380; Senate Bill
+380; Senate Bill 380"
+SB 325,SB,Senate Bill,4,4,"Senate Bill
+325; Senate Bill 325; Senate bill
+325"
+HB 480,HB,House Bill,4,4,"HB 480; House Bill
+480; House Bill 480"
+SB 490,SB,Senate Bill,4,4,SB 490; Senate Bill 490
+HB 279,HB,House Bill,4,4,"HB 279; House Bill
+279; House Bill 279; house Bill 279"
+SB 494,SB,Senate Bill,4,4,Senate Bill 494
+HM 51,HM,House Memorial,4,4,House Memorial 51; house Memorial 51
+HB 547,HB,House Bill,4,4,"House Bill
+547; House Bill 547; house Bill 547; house bill
+547"
+HB 263,HB,House Bill,4,4,"HB 263; House Bill
+263; House Bill 263"
+HB 341,HB,House Bill,4,4,"HB
+341; HB 341; House Bill
+341; House Bill 341"
+HB 351,HB,House Bill,4,4,"HB
+351; HB 351; House Bill 351"
+HB 94,HB,House Bill,4,4,"HB 94; House Bill
+94; House Bill 94; house Bill 94"
+HB 540,HB,House Bill,4,4,"House Bill
+540; House Bill 540; house Bill 540"
+HM 39,HM,House Memorial,4,4,"House Memorial
+39; House Memorial 39"
+HB 55,HB,House Bill,4,4,"House Bill
+55; House Bill 55"
+HM 61,HM,House Memorial,4,4,"House Memorial
+61; House Memorial 61"
+HB 347,HB,House Bill,4,4,HB 347; House Bill 347
+HM 15,HM,House Memorial,4,4,"House Memorial
+15; House Memorial 15"
+SB 177,SB,Senate Bill,4,4,"SB
+177; SB 177; Senate Bill
+177; Senate Bill 177"
+SB 84,SB,Senate Bill,4,4,"SB
+84; SB 84; Senate Bill 84"
+SB 173,SB,Senate Bill,4,4,"Senate Bill
+173; Senate Bill 173"
+SB 149,SB,Senate Bill,4,4,"SB
+149; SB 149; Senate Bill 149"
+HB 176,HB,House Bill,4,4,"HB 176; House Bill
+176; House Bill 176"
+HB 256,HB,House Bill,4,4,"House Bill
+256; House Bill 256; house bill 256"
+HB 521,HB,House Bill,4,4,"HB 521; House Bill
+521; House Bill 521; house Bill 521"
+HB 386,HB,House Bill,4,4,"House Bill
+386; House Bill 386"
+HB 25,HB,House Bill,4,4,"HB
+25; HB 25; House Bill 25"
+HB 127,HB,House Bill,4,4,House Bill 127; house Bill 127
+HB 123,HB,House Bill,4,4,House Bill 123
+HB 231,HB,House Bill,4,4,"HB 231; House Bill
+231; House Bill 231; house Bill
+231"
+HB 132,HB,House Bill,4,4,"HB 132; House Bill
+132; House Bill 132"
+SB 190,SB,Senate Bill,4,4,SB 190; Senate Bill 190
+SB 319,SB,Senate Bill,4,4,Senate Bill 319
+HB 202,HB,House Bill,4,4,"HB 202; House Bill
+202; House Bill 202"
+HB 273,HB,House Bill,4,4,"HB
+273; HB 273; House Bill
+273; House Bill 273"
+HB 264,HB,House Bill,4,4,"House Bill
+264; House Bill 264; House bill 264; house Bill
+264; house Bill 264"
+HB 423,HB,House Bill,4,4,"HB
+423; HB 423; House Bill
+423; House Bill 423"
+HM 27,HM,House Memorial,4,4,House Memorial 27
+HM 38,HM,House Memorial,4,4,HM 38; House Memorial 38
+HB 331,HB,House Bill,4,4,"HB 331; House Bill
+331; House Bill 331"
+HB 337,HB,House Bill,4,4,"House Bill
+337; House Bill 337"
+HM 60,HM,House Memorial,4,4,House Memorial 60
+HM 62,HM,House Memorial,4,4,House Memorial 62
+HB 462,HB,House Bill,4,4,"House Bill
+462; House Bill 462; house bill 462"
+HB 283,HB,House Bill,4,4,"HB
+283; HB 283; House Bill
+283; House Bill 283"
+HB 221,HB,House Bill,4,4,House Bill 221
+HM 48,HM,House Memorial,4,4,House Memorial 48; House memorial 48; house Memorial 48
+HM 23,HM,House Memorial,4,4,House Memorial 23; house Memorial 23; house memorial 23
+HB 83,HB,House Bill,4,4,"HB 83; House Bill
+83; House Bill 83"
+HB 459,HB,House Bill,4,4,"HB
+459; HB 459; House Bill 459"
+HM 42,HM,House Memorial,4,4,House Memorial 42
+HB 254,HB,House Bill,4,4,"House Bill
+254; House Bill 254; house Bill
+254; house Bill 254; house bill
+254"
+HB 150,HB,House Bill,4,4,HB 150; House Bill 150
+HB 208,HB,House Bill,4,4,"House Bill
+208; House Bill 208"
+HB 274,HB,House Bill,4,4,"HB
+274; HB 274; House Bill 274; house bill 274"
+HB 299,HB,House Bill,4,4,"HB
+299; House Bill
+299; House Bill 299; house Bill 299; house bill 299"
+HB 300,HB,House Bill,4,4,House Bill 300; house bill 300
+SB 458,SB,Senate Bill,4,4,"Senate Bill
+458; Senate Bill 458"
+HM 55,HM,House Memorial,3,3,House Memorial 55; house Memorial 55
+HB 170,HB,House Bill,3,3,"House Bill
+170; House Bill 170"
+HB 237,HB,House Bill,3,3,HB 237; House Bill 237; hb 237
+HB 377,HB,House Bill,3,3,House Bill 377
+SB 289,SB,Senate Bill,3,3,"Senate Bill
+289; Senate Bill 289"
+SB 205,SB,Senate Bill,3,3,SB 205; Senate Bill 205; Senate bill 205
+HB 166,HB,House Bill,3,3,"HB 166; House Bill 166; house bill
+166; house bill 166"
+HB 267,HB,House Bill,3,3,HB 267; House Bill 267
+HB 285,HB,House Bill,3,3,House Bill 285
+HB 447,HB,House Bill,3,3,"HB 447; House Bill
+447; House Bill 447"
+HB 44,HB,House Bill,3,3,"HB
+44; HB 44; House Bill 44"
+HB 506,HB,House Bill,3,3,"House Bill
+506; House Bill 506"
+HB 396,HB,House Bill,3,3,"House Bill
+396; House Bill 396"
+SB 214,SB,Senate Bill,3,3,SB 214; Senate Bill 214
+SB 384,SB,Senate Bill,3,3,"Senate Bill
+384; Senate Bill 384"
+SB 208,SB,Senate Bill,3,3,"Senate Bill
+208; Senate Bill 208"
+SB 469,SB,Senate Bill,3,3,Senate Bill 469
+SB 114,SB,Senate Bill,3,3,"SB
+114; SB 114; Senate Bill 114"
+SB 34,SB,Senate Bill,3,3,"SB 34; Senate Bill
+34; Senate Bill 34"
+HB 115,HB,House Bill,3,3,"House Bill
+115; House Bill 115"
+SB 355,SB,Senate Bill,3,3,"Senate Bill
+355; Senate Bill 355"
+SB 455,SB,Senate Bill,3,3,Senate Bill 455
+SB 408,SB,Senate Bill,3,3,"Senate Bill 408; Senate bill
+408; Senate bill 408"
+HM 83,HM,House Memorial,3,3,House Memorial 83
+SB 110,SB,Senate Bill,3,3,SB 110; Senate Bill 110
+SB 265,SB,Senate Bill,3,3,Senate Bill 265
+SB 121,SB,Senate Bill,3,3,"Senate Bill
+121; Senate Bill 121"
+SB 25,SB,Senate Bill,3,3,Senate Bill 25
+SB 491,SB,Senate Bill,3,3,"Senate Bill 491; Senate bill
+491"
+SB 206,SB,Senate Bill,3,3,Senate Bill 206; Senate bill 206
+SB 215,SB,Senate Bill,3,3,"Senate Bill
+215; Senate Bill 215"
+SB 420,SB,Senate Bill,3,3,"SB 420; Senate Bill
+420; Senate Bill 420"
+SB 294,SB,Senate Bill,3,3,"SB
+294; SB 294; Senate Bill
+294; Senate Bill 294"
+SB 287,SB,Senate Bill,3,3,"SB
+287; SB 287; Senate Bill 287"
+SB 62,SB,Senate Bill,3,3,Senate Bill 62
+SB 419,SB,Senate Bill,3,3,Senate Bill 419
+SB 211,SB,Senate Bill,3,3,"SB
+211; SB 211; Senate Bill
+211; Senate Bill 211"
+SB 164,SB,Senate Bill,3,3,SB 164; Senate Bill 164; Senate bill 164
+SB 194,SB,Senate Bill,3,3,Senate Bill 194
+SB 295,SB,Senate Bill,3,3,SB 295; Senate Bill 295
+SB 296,SB,Senate Bill,3,3,SB 296; Senate Bill 296; Senate bill 296
+SB 298,SB,Senate Bill,3,3,Senate Bill 298
+SB 28,SB,Senate Bill,3,3,Senate Bill 28; Senate bill 28
+SB 282,SB,Senate Bill,3,3,"SB 282; Senate Bill
+282; Senate Bill 282"
+SB 370,SB,Senate Bill,3,3,"SB 370; Senate Bill
+370; Senate Bill 370"
+SB 445,SB,Senate Bill,3,3,"Senate Bill
+445; Senate Bill 445"
+HB 110,HB,House Bill,3,3,HB 110; House Bill 110
+SB 266,SB,Senate Bill,3,3,"SB 266; Senate Bill
+266; Senate Bill 266; Senate bill 266"
+SB 354,SB,Senate Bill,3,3,"SB 354; Senate Bill
+354; Senate Bill 354"
+SB 482,SB,Senate Bill,3,3,"Senate Bill
+482; Senate Bill 482; Senate bill 482"
+SB 286,SB,Senate Bill,3,3,SB 286; Senate Bill 286
+SB 394,SB,Senate Bill,3,3,"Senate Bill
+394; Senate Bill 394"
+SB 130,SB,Senate Bill,3,3,"SB
+130; Senate Bill
+130; Senate Bill 130"
+SB 516,SB,Senate Bill,3,3,Senate Bill 516
+SB 238,SB,Senate Bill,3,3,"SB 238; Senate Bill
+238; Senate Bill 238; Senate bill 238"
+SB 344,SB,Senate Bill,3,3,"Senate Bill
+344; Senate Bill 344"
+SB 136,SB,Senate Bill,3,3,Senate Bill 136
+SM 22,SM,Senate Memorial,3,3,"Senate Memorial
+22; Senate Memorial 22"
+SB 492,SB,Senate Bill,3,3,"Senate Bill
+492; Senate Bill 492"
+SB 198,SB,Senate Bill,3,3,Senate Bill 198
+SB 414,SB,Senate Bill,3,3,"Senate Bill
+414; Senate Bill 414"
+SB 50,SB,Senate Bill,3,3,"Senate Bill
+50; Senate Bill 50"
+SB 46,SB,Senate Bill,3,3,SB 46; Senate Bill 46
+HB 266,HB,House Bill,3,3,HB 266; House Bill 266
+HB 355,HB,House Bill,3,3,"HB 355; House Bill
+355; House Bill 355"
+HB 420,HB,House Bill,3,3,"HB 420; House Bill
+420; House Bill 420"
+HB 408,HB,House Bill,3,3,House Bill 408
+HB 542,HB,House Bill,3,3,"HB
+542; HB 542; House Bill
+542; House Bill 542"
+HB 189,HB,House Bill,3,3,House Bill 189
+HB 430,HB,House Bill,3,3,HB 430; House Bill 430
+HB 373,HB,House Bill,3,3,"HB
+373; HB 373; House Bill
+373; House Bill 373"
+HB 389,HB,House Bill,3,3,"HB 389; House Bill
+389; House Bill 389"
+HB 393,HB,House Bill,3,3,House Bill 393
+HB 551,HB,House Bill,3,3,"House Bill
+551; House Bill 551; house Bill 551"
+HB 555,HB,House Bill,3,3,"House Bill
+555; House Bill 555; House bill 555"
+SM 12,SM,Senate Memorial,3,3,"Senate Memorial
+12; Senate Memorial 12; Senate memorial
+12; Senate memorial 12"
+HB 589,HB,House Bill,3,3,"House Bill
+589; House Bill 589"
+HB 437,HB,House Bill,3,3,HB 437; House Bill 437
+HB 503,HB,House Bill,3,3,HB 503; House Bill 503; house Bill 503
+HB 465,HB,House Bill,3,3,House Bill 465
+HB 404,HB,House Bill,3,3,HB 404; House Bill 404
+HB 407,HB,House Bill,3,3,House Bill 407
+HB 579,HB,House Bill,3,3,"HB 579; House Bill
+579; House Bill 579"
+HB 562,HB,House Bill,3,3,"House Bill
+562; House Bill 562; house Bill
+562; house Bill 562"
+HM 58,HM,House Memorial,3,3,House Memorial 58
+HB 527,HB,House Bill,3,3,"House Bill
+527; House Bill 527"
+HB 517,HB,House Bill,3,3,"House Bill
+517; House Bill 517"
+SB 55,SB,Senate Bill,3,3,Senate Bill 55; Senate bill 55
+SB 103,SB,Senate Bill,3,3,"SB
+103; SB 103; Senate Bill
+103; Senate Bill 103"
+SB 404,SB,Senate Bill,3,3,SB 404; Senate Bill 404; Senate bill 404
+SB 498,SB,Senate Bill,3,3,"Senate Bill
+498; Senate Bill 498; Senate bill
+498"
+SB 322,SB,Senate Bill,3,3,"SB 322; Senate Bill
+322; Senate Bill 322"
+SB 489,SB,Senate Bill,3,3,SB 489; Senate Bill 489; Senate bill 489
+SB 80,SB,Senate Bill,3,3,SB 80; Senate Bill 80; Senate bill 80
+SB 360,SB,Senate Bill,3,3,"SB
+360; SB 360; Senate Bill
+360; Senate Bill 360"
+SB 499,SB,Senate Bill,3,3,"SB 499; Senate Bill
+499; Senate Bill 499"
+SB 346,SB,Senate Bill,3,3,Senate Bill 346
+SB 436,SB,Senate Bill,3,3,"Senate Bill
+436; Senate Bill 436; Senate bill 436"
+SB 182,SB,Senate Bill,3,3,SB 182; Senate Bill 182
+SB 415,SB,Senate Bill,3,3,"SB
+415; SB 415; Senate Bill
+415"
+HB 581,HB,House Bill,3,3,"HB
+581; HB 581; House Bill
+581; House Bill 581; house Bill
+581"
+HB 334,HB,House Bill,3,3,"HB 334; House Bill
+334; House Bill 334"
+HM 24,HM,House Memorial,3,3,House Memorial 24
+HM 36,HM,House Memorial,3,3,House Memorial 36; house Memorial 36
+HB 482,HB,House Bill,3,3,"HB 482; House Bill
+482; House Bill 482"
+HB 569,HB,House Bill,3,3,HB 569; House Bill 569
+HB 470,HB,House Bill,3,3,HB 470; House Bill 470
+HB 319,HB,House Bill,3,3,"House Bill
+319; House Bill 319; house Bill 319"
+HB 329,HB,House Bill,3,3,"House Bill
+329; House Bill 329"
+HB 416,HB,House Bill,3,3,House Bill 416
+HM 11,HM,House Memorial,3,3,"House Memorial
+11; House Memorial 11; house Memorial 11"
+HB 440,HB,House Bill,3,3,"House Bill
+440; House Bill 440"
+HB 367,HB,House Bill,3,3,House Bill 367
+HB 114,HB,House Bill,3,3,"House Bill
+114; House Bill 114"
+HB 136,HB,House Bill,3,3,"HB 136; House Bill
+136; House Bill 136"
+HB 414,HB,House Bill,3,3,"House Bill
+414; House Bill 414"
+HJR 8,HJR,House Joint Resolution,3,3,HJR 8; House Joint Resolution 8
+HB 406,HB,House Bill,3,3,"HB 406; House Bill
+406; House Bill 406"
+HB 418,HB,House Bill,3,3,"HB 418; House Bill
+418; House Bill 418; house Bill 418"
+HB 526,HB,House Bill,3,3,HB 526; House Bill 526
+HB 475,HB,House Bill,3,3,"HB 475; House Bill
+475; House Bill 475"
+HB 497,HB,House Bill,3,3,"HB
+497; HB 497; House Bill
+497; House Bill 497"
+HB 507,HB,House Bill,3,3,HB 507; House Bill 507
+HB 390,HB,House Bill,3,3,"House Bill
+390; House Bill 390"
+HB 568,HB,House Bill,3,3,House Bill 568
+HM 16,HM,House Memorial,3,3,"House Memorial
+16; House Memorial 16"
+HM 6,HM,House Memorial,3,3,House Memorial 6; house Memorial 6
+HM 13,HM,House Memorial,3,3,House Memorial 13; House memorial 13
+HB 356,HB,House Bill,3,3,House Bill 356
+HM 41,HM,House Memorial,3,3,"HM 41; House Memorial
+41; House Memorial 41"
+HB 314,HB,House Bill,3,3,"HB
+314; House Bill
+314; House Bill 314"
+HM 44,HM,House Memorial,3,3,House Memorial 44; house memorial 44
+HB 305,HB,House Bill,3,3,"HB
+305; House Bill
+305; House Bill 305; house Bill
+305; house Bill 305"
+HB 306,HB,House Bill,3,3,House Bill 306
+HB 312,HB,House Bill,3,3,"House Bill
+312; House Bill 312"
+HB 313,HB,House Bill,3,3,"House Bill 313; house bill
+313; house bill 313"
+HB 187,HB,House Bill,3,3,"House Bill 187; house Bill
+187"
+HB 223,HB,House Bill,3,3,"House Bill
+223; House Bill 223; house Bill 223"
+SB 379,SB,Senate Bill,3,3,"Senate Bill
+379; Senate Bill 379"
+SB 273,SB,Senate Bill,3,3,"SB
+273; SB 273; Senate Bill
+273; Senate Bill 273"
+SB 237,SB,Senate Bill,3,3,SB 237; Senate Bill 237
+SM 13,SM,Senate Memorial,3,3,Senate Memorial 13
+SB 44,SB,Senate Bill,3,3,"Senate Bill
+44; Senate Bill 44; Senate bill 44"
+SB 196,SB,Senate Bill,3,3,Senate Bill 196; Senate bill 196
+SB 478,SB,Senate Bill,3,3,"SB
+478; Senate Bill 478"
+SB 228,SB,Senate Bill,3,3,SB 228; Senate Bill 228
+SB 457,SB,Senate Bill,3,3,Senate Bill 457
+HB 990,HB,House Bill,2,2,House Bill 990
+HB 2289,HB,House Bill,2,2,"HB
+2289; House Bill 2289"
+HB 387,HB,House Bill,2,2,House Bill 387
+HB 560,HB,House Bill,2,2,House Bill 560
+HB 121,HB,House Bill,2,2,"House Bill 121; house bill
+121"
+HB 122,HB,House Bill,2,2,"House Bill 122; house bill
+122"
+HB 564,HB,House Bill,2,2,"House Bill
+564; House Bill 564"
+HB 504,HB,House Bill,2,2,HB 504; House Bill 504
+HB 574,HB,House Bill,2,2,HB 574; House Bill 574
+HB 476,HB,House Bill,2,2,HB 476; House Bill 476
+SB 391,SB,Senate Bill,2,2,Senate Bill 391
+SB 412,SB,Senate Bill,2,2,Senate Bill 412
+SB 139,SB,Senate Bill,2,2,"SB 139; Senate Bill
+139; Senate Bill 139"
+SB 342,SB,Senate Bill,2,2,Senate Bill 342
+SB 339,SB,Senate Bill,2,2,Senate Bill 339; Senate bill 339
+SB 470,SB,Senate Bill,2,2,SB 470; Senate Bill 470
+SB 260,SB,Senate Bill,2,2,SB 260; Senate Bill 260
+SB 262,SB,Senate Bill,2,2,Senate Bill 262
+SB 439,SB,Senate Bill,2,2,Senate Bill 439
+SB 466,SB,Senate Bill,2,2,"Senate Bill
+466; Senate Bill 466"
+SB 413,SB,Senate Bill,2,2,"Senate Bill
+413; Senate Bill 413"
+SB 422,SB,Senate Bill,2,2,Senate Bill 422
+SB 141,SB,Senate Bill,2,2,"SB
+141; SB 141; Senate Bill 141"
+SB 181,SB,Senate Bill,2,2,Senate Bill 181
+SB 183,SB,Senate Bill,2,2,"Senate Bill
+183; Senate Bill 183"
+SB 393,SB,Senate Bill,2,2,Senate Bill 393; Senate bill 393
+SB 297,SB,Senate Bill,2,2,"Senate Bill 297; Senate bill
+297"
+SB 372,SB,Senate Bill,2,2,SB 372; Senate Bill 372
+SB 424,SB,Senate Bill,2,2,"SB
+424; SB 424; Senate Bill 424"
+SB 497,SB,Senate Bill,2,2,Senate Bill 497
+SB 336,SB,Senate Bill,2,2,"SB 336; Senate Bill
+336; Senate Bill 336"
+SB 67,SB,Senate Bill,2,2,Senate Bill 67
+SB 316,SB,Senate Bill,2,2,"SB
+316; SB 316; Senate Bill
+316; Senate Bill 316; Senate bill
+316"
+HB 464,HB,House Bill,2,2,House Bill 464
+SB 323,SB,Senate Bill,2,2,"Senate Bill
+323; Senate Bill 323"
+SB 351,SB,Senate Bill,2,2,Senate Bill 351
+SB 473,SB,Senate Bill,2,2,"Senate Bill
+473; Senate Bill 473"
+HB 473,HB,House Bill,2,2,"House Bill
+473; House Bill 473; house Bill 473"
+HB 537,HB,House Bill,2,2,"HB 537; House Bill
+537; House Bill 537"
+HB 536,HB,House Bill,2,2,House Bill 536
+HB 397,HB,House Bill,2,2,"House Bill
+397; House Bill 397"
+SB 416,SB,Senate Bill,2,2,Senate Bill 416
+HB 488,HB,House Bill,2,2,House Bill 488
+SB 396,SB,Senate Bill,2,2,"Senate Bill
+396; Senate Bill 396"
+SB 524,SB,Senate Bill,2,2,Senate Bill 524
+SB 147,SB,Senate Bill,2,2,SB 147; Senate Bill 147
+SB 245,SB,Senate Bill,2,2,"Senate Bill
+245; Senate Bill 245"
+SB 437,SB,Senate Bill,2,2,"Senate Bill
+437; Senate Bill 437"
+SB 465,SB,Senate Bill,2,2,"Senate Bill
+465; Senate Bill 465"
+SB 314,SB,Senate Bill,2,2,Senate Bill 314
+SB 421,SB,Senate Bill,2,2,Senate Bill 421; Senate bill 421
+SB 97,SB,Senate Bill,2,2,Senate Bill 97
+SB 301,SB,Senate Bill,2,2,"Senate Bill
+301; Senate Bill 301"
+SB 222,SB,Senate Bill,2,2,Senate Bill 222
+SB 185,SB,Senate Bill,2,2,SB 185; Senate Bill 185
+SB 134,SB,Senate Bill,2,2,Senate Bill 134
+SB 87,SB,Senate Bill,2,2,Senate Bill 87
+HB 441,HB,House Bill,2,2,"HB 441; House Bill
+441; House Bill 441"
+HB 463,HB,House Bill,2,2,House Bill 463
+HB 119,HB,House Bill,2,2,"House Bill
+119; House Bill 119"
+HB 593,HB,House Bill,2,2,HB 593; House Bill 593
+HB 512,HB,House Bill,2,2,HB 512; House Bill 512
+HB 400,HB,House Bill,2,2,HB 400; House Bill 400
+HB 374,HB,House Bill,2,2,HB 374; House Bill 374
+HB 379,HB,House Bill,2,2,HB 379; House Bill 379
+HB 543,HB,House Bill,2,2,HB 543; House Bill 543
+HB 561,HB,House Bill,2,2,"House Bill
+561; House Bill 561; house Bill 561"
+HB 486,HB,House Bill,2,2,"HB
+486; HB 486; House Bill
+486; House Bill 486"
+HB 460,HB,House Bill,2,2,HB 460; House Bill 460
+HB 500,HB,House Bill,2,2,"HB 500; House Bill
+500; House Bill 500"
+SB 502,SB,Senate Bill,2,2,Senate Bill 502
+SB 269,SB,Senate Bill,2,2,"Senate Bill
+269; Senate Bill 269"
+SB 104,SB,Senate Bill,2,2,"SB 104; Senate Bill
+104; Senate Bill 104"
+SB 392,SB,Senate Bill,2,2,Senate Bill 392
+SB 511,SB,Senate Bill,2,2,"Senate Bill
+511; Senate Bill 511"
+SB 582,SB,Senate Bill,2,2,SB 582; Senate Bill 582
+SB 270,SB,Senate Bill,2,2,"Senate Bill
+270; Senate Bill 270"
+SB 288,SB,Senate Bill,2,2,Senate Bill 288; Senate bill 288
+SB 338,SB,Senate Bill,2,2,Senate Bill 338
+SB 365,SB,Senate Bill,2,2,Senate Bill 365
+SB 366,SB,Senate Bill,2,2,Senate Bill 366
+SB 395,SB,Senate Bill,2,2,Senate Bill 395
+SB 427,SB,Senate Bill,2,2,Senate Bill 427
+HB 594,HB,House Bill,2,2,HB 594; House Bill 594; house Bill 594
+HB 4594,HB,House Bill,2,2,"HB
+4594; House Bill 4594"
+HB 318,HB,House Bill,2,2,House Bill 318
+SB 191,SB,Senate Bill,2,2,"Senate Bill
+191; Senate Bill 191"
+SB 150,SB,Senate Bill,2,2,Senate Bill 150
+SB 374,SB,Senate Bill,2,2,"Senate Bill
+374; Senate Bill 374"
+SB 381,SB,Senate Bill,2,2,"Senate Bill
+381"
+SB 244,SB,Senate Bill,2,2,Senate Bill 244
+SB 32,SB,Senate Bill,2,2,Senate Bill 32
+SB 359,SB,Senate Bill,2,2,Senate Bill 359
+SB 307,SB,Senate Bill,2,2,Senate Bill 307
+HB 342,HB,House Bill,2,2,House Bill 342
+SB 464,SB,Senate Bill,2,2,Senate Bill 464
+HM 28,HM,House Memorial,2,2,"House Memorial
+28; House Memorial 28"
+HM 30,HM,House Memorial,2,2,House Memorial 30
+HJR 18,HJR,House Joint Resolution,2,2,HJR 18; House Joint Resolution 18
+SB 3636,SB,Senate Bill,2,2,"Senate Bill
+3636; Senate Bill 3636"
+HM 17,HM,House Memorial,2,2,"House Memorial
+17; House Memorial 17; House memorial 17; house Memorial 17"
+HB 321,HB,House Bill,2,2,House Bill 321
+HB 327,HB,House Bill,2,2,House Bill 327
+HJR 14,HJR,House Joint Resolution,2,2,"House Joint resolution 14; House joint Resolution
+14; House joint resolution 14"
+HB 577,HB,House Bill,2,2,"House Bill
+577; House Bill 577"
+HM 26,HM,House Memorial,2,2,House Memorial 26
+HM 21,HM,House Memorial,2,2,House Memorial 21
+HB 435,HB,House Bill,2,2,"HB 435; House Bill
+435; House Bill 435"
+HB 436,HB,House Bill,2,2,House Bill 436
+HB 126,HB,House Bill,2,2,"House Bill
+126; House Bill 126"
+HB 96,HB,House Bill,2,2,"House Bill
+96; House Bill 96"
+HB 105,HB,House Bill,2,2,"House Bill
+105; House Bill 105"
+HB 107,HB,House Bill,2,2,"HB
+107; HB 107; House Bill
+107; House Bill 107; house Bill 107"
+HB 412,HB,House Bill,2,2,House Bill 412
+HM 54,HM,House Memorial,2,2,House Memorial 54
+HM 49,HM,House Memorial,2,2,"House Memorial
+49; House Memorial 49"
+HM 47,HM,House Memorial,2,2,House Memorial 47
+HM 8,HM,House Memorial,2,2,House Memorial 8
+HB 422,HB,House Bill,2,2,House Bill 422
+HB 424,HB,House Bill,2,2,"House Bill
+424; House Bill 424"
+HB 474,HB,House Bill,2,2,HB 474; House Bill 474
+HB 481,HB,House Bill,2,2,"HB 481; House Bill
+481; House Bill 481"
+HB 484,HB,House Bill,2,2,House Bill 484
+HB 502,HB,House Bill,2,2,HB 502; House Bill 502
+HB 513,HB,House Bill,2,2,"House Bill
+513; House Bill 513"
+HB 552,HB,House Bill,2,2,"HB 552; House Bill
+552; House Bill 552"
+HB 580,HB,House Bill,2,2,HB 580; House Bill 580
+HM 9,HM,House Memorial,2,2,"House Memorial
+9; House Memorial 9"
+HM 14,HM,House Memorial,2,2,"House Memorial
+14; House Memorial 14"
+HB 85,HB,House Bill,2,2,House Bill 85
+HB 100,HB,House Bill,2,2,House Bill 100
+SB 3003,SB,Senate Bill,2,2,Senate Bill 3003
+HB 360,HB,House Bill,2,2,House Bill 360
+HB 362,HB,House Bill,2,2,"House Bill 362; house Bill
+362"
+HB 363,HB,House Bill,2,2,House Bill 363; house Bill 363
+HM 22,HM,House Memorial,2,2,"House Memorial
+22; House Memorial 22"
+HB 452,HB,House Bill,2,2,"HB 452; House Bill
+452; House Bill 452"
+HB 455,HB,House Bill,2,2,House Bill 455
+HM 12TH,HM,House Memorial,2,2,"House Memorial
+12th; House Memorial 12th"
+HB 248,HB,House Bill,2,2,"House Bill
+248; House Bill 248"
+HB 262,HB,House Bill,2,2,House Bill 262; house Bill 262
+HM 4,HM,House Memorial,2,2,"House Memorial
+4; House Memorial 4"
+HB 142,HB,House Bill,2,2,"House Bill
+142; House Bill 142"
+HB 144,HB,House Bill,2,2,House Bill 144
+HB 173,HB,House Bill,2,2,House Bill 173
+HJR 7,HJR,House Joint Resolution,2,2,"HJR 7; House Joint Resolution
+7; House joint resolution 7"
+HB 588,HB,House Bill,2,2,"HB 588; House Bill
+588; House Bill 588"
+HB 1717,HB,House Bill,2,2,House Bill 1717
+HB 278,HB,House Bill,2,2,House Bill 278
+HB 294,HB,House Bill,2,2,"House Bill
+294; House Bill 294"
+HB 309,HB,House Bill,2,2,House Bill 309
+HB 45,HB,House Bill,2,2,"HB
+45; HB 45; House Bill 45"
+HJR 4,HJR,House Joint Resolution,2,2,HJR 4; HJR4; House Joint Resolution 4; House joint resolution 4; house joint resolution 4
+HB 204,HB,House Bill,2,2,HB 204; House Bill 204
+HJR 9,HJR,House Joint Resolution,2,2,HJR 9; House joint resolution 9
+SB 462,SB,Senate Bill,2,2,"SB
+462; Senate Bill 462"
+SB 332,SB,Senate Bill,2,2,"Senate Bill
+332; Senate Bill 332"
+SB 306,SB,Senate Bill,2,2,"Senate Bill 306; Senate bill
+306"
+SB 308,SB,Senate Bill,2,2,"Senate Bill 308; Senate bill
+308"
+SB 409,SB,Senate Bill,2,2,"Senate Bill
+409; Senate Bill 409; Senate bill
+409"
+SB 468,SB,Senate Bill,2,2,"Senate Bill
+468; Senate Bill 468"
+SB 447,SB,Senate Bill,2,2,SB 447; Senate Bill 447
+SJR 7,SJR,Senate Joint Resolution,2,2,SJR 7; Senate Joint Resolution 7
+SB 2122,SB,Senate Bill,2,2,SB 2122; Senate Bill 2122
+SM 18,SM,Senate Memorial,2,2,"Senate Memorial
+18; Senate Memorial 18"
+SB 368,SB,Senate Bill,2,2,SB 368; Senate Bill 368
+SB 496,SB,Senate Bill,2,2,"Senate Bill
+496; Senate Bill 496"
+SB 257,SB,Senate Bill,2,2,"Senate Bill
+257; Senate Bill 257"
+SB 43,SB,Senate Bill,2,2,Senate Bill 43
+SB 157,SB,Senate Bill,2,2,Senate Bill 157
+SB 256,SB,Senate Bill,2,2,Senate Bill 256
+HM 85,HM,House Memorial,2,2,"House Memorial
+85; House Memorial 85"
+SB 310,SB,Senate Bill,2,2,SB 310; Senate Bill 310
+SB 79,SB,Senate Bill,2,2,Senate Bill 79; Senate bill 79
+SB 0001,SB,Senate Bill,2,2,"SB
+0001"
+SB 410,SB,Senate Bill,2,2,Senate Bill 410
+SB 74,SB,Senate Bill,2,2,SB 74; Senate Bill 74; Senate bill 74
+SB 522,SB,Senate Bill,2,2,Senate Bill 522
+SM 24,SM,Senate Memorial,2,2,Senate Memorial 24
+SJR 9,SJR,Senate Joint Resolution,2,2,SJR 9; Senate Joint resolution 9
+SB 555,SB,Senate Bill,2,2,Senate Bill 555
+SB 504,SB,Senate Bill,2,2,Senate Bill 504
+SB 553,SB,Senate Bill,2,2,Senate Bill 553
+SM 15,SM,Senate Memorial,2,2,Senate Memorial 15
+SB 209,SB,Senate Bill,2,2,Senate Bill 209
+SM 43,SM,Senate Memorial,1,1,SM 43
+HB 5453,HB,House Bill,1,1,HB 5453
+HB 2928,HB,House Bill,1,1,"HB
+2928"
+HB 3364,HB,House Bill,1,1,House Bill 3364
+HB 1175,HB,House Bill,1,1,House Bill 1175
+HB 1133,HB,House Bill,1,1,House Bill 1133
+HB 1112,HB,House Bill,1,1,House Bill 1112
+SB 2219,SB,Senate Bill,1,1,Senate Bill 2219
+HB 3307,HB,House Bill,1,1,"HB
+3307"
+HB 1756,HB,House Bill,1,1,HB 1756
+HB 4314,HB,House Bill,1,1,House Bill 4314
+HB 2291,HB,House Bill,1,1,HB 2291
+SB 352,SB,Senate Bill,1,1,SB 352
+SB 9294,SB,Senate Bill,1,1,"SB
+9294"
+SB 369,SB,Senate Bill,1,1,Senate Bill 369
+HB 56A,HB,House Bill,1,1,House Bill 56A
+HB 93A,HB,House Bill,1,1,House Bill 93A
+HB 99A,HB,House Bill,1,1,House Bill 99A
+SB 80S,SB,Senate Bill,1,1,Senate Bill 80s
+SB 320,SB,Senate Bill,1,1,"Senate Bill
+320; Senate Bill 320"
+SB 350,SB,Senate Bill,1,1,Senate Bill 350
+SB 351A,SB,Senate Bill,1,1,Senate Bill 351A
+SB 193,SB,Senate Bill,1,1,SB 193
+HB 2160,HB,House Bill,1,1,House Bill 2160
+HB 2308,HB,House Bill,1,1,House Bill 2308
+HB 2S,HB,House Bill,1,1,House Bill 2s
+SB 13TH,SB,Senate Bill,1,1,SB 13th
+HB 4807,HB,House Bill,1,1,HB 4807
+SB 2258,SB,Senate Bill,1,1,Senate Bill 2258
+SB 2246,SB,Senate Bill,1,1,"Senate Bill
+2246"
+SB 864,SB,Senate Bill,1,1,SB 864
+SB 493,SB,Senate Bill,1,1,Senate Bill 493
+SB 2119,SB,Senate Bill,1,1,SB 2119
+HB 711,HB,House Bill,1,1,House Bill 711
+SB 4849,SB,Senate Bill,1,1,SB 4849
+HB 1968,HB,House Bill,1,1,HB 1968
+HB 1111,HB,House Bill,1,1,"HB
+1111"
+HB 2226,HB,House Bill,1,1,HB 2226
+HB 1308,HB,House Bill,1,1,HB 1308
+HB 7174,HB,House Bill,1,1,House Bill 7174
+HB 2233,HB,House Bill,1,1,"HB
+2233; House Bill 2233"
+HB 349,HB,House Bill,1,1,HB 349
+HB 708,HB,House Bill,1,1,HB 708
+HB 8D,HB,House Bill,1,1,HB8D
+HB 666,HB,House Bill,1,1,hb 666
+HB 18,HB,House Bill,1,1,hb 18
+SB 1070,SB,Senate Bill,1,1,Senate Bill 1070
+SB 433,SB,Senate Bill,1,1,SB 433
+SB 1452,SB,Senate Bill,1,1,SB 1452
+SB 356,SB,Senate Bill,1,1,"Senate Bill
+356; Senate Bill 356"
+SM 11,SM,Senate Memorial,1,1,Senate Memorial 11
+SB 430,SB,Senate Bill,1,1,SB 430; Senate Bill 430
+HB 009,HB,House Bill,1,1,HB 009
+SB 3959,SB,Senate Bill,1,1,Senate Bill 3959
+HB 2258,HB,House Bill,1,1,"HB
+2258"
+HB 998,HB,House Bill,1,1,House Bill 998
+SB 124A,SB,Senate Bill,1,1,Senate Bill 124A
+HB 982,HB,House Bill,1,1,House Bill 982
+HB 3339,HB,House Bill,1,1,House Bill 3339
+HB 7981,HB,House Bill,1,1,"House Bill
+7981"
+SCR 16,SCR,Senate Concurrent Resolution,1,1,Scr 16
+SB 658,SB,Senate Bill,1,1,Senate Bill 658
+SB 2279,SB,Senate Bill,1,1,"SB
+2279"
+SB 363,SB,Senate Bill,1,1,Senate Bill 363
+HB 203S,HB,House Bill,1,1,HB 203s
+HB 1170,HB,House Bill,1,1,House Bill 1170
+HB 1095,HB,House Bill,1,1,House Bill 1095
+HB 350,HB,House Bill,1,1,House Bill 350
+HJR 17,HJR,House Joint Resolution,1,1,House joint resolution 17
+HJR 19,HJR,House Joint Resolution,1,1,"House Joint Resolution 19; House Joint resolution
+19"
+HJR 20,HJR,House Joint Resolution,1,1,House Joint Resolution 20
+HJR 21,HJR,House Joint Resolution,1,1,House Joint Resolution 21
+HB 317,HB,House Bill,1,1,House Bill 317
+HB 320,HB,House Bill,1,1,House Bill 320
+HB 322,HB,House Bill,1,1,House Bill 322
+HB 324,HB,House Bill,1,1,House Bill 324
+HB 3244,HB,House Bill,1,1,House Bill 3244
+HB 328,HB,House Bill,1,1,House Bill 328
+HB 332,HB,House Bill,1,1,House Bill 332
+HB 338,HB,House Bill,1,1,House Bill 338
+HJR 13,HJR,House Joint Resolution,1,1,House Joint Resolution 13; House Joint resolution 13
+SB 7D,SB,Senate Bill,1,1,"SB
+7D"
+SB 708,SB,Senate Bill,1,1,Senate Bill 708
+SB 4481,SB,Senate Bill,1,1,SB 4481
+SB 5959,SB,Senate Bill,1,1,Senate Bill 5959
+SB 1485,SB,Senate Bill,1,1,"Senate Bill
+1485"
+HB 5454,HB,House Bill,1,1,House Bill 5454
+HM 19,HM,House Memorial,1,1,House Memorial 19
+HB 429,HB,House Bill,1,1,House Bill 429
+HB 432,HB,House Bill,1,1,House Bill 432
+HB 434,HB,House Bill,1,1,House Bill 434
+HB 445,HB,House Bill,1,1,House Bill 445
+HB 4500,HB,House Bill,1,1,House Bill 4500
+HB 2297,HB,House Bill,1,1,House Bill 2297
+HB 3134,HB,House Bill,1,1,"House Bill
+3134"
+SB 3150,SB,Senate Bill,1,1,Senate Bill 3150
+HB 864,HB,House Bill,1,1,House Bill 864
+HB 425,HB,House Bill,1,1,House Bill 425
+HB 478,HB,House Bill,1,1,House Bill 478
+HB 483,HB,House Bill,1,1,House Bill 483
+HB 485,HB,House Bill,1,1,House Bill 485
+HB 489,HB,House Bill,1,1,House Bill 489
+HB 490,HB,House Bill,1,1,House Bill 490
+HB 491,HB,House Bill,1,1,"House Bill
+491"
+HB 492,HB,House Bill,1,1,House Bill 492
+HB 496,HB,House Bill,1,1,House Bill 496
+HB 495,HB,House Bill,1,1,House Bill 495
+HB 498,HB,House Bill,1,1,House Bill 498
+HB 499,HB,House Bill,1,1,House Bill 499
+HB 501,HB,House Bill,1,1,House Bill 501
+HB 508,HB,House Bill,1,1,House Bill 508
+HB 509,HB,House Bill,1,1,"House Bill
+509"
+HB 510,HB,House Bill,1,1,House Bill 510
+HB 511,HB,House Bill,1,1,House Bill 511
+HB 514,HB,House Bill,1,1,House Bill 514
+HB 515,HB,House Bill,1,1,House Bill 515
+HB 516,HB,House Bill,1,1,House Bill 516
+HB 5018,HB,House Bill,1,1,House Bill 5018
+HB 520,HB,House Bill,1,1,House Bill 520
+HB 522,HB,House Bill,1,1,House Bill 522
+HB 5222,HB,House Bill,1,1,House Bill 5222
+HB 523,HB,House Bill,1,1,House Bill 523
+HB 524,HB,House Bill,1,1,House Bill 524
+HB 525,HB,House Bill,1,1,House Bill 525
+HB 528,HB,House Bill,1,1,House Bill 528
+HB 529,HB,House Bill,1,1,House Bill 529
+HB 530,HB,House Bill,1,1,House Bill 530
+HB 531,HB,House Bill,1,1,House Bill 531
+HB 534,HB,House Bill,1,1,House Bill 534
+HB 535,HB,House Bill,1,1,House Bill 535
+HB 538,HB,House Bill,1,1,House Bill 538
+HB 539,HB,House Bill,1,1,House Bill 539
+HB 541,HB,House Bill,1,1,House Bill 541
+HB 544,HB,House Bill,1,1,House Bill 544
+HB 545,HB,House Bill,1,1,House Bill 545
+HB 549,HB,House Bill,1,1,House Bill 549
+HB 550,HB,House Bill,1,1,House Bill 550
+HB 556,HB,House Bill,1,1,House Bill 556
+HB 557,HB,House Bill,1,1,"House Bill
+557; House Bill 557"
+HB 558,HB,House Bill,1,1,House Bill 558
+HB 559,HB,House Bill,1,1,House Bill 559
+HB 563,HB,House Bill,1,1,House Bill 563
+HB 565,HB,House Bill,1,1,House Bill 565
+HB 566,HB,House Bill,1,1,House Bill 566
+HB 567,HB,House Bill,1,1,House Bill 567
+HB 572,HB,House Bill,1,1,"House Bill
+572; House Bill 572"
+HB 573,HB,House Bill,1,1,House Bill 573
+HB 575,HB,House Bill,1,1,House Bill 575
+HB 5755,HB,House Bill,1,1,House Bill 5755
+HB 578,HB,House Bill,1,1,House Bill 578
+HB 582,HB,House Bill,1,1,House Bill 582
+HB 583,HB,House Bill,1,1,House Bill 583
+HB 602,HB,House Bill,1,1,House Bill 602
+HB 604,HB,House Bill,1,1,House Bill 604
+HB 608,HB,House Bill,1,1,House Bill 608
+HB 610,HB,House Bill,1,1,House Bill 610
+HB 612,HB,House Bill,1,1,House Bill 612
+HB 614,HB,House Bill,1,1,House Bill 614
+HB 616,HB,House Bill,1,1,House Bill 616
+HB 620,HB,House Bill,1,1,House Bill 620
+HB 622,HB,House Bill,1,1,House Bill 622
+HB 6868,HB,House Bill,1,1,House Bill 6868
+HB 9696,HB,House Bill,1,1,House Bill 9696
+HB 235,HB,House Bill,1,1,House Bill 235
+HB 353,HB,House Bill,1,1,House Bill 353
+HB 358,HB,House Bill,1,1,House Bill 358
+HB 359,HB,House Bill,1,1,"House Bill
+359; House Bill 359"
+HB 376,HB,House Bill,1,1,House Bill 376
+HB 378,HB,House Bill,1,1,House Bill 378
+HB 380,HB,House Bill,1,1,House Bill 380
+HB 381,HB,House Bill,1,1,House Bill 381
+HB 382,HB,House Bill,1,1,House Bill 382
+HB 383,HB,House Bill,1,1,House Bill 383
+HB 384,HB,House Bill,1,1,House Bill 384
+HB 385,HB,House Bill,1,1,House Bill 385
+HB 388,HB,House Bill,1,1,House Bill 388
+HB 2144,HB,House Bill,1,1,House Bill 2144
+HB 451,HB,House Bill,1,1,House Bill 451
+HB 4533,HB,House Bill,1,1,House Bill 4533
+HB 454,HB,House Bill,1,1,House Bill 454
+HB 466,HB,House Bill,1,1,House Bill 466
+HB 467,HB,House Bill,1,1,House Bill 467
+HB 471,HB,House Bill,1,1,House Bill 471
+HB 472,HB,House Bill,1,1,House Bill 472
+HB 1677,HB,House Bill,1,1,House Bill 1677
+HB 168,HB,House Bill,1,1,House Bill 168
+HB 1609,HB,House Bill,1,1,House Bill 1609
+HCR 1,HCR,House Concurrent Resolution,1,1,House concurrent resolution 1
+HJR 6,HJR,House Joint Resolution,1,1,House Joint Resolution 6
+HB 391,HB,House Bill,1,1,House Bill 391
+HB 399,HB,House Bill,1,1,House Bill 399
+HB 3999,HB,House Bill,1,1,House Bill 3999
+HB 401,HB,House Bill,1,1,House Bill 401
+HB 409,HB,House Bill,1,1,House Bill 409
+HM 4545,HM,House Memorial,1,1,"House Memorial
+4545"
+HB 4141,HB,House Bill,1,1,House Bill 4141
+HB 2111,HB,House Bill,1,1,House Bill 2111
+HB 224,HB,House Bill,1,1,House Bill 224
+HM 7,HM,House Memorial,1,1,House Memorial 7
+SB 5353,SB,Senate Bill,1,1,Senate Bill 5353
+HJR 22,HJR,House Joint Resolution,1,1,House Joint Resolution 22; House Joint resolution 22
+HM 63,HM,House Memorial,1,1,House Memorial 63
+SB 1115,SB,Senate Bill,1,1,Senate Bill 1115
+HB 5505,HB,House Bill,1,1,"House Bill
+5505"
+HB 60S,HB,House Bill,1,1,House Bill 60s
+HB 212S,HB,House Bill,1,1,HB 212s
+HB 5581,HB,House Bill,1,1,HB 5581
+SB 2260,SB,Senate Bill,1,1,Senate Bill 2260
+HB 257,HB,House Bill,1,1,"HB 257; House Bill
+257; House Bill 257; house Bill 257"
+SJR 2,SJR,Senate Joint Resolution,1,1,"SJR
+2; SJR2"
+SB 90,SB,Senate Bill,1,1,SB 90; Senate Bill 90
+SB 484,SB,Senate Bill,1,1,"SB
+484; SB 484; Senate Bill 484"
+SM 13TH,SM,Senate Memorial,1,1,"SM
+13th"
+SB 2218,SB,Senate Bill,1,1,Senate Bill 2218
+SB 841,SB,Senate Bill,1,1,SB 841
+SB 4514,SB,Senate Bill,1,1,Senate Bill 4514
+SB 311,SB,Senate Bill,1,1,Senate Bill 311
+HB 5669,HB,House Bill,1,1,House Bill 5669
+SB 1001,SB,Senate Bill,1,1,Senate Bill 1001
+HB 1252,HB,House Bill,1,1,"HB
+1252"
+HB 752,HB,House Bill,1,1,"house Bill
+752"
+SB 41A,SB,Senate Bill,1,1,Senate Bill 41A
+HJR 111,HJR,House Joint Resolution,1,1,HJR 111
+HB 291ST,HB,House Bill,1,1,House Bill 291st
+HB 832,HB,House Bill,1,1,House Bill 832
+HB 4414,HB,House Bill,1,1,"House Bill
+4414"
+HB 1893,HB,House Bill,1,1,HB 1893
+HB 3982,HB,House Bill,1,1,House Bill 3982
+HCR 10,HCR,House Concurrent Resolution,1,1,HCR 10
+SB 4775,SB,Senate Bill,1,1,Senate Bill 4775
+SB 82IT,SB,Senate Bill,1,1,Senate Bill 82it
+HB 1981,HB,House Bill,1,1,House Bill 1981
+HB 22A,HB,House Bill,1,1,HB 22A
+HB 2521,HB,House Bill,1,1,"HB
+2521"
+SM 38,SM,Senate Memorial,1,1,"Senate Memorial
+38; Senate Memorial 38"
+SM 145,SM,Senate Memorial,1,1,Senate Memorial 145
+SB 2425,SB,Senate Bill,1,1,SB 2425
+SB 3S,SB,Senate Bill,1,1,SB3s
+SM 51,SM,Senate Memorial,1,1,"Senate Memorial
+51"
+HB 887,HB,House Bill,1,1,"House bill
+887"
+SB 35,SB,Senate Bill,1,1,Senate Bill 35
+SB 397,SB,Senate Bill,1,1,"SB
+397; SB 397"
+HB 43A,HB,House Bill,1,1,HB 43A
+SB 385,SB,Senate Bill,1,1,Senate Bill 385
+SB 3088,SB,Senate Bill,1,1,Senate Bill 3088
+SB 388,SB,Senate Bill,1,1,Senate Bill 388
+SB 389,SB,Senate Bill,1,1,Senate Bill 389
+SB 390,SB,Senate Bill,1,1,Senate Bill 390
+SB 400,SB,Senate Bill,1,1,Senate Bill 400
+SB 4002,SB,Senate Bill,1,1,Senate Bill 4002
+SB 403,SB,Senate Bill,1,1,Senate Bill 403
+SB 405,SB,Senate Bill,1,1,Senate Bill 405
+SB 406,SB,Senate Bill,1,1,Senate Bill 406
+SB 407,SB,Senate Bill,1,1,Senate Bill 407
+SM 7,SM,Senate Memorial,1,1,Senate Memorial 7
+SB 386,SB,Senate Bill,1,1,Senate Bill 386
+HB 7756,HB,House Bill,1,1,House Bill 7756
+HB 2020,HB,House Bill,1,1,House Bill 2020
+SB 309,SB,Senate Bill,1,1,Senate Bill 309
+SB 3011,SB,Senate Bill,1,1,Senate Bill 3011
+SB 312,SB,Senate Bill,1,1,Senate Bill 312
+SB 3016,SB,Senate Bill,1,1,Senate Bill 3016
+SB 321,SB,Senate Bill,1,1,Senate Bill 321
+SB 223,SB,Senate Bill,1,1,Senate Bill 223
+SB 224,SB,Senate Bill,1,1,Senate Bill 224
+SB 229,SB,Senate Bill,1,1,"Senate Bill
+229; Senate Bill 229"
+SB 234,SB,Senate Bill,1,1,Senate Bill 234
+SB 373,SB,Senate Bill,1,1,"Senate Bill
+373"
+SB 3237,SB,Senate Bill,1,1,Senate Bill 3237
+SB 326,SB,Senate Bill,1,1,Senate Bill 326
+SB 328,SB,Senate Bill,1,1,Senate bill 328
+SB 329,SB,Senate Bill,1,1,Senate Bill 329
+SB 331,SB,Senate Bill,1,1,Senate Bill 331
+SB 333,SB,Senate Bill,1,1,Senate Bill 333
+SB 334,SB,Senate Bill,1,1,Senate Bill 334
+SB 337,SB,Senate Bill,1,1,Senate Bill 337
+SB 340,SB,Senate Bill,1,1,Senate Bill 340; Senate bill 340
+SB 341,SB,Senate Bill,1,1,Senate Bill 341
+SJR 10,SJR,Senate Joint Resolution,1,1,Senate joint resolution 10
+SB 428,SB,Senate Bill,1,1,Senate Bill 428
+SB 429,SB,Senate Bill,1,1,Senate Bill 429
+SB 431,SB,Senate Bill,1,1,Senate Bill 431
+SB 94,SB,Senate Bill,1,1,Senate Bill 94
+SB 243,SB,Senate Bill,1,1,Senate Bill 243
+SB 253,SB,Senate Bill,1,1,Senate Bill 253
+SB 255,SB,Senate Bill,1,1,Senate Bill 255
+SB 263,SB,Senate Bill,1,1,Senate Bill 263
+SB 272,SB,Senate Bill,1,1,Senate Bill 272
+SB 3535,SB,Senate Bill,1,1,Senate Bill 3535
+SM 25,SM,Senate Memorial,1,1,Senate Memorial 25
+SM 21,SM,Senate Memorial,1,1,Senate Memorial 21
+SM 17,SM,Senate Memorial,1,1,Senate Memorial 17
+SB 382,SB,Senate Bill,1,1,Senate Bill 382
+SB 459,SB,Senate Bill,1,1,Senate Bill 459
+SB 460,SB,Senate Bill,1,1,Senate Bill 460
+SB 461,SB,Senate Bill,1,1,Senate Bill 461
+SB 463,SB,Senate Bill,1,1,Senate Bill 463
+SB 467,SB,Senate Bill,1,1,Senate Bill 467
+SB 4717,SB,Senate Bill,1,1,Senate Bill 4717
+SB 472,SB,Senate Bill,1,1,Senate Bill 472
+SB 4733,SB,Senate Bill,1,1,Senate Bill 4733
+SB 474,SB,Senate Bill,1,1,"Senate Bill
+474; Senate Bill 474"
+SB 475,SB,Senate Bill,1,1,Senate Bill 475
+SB 477,SB,Senate Bill,1,1,Senate Bill 477
+SB 483,SB,Senate Bill,1,1,Senate Bill 483
+SB 485,SB,Senate Bill,1,1,Senate Bill 485
+SB 486,SB,Senate Bill,1,1,Senate Bill 486
+SB 4866,SB,Senate Bill,1,1,Senate Bill 4866
+SB 487,SB,Senate Bill,1,1,"Senate Bill
+487; Senate Bill 487"
+SB 488,SB,Senate Bill,1,1,"Senate Bill
+488"
+SB 500,SB,Senate Bill,1,1,Senate Bill 500
+SB 501,SB,Senate Bill,1,1,Senate Bill 501
+SB 5002,SB,Senate Bill,1,1,Senate Bill 5002
+SB 503,SB,Senate Bill,1,1,"Senate Bill
+503"
+SB 506,SB,Senate Bill,1,1,Senate Bill 506
+SB 508,SB,Senate Bill,1,1,Senate Bill 508
+SB 509,SB,Senate Bill,1,1,Senate Bill 509
+SB 513,SB,Senate Bill,1,1,Senate Bill 513
+SB 514,SB,Senate Bill,1,1,Senate Bill 514; Senate bill 514
+SB 515,SB,Senate Bill,1,1,Senate Bill 515
+SB 5017,SB,Senate Bill,1,1,Senate Bill 5017
+SB 518,SB,Senate Bill,1,1,Senate Bill 518
+SB 519,SB,Senate Bill,1,1,Senate Bill 519
+SB 520,SB,Senate Bill,1,1,Senate Bill 520
+SB 521,SB,Senate Bill,1,1,Senate Bill 521
+SB 523,SB,Senate Bill,1,1,Senate Bill 523
+SB 526,SB,Senate Bill,1,1,Senate Bill 526
+SB 527,SB,Senate Bill,1,1,Senate Bill 527
+SB 528,SB,Senate Bill,1,1,"Senate Bill
+528; Senate Bill 528"
+SB 529,SB,Senate Bill,1,1,Senate Bill 529
+SB 531,SB,Senate Bill,1,1,"Senate Bill
+531"
+SB 533,SB,Senate Bill,1,1,Senate Bill 533
+SB 534,SB,Senate Bill,1,1,Senate Bill 534
+SB 536,SB,Senate Bill,1,1,Senate Bill 536
+SB 537,SB,Senate Bill,1,1,Senate Bill 537
+SB 539,SB,Senate Bill,1,1,Senate Bill 539
+SB 540,SB,Senate Bill,1,1,Senate Bill 540
+SB 541,SB,Senate Bill,1,1,Senate Bill 541
+SB 543,SB,Senate Bill,1,1,Senate Bill 543
+SB 544,SB,Senate Bill,1,1,Senate Bill 544
+SB 545,SB,Senate Bill,1,1,Senate Bill 545
+SB 546,SB,Senate Bill,1,1,Senate Bill 546
+SB 547,SB,Senate Bill,1,1,Senate Bill 547
+SB 548,SB,Senate Bill,1,1,"Senate Bill
+548; Senate Bill 548"
+SB 549,SB,Senate Bill,1,1,Senate Bill 549
+SB 550,SB,Senate Bill,1,1,Senate Bill 550
+SB 551,SB,Senate Bill,1,1,Senate bill 551
+SB 554,SB,Senate Bill,1,1,Senate Bill 554
+SB 556,SB,Senate Bill,1,1,Senate Bill 556
+SB 557,SB,Senate Bill,1,1,Senate bill 557
+SB 558,SB,Senate Bill,1,1,Senate Bill 558; Senate bill 558
+SJR 14,SJR,Senate Joint Resolution,1,1,Senate Joint Resolution 14
+SB 559,SB,Senate Bill,1,1,Senate Bill 559; Senate bill 559
+SB 9494,SB,Senate Bill,1,1,Senate Bill 9494
+SB 9595,SB,Senate Bill,1,1,Senate Bill 9595
+SB 9696,SB,Senate Bill,1,1,Senate Bill 9696
+SB 9797,SB,Senate Bill,1,1,Senate Bill 9797
+SB 1166,SB,Senate Bill,1,1,Senate Bill 1166
+SB 132,SB,Senate Bill,1,1,Senate Bill 132
+SB 140,SB,Senate Bill,1,1,Senate Bill 140
+SJR 5,SJR,Senate Joint Resolution,1,1,"Senate Joint Resolution
+5"
+SB 2204,SB,Senate Bill,1,1,Senate Bill 2204
+SB 207,SB,Senate Bill,1,1,Senate Bill 207
+SB 2009,SB,Senate Bill,1,1,Senate Bill 2009
+SB 2017,SB,Senate Bill,1,1,Senate Bill 2017
+HB 6981,HB,House Bill,1,1,House Bill 6981
+SB 2005,SB,Senate Bill,1,1,Senate Bill 2005
+SB 200,SB,Senate Bill,1,1,Senate Bill 200
+HB 1040,HB,House Bill,1,1,House Bill 1040
+SB 347,SB,Senate Bill,1,1,Senate Bill 347
+SB 348,SB,Senate Bill,1,1,Senate Bill 348
+SB 349,SB,Senate Bill,1,1,Senate Bill 349; Senate bill 349
+SB 231ST,SB,Senate Bill,1,1,Senate Bill 231st
+SB 435,SB,Senate Bill,1,1,"Senate Bill
+435"
+SB 438,SB,Senate Bill,1,1,Senate Bill 438
+SB 440,SB,Senate Bill,1,1,Senate Bill 440
+SB 441,SB,Senate Bill,1,1,Senate Bill 441; Senate bill 441
+SM 8,SM,Senate Memorial,1,1,Senate Memorial 8
+SM 10,SM,Senate Memorial,1,1,Senate Memorial 10
+SJR 13,SJR,Senate Joint Resolution,1,1,Senate Joint Resolution 13
+SB 1043,SB,Senate Bill,1,1,Senate Bill 1043
+SB 284,SB,Senate Bill,1,1,"Senate Bill
+284; Senate Bill 284"
+SB 1616,SB,Senate Bill,1,1,Senate Bill 1616
+SB 172,SB,Senate Bill,1,1,Senate Bill 172; Senate bill 172
+SM 14A,SM,Senate Memorial,1,1,Senate memorial 14A
+HB 2003,HB,House Bill,1,1,House Bill 2003
+SB 361,SB,Senate Bill,1,1,Senate Bill 361
+SB 362,SB,Senate Bill,1,1,Senate Bill 362
+SB 367,SB,Senate Bill,1,1,"Senate Bill
+367"
+SB 371,SB,Senate Bill,1,1,Senate Bill 371
+SM 6,SM,Senate Memorial,1,1,Senate Memorial 6
+SB 665,SB,Senate Bill,1,1,"Senate Bill
+665"
+SB 882,SB,Senate Bill,1,1,Senate Bill 882
+SB 444,SB,Senate Bill,1,1,Senate Bill 444
+SB 448,SB,Senate Bill,1,1,Senate Bill 448
+SB 451,SB,Senate Bill,1,1,"Senate Bill
+451; Senate Bill 451"
+SB 452,SB,Senate Bill,1,1,Senate Bill 452
+SB 453,SB,Senate Bill,1,1,Senate Bill 453
+SB 454,SB,Senate Bill,1,1,Senate Bill 454
+HB 6969,HB,House Bill,1,1,House Bill 6969
+HB 2977,HB,House Bill,1,1,House Bill 2977
+SB 285,SB,Senate Bill,1,1,Senate Bill 285
+SB 291,SB,Senate Bill,1,1,Senate Bill 291
+SB 292,SB,Senate Bill,1,1,Senate Bill 292
+SB 293,SB,Senate Bill,1,1,Senate Bill 293
+SJR 8,SJR,Senate Joint Resolution,1,1,Senate Joint Resolution 8
+SB 7070,SB,Senate Bill,1,1,Senate Bill 7070
+SB 71,SB,Senate Bill,1,1,Senate Bill 71
+SB 747,SB,Senate Bill,1,1,Senate Bill 747
+SB 7777,SB,Senate Bill,1,1,Senate Bill 7777
+SB 8383,SB,Senate Bill,1,1,Senate Bill 8383
+SB 8888,SB,Senate Bill,1,1,Senate Bill 8888
+SJR 4,SJR,Senate Joint Resolution,1,1,Senate Joint Resolution 4; Senate joint resolution 4
+SB 187,SB,Senate Bill,1,1,Senate Bill 187
+SB 192,SB,Senate Bill,1,1,Senate Bill 192
+SB 195,SB,Senate Bill,1,1,Senate Bill 195
+SM 23,SM,Senate Memorial,1,1,Senate Memorial 23
+HB 7171,HB,House Bill,1,1,House Bill 7171
+HB 2017,HB,House Bill,1,1,House Bill 2017
+HM 5151,HM,House Memorial,1,1,House Memorial 5151
+HB 2085,HB,House Bill,1,1,House Bill 2085
+HB 4148,HB,House Bill,1,1,house Bill 4148
+HB 3298,HB,House Bill,1,1,"house Bill
+3298"
+SB 1169,SB,Senate Bill,1,1,Senate Bill 1169
+HM 4041,HM,House Memorial,1,1,House Memorial 4041
+HB 2050,HB,House Bill,1,1,"house Bill
+2050"
+HJR 15,HJR,House Joint Resolution,1,1,House joint resolution 15
+SJR 16,SJR,Senate Joint Resolution,1,1,"Senate joint Resolution
+16; Senate joint resolution 16"
+HB 3RD,HB,House Bill,1,1,House Bill 3rd
+HB 1617,HB,House Bill,1,1,House Bill 1617

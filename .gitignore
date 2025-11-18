@@ -41,6 +41,8 @@ test_*.json
 extracted_names_clean.*
 extracted_names_full.*
 *_extraction_log.txt
+bills_test.*
+*_extraction.log
 
 # Downloadable archive files
 *.tar.gz
