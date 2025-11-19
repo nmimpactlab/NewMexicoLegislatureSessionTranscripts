@@ -4,12 +4,13 @@ This guide explains how to extract official legislator data from nmlegis.gov and
 
 ## Overview
 
-We have created four tools to handle different scenarios for getting legislator data:
+We have created five tools to handle different scenarios for getting legislator data:
 
-1. **`parse_legislators_cards.py`** - Parse card/thumbnail layout (RECOMMENDED - gets all data)
-2. **`parse_legislators_dropdown.py`** - Parse dropdown select HTML (name and chamber only)
-3. **`parse_legislators_html.py`** - Parse table-based HTML layouts
-4. **`scrape_legislators.py`** - Direct web scraping (may be blocked by site)
+1. **`parse_legislators_cards.py`** - Parse card/thumbnail layout (RECOMMENDED for basic data)
+2. **`scrape_legislator_details.py`** - Enhance with detail page data (committees, contact info)
+3. **`parse_legislators_dropdown.py`** - Parse dropdown select HTML (name and chamber only)
+4. **`parse_legislators_html.py`** - Parse table-based HTML layouts
+5. **`scrape_legislators.py`** - Direct web scraping (may be blocked by site)
 
 ## Quick Start: Recommended Method
 
@@ -44,7 +45,32 @@ python parse_legislators_cards.py legislators_current.html --output legislators_
 - Profile URL
 - Photo URL
 
-### Step 3: (Optional) Get Former Legislators
+### Step 3: (Optional) Enhance with Detail Page Data
+
+To get additional information like committees, contact info, and district maps:
+
+```bash
+# Option A: Scrape detail pages from web (slow, may be blocked)
+python scrape_legislator_details.py legislators_official.json --web -o legislators_complete
+
+# Option B: Save detail pages manually and parse (recommended)
+# 1. Visit a few legislator profile pages
+# 2. Save each as HTML (e.g., HABMI.html, SPADR.html)
+# 3. Parse all at once:
+python scrape_legislator_details.py --from-html *.html -o legislators_complete
+```
+
+**Additional data extracted from detail pages:**
+- Committees (list)
+- Email address
+- Phone number
+- Capitol room number
+- Counties represented
+- District map PDF link
+- Leadership positions
+- Biography (if available)
+
+### Step 4: (Optional) Get Former Legislators
 
 Repeat the same process for former legislators:
 

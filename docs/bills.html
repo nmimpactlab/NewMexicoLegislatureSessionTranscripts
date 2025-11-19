@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bills Directory - NM Legislature Transcripts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2ecc71 100%);
+            color: white;
+            padding: 2rem 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2ecc71;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .controls {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .search-box input {
+            flex: 1;
+            min-width: 250px;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #2ecc71;
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filters label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .filters select {
+            padding: 0.5rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .filters select:focus {
+            outline: none;
+            border-color: #2ecc71;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #27ae60;
+        }
+
+        .btn-secondary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #2980b9;
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: #2ecc71;
+            color: white;
+        }
+
+        th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th:hover {
+            background: #27ae60;
+        }
+
+        th.sortable::after {
+            content: ' ⇅';
+            opacity: 0.5;
+        }
+
+        th.sort-asc::after {
+            content: ' ↑';
+            opacity: 1;
+        }
+
+        th.sort-desc::after {
+            content: ' ↓';
+            opacity: 1;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .bill-type-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .bill-type-hb { background: #3498db; color: white; }
+        .bill-type-sb { background: #e74c3c; color: white; }
+        .bill-type-hjr { background: #9b59b6; color: white; }
+        .bill-type-sjr { background: #e67e22; color: white; }
+        .bill-type-hm { background: #1abc9c; color: white; }
+        .bill-type-sm { background: #f39c12; color: white; }
+        .bill-type-hcr { background: #34495e; color: white; }
+        .bill-type-scr { background: #7f8c8d; color: white; }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .pagination button {
+            padding: 0.5rem 1rem;
+            border: 2px solid #2ecc71;
+            background: white;
+            color: #2ecc71;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-info {
+            color: #666;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .table-container {
+                overflow-x: auto;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>📜 Bills Directory</h1>
+            <p class="subtitle">Legislative Bills Referenced in Committee Transcripts</p>
+            <div class="nav-links">
+                <a href="index.html">← Home</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="speakers.html">Speakers</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="stats" id="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" id="total-bills">-</div>
+                <div class="stat-label">Unique Bills</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="total-mentions">-</div>
+                <div class="stat-label">Total Mentions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="house-bills">-</div>
+                <div class="stat-label">House Bills</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="senate-bills">-</div>
+                <div class="stat-label">Senate Bills</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search by bill ID (e.g., HB 2, SB 17)..."
+                >
+            </div>
+
+            <div class="filters">
+                <label for="type-filter">Bill Type:</label>
+                <select id="type-filter">
+                    <option value="all">All Types</option>
+                    <option value="HB">House Bill (HB)</option>
+                    <option value="SB">Senate Bill (SB)</option>
+                    <option value="HJR">House Joint Resolution (HJR)</option>
+                    <option value="SJR">Senate Joint Resolution (SJR)</option>
+                    <option value="HM">House Memorial (HM)</option>
+                    <option value="SM">Senate Memorial (SM)</option>
+                    <option value="HCR">House Concurrent Resolution (HCR)</option>
+                    <option value="SCR">Senate Concurrent Resolution (SCR)</option>
+                </select>
+
+                <label for="min-mentions">Min Mentions:</label>
+                <select id="min-mentions">
+                    <option value="1">1+</option>
+                    <option value="5">5+</option>
+                    <option value="10" selected>10+</option>
+                    <option value="20">20+</option>
+                    <option value="50">50+</option>
+                </select>
+
+                <label for="items-per-page">Show:</label>
+                <select id="items-per-page">
+                    <option value="25">25</option>
+                    <option value="50" selected>50</option>
+                    <option value="100">100</option>
+                    <option value="all">All</option>
+                </select>
+            </div>
+
+            <div class="download-buttons">
+                <a href="bills_all_transcripts.csv" class="btn btn-primary" download>
+                    ⬇ Download CSV
+                </a>
+                <a href="bills_all_transcripts.json" class="btn btn-secondary" download>
+                    ⬇ Download JSON
+                </a>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="bills-table">
+                <thead>
+                    <tr>
+                        <th class="sortable" data-sort="bill_id">Bill ID</th>
+                        <th class="sortable" data-sort="bill_type">Type</th>
+                        <th class="sortable" data-sort="full_name">Full Name</th>
+                        <th class="sortable" data-sort="frequency">Mentions</th>
+                        <th class="sortable" data-sort="num_transcripts">Transcripts</th>
+                    </tr>
+                </thead>
+                <tbody id="bills-body">
+                    <tr><td colspan="5" class="no-results">Loading bills data...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination" id="pagination">
+            <button id="prev-page">Previous</button>
+            <span class="pagination-info" id="pagination-info">Page 1</span>
+            <button id="next-page">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let billsData = [];
+        let filteredData = [];
+        let currentPage = 1;
+        let itemsPerPage = 50;
+        let currentSort = { column: 'frequency', direction: 'desc' };
+
+        // Load bills data
+        fetch('bills_all_transcripts.json')
+            .then(response => response.json())
+            .then(data => {
+                billsData = Object.values(data.bills);
+
+                // Update statistics
+                document.getElementById('total-bills').textContent = data.metadata.total_unique_bills.toLocaleString();
+                document.getElementById('total-mentions').textContent = data.metadata.total_mentions.toLocaleString();
+                document.getElementById('house-bills').textContent = (data.metadata.bill_types.HB || 0).toLocaleString();
+                document.getElementById('senate-bills').textContent = (data.metadata.bill_types.SB || 0).toLocaleString();
+
+                applyFilters();
+            })
+            .catch(error => {
+                console.error('Error loading bills data:', error);
+                document.getElementById('bills-body').innerHTML =
+                    '<tr><td colspan="5" class="no-results">Error loading bills data</td></tr>';
+            });
+
+        function applyFilters() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const typeFilter = document.getElementById('type-filter').value;
+            const minMentions = parseInt(document.getElementById('min-mentions').value);
+
+            filteredData = billsData.filter(bill => {
+                if (searchTerm && !bill.bill_id.toLowerCase().includes(searchTerm)) return false;
+                if (typeFilter !== 'all' && bill.bill_type !== typeFilter) return false;
+                if (bill.frequency < minMentions) return false;
+                return true;
+            });
+
+            sortData();
+            currentPage = 1;
+            renderTable();
+        }
+
+        function sortData() {
+            filteredData.sort((a, b) => {
+                let aVal = a[currentSort.column];
+                let bVal = b[currentSort.column];
+
+                // Handle numeric sorting
+                if (typeof aVal === 'number' && typeof bVal === 'number') {
+                    return currentSort.direction === 'asc' ? aVal - bVal : bVal - aVal;
+                }
+
+                // Handle string sorting
+                aVal = String(aVal).toLowerCase();
+                bVal = String(bVal).toLowerCase();
+
+                if (currentSort.direction === 'asc') {
+                    return aVal.localeCompare(bVal);
+                } else {
+                    return bVal.localeCompare(aVal);
+                }
+            });
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('bills-body');
+
+            if (filteredData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" class="no-results">No bills found matching your filters</td></tr>';
+                updatePagination();
+                return;
+            }
+
+            // Calculate pagination
+            const perPage = itemsPerPage === 'all' ? filteredData.length : itemsPerPage;
+            const startIdx = (currentPage - 1) * perPage;
+            const endIdx = Math.min(startIdx + perPage, filteredData.length);
+            const pageData = filteredData.slice(startIdx, endIdx);
+
+            // Render rows
+            tbody.innerHTML = pageData.map(bill => {
+                const billTypeLower = bill.bill_type.toLowerCase();
+                return `
+                    <tr>
+                        <td><strong>${bill.bill_id}</strong></td>
+                        <td><span class="bill-type-badge bill-type-${billTypeLower}">${bill.bill_type}</span></td>
+                        <td>${bill.full_name}</td>
+                        <td>${bill.frequency.toLocaleString()}</td>
+                        <td>${bill.transcripts.length.toLocaleString()}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            updatePagination();
+        }
+
+        function updatePagination() {
+            const perPage = itemsPerPage === 'all' ? filteredData.length : itemsPerPage;
+            const totalPages = Math.ceil(filteredData.length / perPage);
+
+            document.getElementById('prev-page').disabled = currentPage === 1;
+            document.getElementById('next-page').disabled = currentPage === totalPages || totalPages === 0;
+
+            const startIdx = (currentPage - 1) * perPage + 1;
+            const endIdx = Math.min(currentPage * perPage, filteredData.length);
+
+            if (filteredData.length === 0) {
+                document.getElementById('pagination-info').textContent = 'No results';
+            } else {
+                document.getElementById('pagination-info').textContent =
+                    `Showing ${startIdx}-${endIdx} of ${filteredData.length.toLocaleString()} bills`;
+            }
+        }
+
+        // Event listeners
+        document.getElementById('search-input').addEventListener('input', applyFilters);
+        document.getElementById('type-filter').addEventListener('change', applyFilters);
+        document.getElementById('min-mentions').addEventListener('change', applyFilters);
+        document.getElementById('items-per-page').addEventListener('change', (e) => {
+            itemsPerPage = e.target.value === 'all' ? 'all' : parseInt(e.target.value);
+            currentPage = 1;
+            renderTable();
+        });
+
+        document.getElementById('prev-page').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderTable();
+            }
+        });
+
+        document.getElementById('next-page').addEventListener('click', () => {
+            const perPage = itemsPerPage === 'all' ? filteredData.length : itemsPerPage;
+            const totalPages = Math.ceil(filteredData.length / perPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderTable();
+            }
+        });
+
+        // Sorting
+        document.querySelectorAll('th.sortable').forEach(th => {
+            th.addEventListener('click', () => {
+                const column = th.dataset.sort;
+
+                if (currentSort.column === column) {
+                    currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+                } else {
+                    currentSort.column = column;
+                    currentSort.direction = 'desc';
+                }
+
+                // Update sort indicators
+                document.querySelectorAll('th.sortable').forEach(header => {
+                    header.classList.remove('sort-asc', 'sort-desc');
+                });
+                th.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
+
+                sortData();
+                renderTable();
+            });
+        });
+    </script>
+</body>
+</html>
