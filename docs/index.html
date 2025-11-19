@@ -386,8 +386,11 @@
                 <strong>Note:</strong> Due to OCR quality, some speaker names may have spelling variations. Bill and committee searches are highly accurate.
             </div>
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search by keyword, speaker name, bill number, or committee...">
+                <input type="text" id="searchInput" placeholder='Search: "Harold Pope" AND "HB 73" OR education AND budget'>
                 <button onclick="performSearch()">Search</button>
+            </div>
+            <div style="margin-bottom: 1rem; padding: 0.75rem; background: #f0f8ff; border-radius: 4px;">
+                <p style="margin: 0; font-size: 0.9rem;"><strong>Search tips:</strong> Use "quotes" for exact phrases • Use AND/OR for multiple terms • Example: "HB 73" AND education</p>
             </div>
 
             <div class="filters">
@@ -535,8 +538,75 @@
             });
         }
 
+        // Parse advanced search query
+        function parseSearchQuery(query) {
+            if (!query.trim()) return null;
+
+            const phrases = [];
+            const keywords = [];
+            let operators = [];
+
+            // Find all quoted phrases
+            const quoteRegex = /"([^"]+)"/g;
+            let match;
+            let remaining = query;
+
+            while ((match = quoteRegex.exec(query)) !== null) {
+                phrases.push(match[1].toLowerCase());
+                remaining = remaining.replace(match[0], '');
+            }
+
+            // Extract operators and keywords from remaining text
+            const tokens = remaining.split(/\s+/).filter(t => t.trim());
+
+            for (const token of tokens) {
+                const upper = token.toUpperCase();
+                if (upper === 'AND' || upper === 'OR') {
+                    operators.push(upper);
+                } else if (token.trim()) {
+                    keywords.push(token.toLowerCase());
+                }
+            }
+
+            return { phrases, keywords, operators, original: query };
+        }
+
+        // Check if text matches search query
+        function matchesSearch(text, searchQuery) {
+            if (!searchQuery) return true;
+
+            text = text.toLowerCase();
+            const { phrases, keywords, operators } = searchQuery;
+            const allTerms = [...phrases, ...keywords];
+
+            if (allTerms.length === 0) return true;
+
+            // If we have operators, determine the logic
+            const hasAnd = operators.some(op => op === 'AND');
+            const hasOr = operators.some(op => op === 'OR');
+
+            // Default: AND logic (all terms must match)
+            if (hasAnd && !hasOr) {
+                return allTerms.every(term => text.includes(term));
+            }
+
+            // OR logic (any term must match)
+            if (hasOr && !hasAnd) {
+                return allTerms.some(term => text.includes(term));
+            }
+
+            // Mixed AND/OR: treat as AND
+            if (hasAnd && hasOr) {
+                return allTerms.every(term => text.includes(term));
+            }
+
+            // No operators: default to AND
+            return allTerms.every(term => text.includes(term));
+        }
+
         function performSearch() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const searchInput = document.getElementById('searchInput').value;
+            const searchQuery = parseSearchQuery(searchInput);
             const committeeFilter = document.getElementById('committeeFilter').value;
             const yearFilter = document.getElementById('yearFilter').value;
             const billFilter = document.getElementById('billFilter').value;
@@ -557,8 +627,8 @@
                 // Apply speaker filter
                 if (speakerFilter && !session.speakers.includes(speakerFilter)) return false;
 
-                // Apply search term
-                if (searchTerm) {
+                // Apply advanced search
+                if (searchQuery) {
                     const searchableText = [
                         session.committee,
                         session.chamber,
@@ -568,7 +638,7 @@
                         ...session.bills
                     ].join(' ').toLowerCase();
 
-                    if (!searchableText.includes(searchTerm)) return false;
+                    if (!matchesSearch(searchableText, searchQuery)) return false;
                 }
 
                 return true;

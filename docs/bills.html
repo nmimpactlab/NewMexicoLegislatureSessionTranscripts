@@ -346,8 +346,11 @@
                 <input
                     type="text"
                     id="search-input"
-                    placeholder="Search by bill ID (e.g., HB 2, SB 17)..."
+                    placeholder='Search: "HB 73" AND superintendent OR HB 2 AND HB 73'
                 >
+            </div>
+            <div style="margin-bottom: 1rem; padding: 0.75rem; background: #f0f8ff; border-radius: 4px;">
+                <p style="margin: 0; font-size: 0.9rem;"><strong>Search tips:</strong> Use "quotes" for exact phrases • Use AND/OR for multiple terms • Example: "HB 73" AND education</p>
             </div>
 
             <div class="filters">
@@ -480,14 +483,85 @@
                     '<tr><td colspan="6" class="no-results">Error loading bills data</td></tr>';
             });
 
+        // Parse advanced search query
+        function parseSearchQuery(query) {
+            if (!query.trim()) return null;
+
+            // Extract quoted phrases and keywords
+            const phrases = [];
+            const keywords = [];
+            let operators = [];
+
+            // Find all quoted phrases
+            const quoteRegex = /"([^"]+)"/g;
+            let match;
+            let remaining = query;
+
+            while ((match = quoteRegex.exec(query)) !== null) {
+                phrases.push(match[1].toLowerCase());
+                remaining = remaining.replace(match[0], '');
+            }
+
+            // Extract operators and keywords from remaining text
+            const tokens = remaining.split(/\s+/).filter(t => t.trim());
+
+            for (const token of tokens) {
+                const upper = token.toUpperCase();
+                if (upper === 'AND' || upper === 'OR') {
+                    operators.push(upper);
+                } else if (token.trim()) {
+                    keywords.push(token.toLowerCase());
+                }
+            }
+
+            return { phrases, keywords, operators, original: query };
+        }
+
+        // Check if text matches search query
+        function matchesSearch(text, searchQuery) {
+            if (!searchQuery) return true;
+
+            text = text.toLowerCase();
+            const { phrases, keywords, operators } = searchQuery;
+            const allTerms = [...phrases, ...keywords];
+
+            if (allTerms.length === 0) return true;
+
+            // If we have operators, determine the logic
+            const hasAnd = operators.some(op => op === 'AND');
+            const hasOr = operators.some(op => op === 'OR');
+
+            // Default: AND logic (all terms must match)
+            if (hasAnd && !hasOr) {
+                return allTerms.every(term => text.includes(term));
+            }
+
+            // OR logic (any term must match)
+            if (hasOr && !hasAnd) {
+                return allTerms.some(term => text.includes(term));
+            }
+
+            // Mixed AND/OR: evaluate left to right
+            // This is a simplified approach
+            if (hasAnd && hasOr) {
+                // For now, treat as AND (all must match)
+                return allTerms.every(term => text.includes(term));
+            }
+
+            // No operators: default to AND (all terms must match)
+            return allTerms.every(term => text.includes(term));
+        }
+
         function applyFilters() {
-            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const searchInput = document.getElementById('search-input').value;
+            const searchQuery = parseSearchQuery(searchInput);
             const typeFilter = document.getElementById('type-filter').value;
             const yearFilter = document.getElementById('year-filter').value;
             const minMentions = parseInt(document.getElementById('min-mentions').value);
 
             filteredData = billsData.filter(bill => {
-                if (searchTerm && !bill.bill_id.toLowerCase().includes(searchTerm)) return false;
+                // Advanced search filter
+                if (searchQuery && !matchesSearch(bill.bill_id, searchQuery)) return false;
                 if (typeFilter !== 'all' && bill.bill_type !== typeFilter) return false;
                 if (yearFilter !== 'all' && !bill.years.includes(parseInt(yearFilter))) return false;
                 if (bill.frequency < minMentions) return false;
