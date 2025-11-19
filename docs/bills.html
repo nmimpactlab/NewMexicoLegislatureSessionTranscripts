@@ -346,8 +346,11 @@
                 <input
                     type="text"
                     id="search-input"
-                    placeholder="Search by bill ID (e.g., HB 2, SB 17)..."
+                    placeholder='Search: "HB 73" AND superintendent OR HB 2 AND HB 73'
                 >
+            </div>
+            <div style="margin-bottom: 1rem; padding: 0.75rem; background: #f0f8ff; border-radius: 4px;">
+                <p style="margin: 0; font-size: 0.9rem;"><strong>Search tips:</strong> Use "quotes" for exact phrases • Use AND/OR for multiple terms • Example: "HB 73" AND education</p>
             </div>
 
             <div class="filters">
@@ -362,6 +365,11 @@
                     <option value="SM">Senate Memorial (SM)</option>
                     <option value="HCR">House Concurrent Resolution (HCR)</option>
                     <option value="SCR">Senate Concurrent Resolution (SCR)</option>
+                </select>
+
+                <label for="year-filter">Year:</label>
+                <select id="year-filter">
+                    <option value="all">All Years</option>
                 </select>
 
                 <label for="min-mentions">Min Mentions:</label>
@@ -398,13 +406,14 @@
                     <tr>
                         <th class="sortable" data-sort="bill_id">Bill ID</th>
                         <th class="sortable" data-sort="bill_type">Type</th>
+                        <th class="sortable" data-sort="primary_year">Year(s)</th>
                         <th class="sortable" data-sort="full_name">Full Name</th>
                         <th class="sortable" data-sort="frequency">Mentions</th>
                         <th class="sortable" data-sort="num_transcripts">Transcripts</th>
                     </tr>
                 </thead>
                 <tbody id="bills-body">
-                    <tr><td colspan="5" class="no-results">Loading bills data...</td></tr>
+                    <tr><td colspan="6" class="no-results">Loading bills data...</td></tr>
                 </tbody>
             </table>
         </div>
@@ -421,13 +430,44 @@
         let filteredData = [];
         let currentPage = 1;
         let itemsPerPage = 50;
-        let currentSort = { column: 'frequency', direction: 'desc' };
+        let currentSort = { column: 'bill_number', direction: 'asc' };
+
+        // Extract year from transcript filename
+        function extractYear(filename) {
+            const match = filename.match(/_(\d{4})_/);
+            return match ? parseInt(match[1]) : 0;
+        }
+
+        // Extract bill number from bill ID
+        function extractBillNumber(billId) {
+            const match = billId.match(/(\d+)/);
+            return match ? parseInt(match[1]) : 0;
+        }
 
         // Load bills data
         fetch('bills_all_transcripts.json')
             .then(response => response.json())
             .then(data => {
                 billsData = Object.values(data.bills);
+
+                // Add computed fields to each bill
+                billsData.forEach(bill => {
+                    bill.bill_number = extractBillNumber(bill.bill_id);
+
+                    // Extract years from transcripts
+                    bill.years = [...new Set(bill.transcripts.map(extractYear))].filter(y => y > 0).sort((a, b) => b - a);
+                    bill.primary_year = bill.years[0] || 0; // Most recent year
+                });
+
+                // Populate year filter dropdown
+                const allYears = [...new Set(billsData.flatMap(bill => bill.years))].sort((a, b) => b - a);
+                const yearFilter = document.getElementById('year-filter');
+                allYears.forEach(year => {
+                    const option = document.createElement('option');
+                    option.value = year;
+                    option.textContent = year;
+                    yearFilter.appendChild(option);
+                });
 
                 // Update statistics
                 document.getElementById('total-bills').textContent = data.metadata.total_unique_bills.toLocaleString();
@@ -440,17 +480,90 @@
             .catch(error => {
                 console.error('Error loading bills data:', error);
                 document.getElementById('bills-body').innerHTML =
-                    '<tr><td colspan="5" class="no-results">Error loading bills data</td></tr>';
+                    '<tr><td colspan="6" class="no-results">Error loading bills data</td></tr>';
             });
 
+        // Parse advanced search query
+        function parseSearchQuery(query) {
+            if (!query.trim()) return null;
+
+            // Extract quoted phrases and keywords
+            const phrases = [];
+            const keywords = [];
+            let operators = [];
+
+            // Find all quoted phrases
+            const quoteRegex = /"([^"]+)"/g;
+            let match;
+            let remaining = query;
+
+            while ((match = quoteRegex.exec(query)) !== null) {
+                phrases.push(match[1].toLowerCase());
+                remaining = remaining.replace(match[0], '');
+            }
+
+            // Extract operators and keywords from remaining text
+            const tokens = remaining.split(/\s+/).filter(t => t.trim());
+
+            for (const token of tokens) {
+                const upper = token.toUpperCase();
+                if (upper === 'AND' || upper === 'OR') {
+                    operators.push(upper);
+                } else if (token.trim()) {
+                    keywords.push(token.toLowerCase());
+                }
+            }
+
+            return { phrases, keywords, operators, original: query };
+        }
+
+        // Check if text matches search query
+        function matchesSearch(text, searchQuery) {
+            if (!searchQuery) return true;
+
+            text = text.toLowerCase();
+            const { phrases, keywords, operators } = searchQuery;
+            const allTerms = [...phrases, ...keywords];
+
+            if (allTerms.length === 0) return true;
+
+            // If we have operators, determine the logic
+            const hasAnd = operators.some(op => op === 'AND');
+            const hasOr = operators.some(op => op === 'OR');
+
+            // Default: AND logic (all terms must match)
+            if (hasAnd && !hasOr) {
+                return allTerms.every(term => text.includes(term));
+            }
+
+            // OR logic (any term must match)
+            if (hasOr && !hasAnd) {
+                return allTerms.some(term => text.includes(term));
+            }
+
+            // Mixed AND/OR: evaluate left to right
+            // This is a simplified approach
+            if (hasAnd && hasOr) {
+                // For now, treat as AND (all must match)
+                return allTerms.every(term => text.includes(term));
+            }
+
+            // No operators: default to AND (all terms must match)
+            return allTerms.every(term => text.includes(term));
+        }
+
         function applyFilters() {
-            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const searchInput = document.getElementById('search-input').value;
+            const searchQuery = parseSearchQuery(searchInput);
             const typeFilter = document.getElementById('type-filter').value;
+            const yearFilter = document.getElementById('year-filter').value;
             const minMentions = parseInt(document.getElementById('min-mentions').value);
 
             filteredData = billsData.filter(bill => {
-                if (searchTerm && !bill.bill_id.toLowerCase().includes(searchTerm)) return false;
+                // Advanced search filter
+                if (searchQuery && !matchesSearch(bill.bill_id, searchQuery)) return false;
                 if (typeFilter !== 'all' && bill.bill_type !== typeFilter) return false;
+                if (yearFilter !== 'all' && !bill.years.includes(parseInt(yearFilter))) return false;
                 if (bill.frequency < minMentions) return false;
                 return true;
             });
@@ -462,23 +575,41 @@
 
         function sortData() {
             filteredData.sort((a, b) => {
-                let aVal = a[currentSort.column];
-                let bVal = b[currentSort.column];
+                let result = 0;
 
-                // Handle numeric sorting
-                if (typeof aVal === 'number' && typeof bVal === 'number') {
-                    return currentSort.direction === 'asc' ? aVal - bVal : bVal - aVal;
-                }
-
-                // Handle string sorting
-                aVal = String(aVal).toLowerCase();
-                bVal = String(bVal).toLowerCase();
-
-                if (currentSort.direction === 'asc') {
-                    return aVal.localeCompare(bVal);
+                // Primary sort by column clicked
+                if (currentSort.column === 'bill_number' || currentSort.column === 'bill_id') {
+                    // Sort by year (desc), then bill type, then bill number
+                    result = b.primary_year - a.primary_year; // Newest first
+                    if (result === 0) {
+                        result = a.bill_type.localeCompare(b.bill_type);
+                    }
+                    if (result === 0) {
+                        result = a.bill_number - b.bill_number;
+                    }
+                    if (currentSort.direction === 'desc') result = -result;
                 } else {
-                    return bVal.localeCompare(aVal);
+                    // Standard sorting for other columns
+                    let aVal = a[currentSort.column];
+                    let bVal = b[currentSort.column];
+
+                    // Handle numeric sorting
+                    if (typeof aVal === 'number' && typeof bVal === 'number') {
+                        result = currentSort.direction === 'asc' ? aVal - bVal : bVal - aVal;
+                    } else {
+                        // Handle string sorting
+                        aVal = String(aVal).toLowerCase();
+                        bVal = String(bVal).toLowerCase();
+
+                        if (currentSort.direction === 'asc') {
+                            result = aVal.localeCompare(bVal);
+                        } else {
+                            result = bVal.localeCompare(aVal);
+                        }
+                    }
                 }
+
+                return result;
             });
         }
 
@@ -486,7 +617,7 @@
             const tbody = document.getElementById('bills-body');
 
             if (filteredData.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="5" class="no-results">No bills found matching your filters</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="6" class="no-results">No bills found matching your filters</td></tr>';
                 updatePagination();
                 return;
             }
@@ -500,10 +631,12 @@
             // Render rows
             tbody.innerHTML = pageData.map(bill => {
                 const billTypeLower = bill.bill_type.toLowerCase();
+                const yearsDisplay = bill.years.length > 0 ? bill.years.join(', ') : 'N/A';
                 return `
                     <tr>
                         <td><strong>${bill.bill_id}</strong></td>
                         <td><span class="bill-type-badge bill-type-${billTypeLower}">${bill.bill_type}</span></td>
+                        <td>${yearsDisplay}</td>
                         <td>${bill.full_name}</td>
                         <td>${bill.frequency.toLocaleString()}</td>
                         <td>${bill.transcripts.length.toLocaleString()}</td>
@@ -535,6 +668,7 @@
         // Event listeners
         document.getElementById('search-input').addEventListener('input', applyFilters);
         document.getElementById('type-filter').addEventListener('change', applyFilters);
+        document.getElementById('year-filter').addEventListener('change', applyFilters);
         document.getElementById('min-mentions').addEventListener('change', applyFilters);
         document.getElementById('items-per-page').addEventListener('change', (e) => {
             itemsPerPage = e.target.value === 'all' ? 'all' : parseInt(e.target.value);

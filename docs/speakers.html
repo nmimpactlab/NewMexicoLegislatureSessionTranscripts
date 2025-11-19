@@ -318,7 +318,10 @@
 
         <div class="controls">
             <div class="search-box">
-                <input type="text" id="search-input" placeholder="Search by name...">
+                <input type="text" id="search-input" placeholder='Search: "Harold Pope" AND superintendent OR Maestes AND Pope'>
+            </div>
+            <div class="info-box" style="margin: 1rem 0; padding: 0.75rem; background: #f0f8ff;">
+                <p style="margin: 0; font-size: 0.9rem;"><strong>Search tips:</strong> Use "quotes" for exact phrases • Use AND/OR for multiple terms • Example: "Harold Pope" AND superintendent</p>
             </div>
 
             <div class="filters">
@@ -394,16 +397,86 @@
                 document.getElementById('speakers-body').innerHTML = '<tr><td colspan="4" class="no-results">Error loading data. Please refresh the page.</td></tr>';
             });
 
+        // Parse advanced search query
+        function parseSearchQuery(query) {
+            if (!query.trim()) return null;
+
+            // Extract quoted phrases and keywords
+            const phrases = [];
+            const keywords = [];
+            let operators = [];
+
+            // Find all quoted phrases
+            const quoteRegex = /"([^"]+)"/g;
+            let match;
+            let remaining = query;
+
+            while ((match = quoteRegex.exec(query)) !== null) {
+                phrases.push(match[1].toLowerCase());
+                remaining = remaining.replace(match[0], '');
+            }
+
+            // Extract operators and keywords from remaining text
+            const tokens = remaining.split(/\s+/).filter(t => t.trim());
+
+            for (const token of tokens) {
+                const upper = token.toUpperCase();
+                if (upper === 'AND' || upper === 'OR') {
+                    operators.push(upper);
+                } else if (token.trim()) {
+                    keywords.push(token.toLowerCase());
+                }
+            }
+
+            return { phrases, keywords, operators, original: query };
+        }
+
+        // Check if text matches search query
+        function matchesSearch(text, searchQuery) {
+            if (!searchQuery) return true;
+
+            text = text.toLowerCase();
+            const { phrases, keywords, operators } = searchQuery;
+            const allTerms = [...phrases, ...keywords];
+
+            if (allTerms.length === 0) return true;
+
+            // If we have operators, determine the logic
+            const hasAnd = operators.some(op => op === 'AND');
+            const hasOr = operators.some(op => op === 'OR');
+
+            // Default: AND logic (all terms must match)
+            if (hasAnd && !hasOr) {
+                return allTerms.every(term => text.includes(term));
+            }
+
+            // OR logic (any term must match)
+            if (hasOr && !hasAnd) {
+                return allTerms.some(term => text.includes(term));
+            }
+
+            // Mixed AND/OR: evaluate left to right
+            // This is a simplified approach
+            if (hasAnd && hasOr) {
+                // For now, treat as AND (all must match)
+                return allTerms.every(term => text.includes(term));
+            }
+
+            // No operators: default to AND (all terms must match)
+            return allTerms.every(term => text.includes(term));
+        }
+
         // Apply filters and search
         function applyFilters() {
-            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const searchInput = document.getElementById('search-input').value;
+            const searchQuery = parseSearchQuery(searchInput);
             const confidenceFilter = document.getElementById('confidence-filter').value;
             const sortBy = document.getElementById('sort-by').value;
 
             // Filter data
             filteredData = speakersData.filter(speaker => {
                 // Search filter
-                if (searchTerm && !speaker.name.toLowerCase().includes(searchTerm)) {
+                if (searchQuery && !matchesSearch(speaker.name, searchQuery)) {
                     return false;
                 }
 
