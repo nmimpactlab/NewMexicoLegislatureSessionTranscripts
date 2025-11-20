@@ -475,9 +475,15 @@
 
             // Filter data
             filteredData = speakersData.filter(speaker => {
-                // Search filter
-                if (searchQuery && !matchesSearch(speaker.name, searchQuery)) {
-                    return false;
+                // Search filter - search in name AND variants
+                if (searchQuery) {
+                    const searchableText = [
+                        speaker.name,
+                        ...(speaker.variants || [])
+                    ].join(' ');
+                    if (!matchesSearch(searchableText, searchQuery)) {
+                        return false;
+                    }
                 }
 
                 // Confidence filter
