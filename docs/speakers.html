@@ -244,6 +244,53 @@
             font-style: italic;
         }
 
+        .affiliation {
+            font-size: 0.85rem;
+            color: #555;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .role-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .role-legislator {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .role-official {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .role-public {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .role-lobbyist {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        .role-expert {
+            background: #e0f7fa;
+            color: #00695c;
+        }
+
+        .role-unknown {
+            background: #f5f5f5;
+            color: #757575;
+        }
+
         .loading {
             text-align: center;
             padding: 3rem;
@@ -326,6 +373,19 @@
 
             <div class="filters">
                 <div class="filter-group">
+                    <label for="role-filter">Role:</label>
+                    <select id="role-filter">
+                        <option value="all" selected>All Roles</option>
+                        <option value="legislator">Legislator</option>
+                        <option value="official">Official</option>
+                        <option value="public">Public Speaker</option>
+                        <option value="lobbyist">Lobbyist</option>
+                        <option value="expert">Expert</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
                     <label for="confidence-filter">Confidence:</label>
                     <select id="confidence-filter">
                         <option value="all" selected>All Levels</option>
@@ -358,13 +418,14 @@
                     <tr>
                         <th data-sort="name">Name</th>
                         <th data-sort="frequency">Frequency</th>
+                        <th data-sort="role">Role</th>
+                        <th>Affiliation</th>
                         <th data-sort="confidence">Confidence</th>
-                        <th>Variants</th>
                     </tr>
                 </thead>
                 <tbody id="speakers-body">
                     <tr>
-                        <td colspan="4" class="loading">Loading speaker data...</td>
+                        <td colspan="5" class="loading">Loading speaker data...</td>
                     </tr>
                 </tbody>
             </table>
@@ -470,20 +531,27 @@
         function applyFilters() {
             const searchInput = document.getElementById('search-input').value;
             const searchQuery = parseSearchQuery(searchInput);
+            const roleFilter = document.getElementById('role-filter').value;
             const confidenceFilter = document.getElementById('confidence-filter').value;
             const sortBy = document.getElementById('sort-by').value;
 
             // Filter data
             filteredData = speakersData.filter(speaker => {
-                // Search filter - search in name AND variants
+                // Search filter - search in name, variants, and affiliation
                 if (searchQuery) {
                     const searchableText = [
                         speaker.name,
-                        ...(speaker.variants || [])
+                        ...(speaker.variants || []),
+                        speaker.affiliation || ''
                     ].join(' ');
                     if (!matchesSearch(searchableText, searchQuery)) {
                         return false;
                     }
+                }
+
+                // Role filter
+                if (roleFilter !== 'all' && speaker.primary_role !== roleFilter) {
+                    return false;
                 }
 
                 // Confidence filter
@@ -519,7 +587,7 @@
             const resultsCount = document.getElementById('results-count');
 
             if (filteredData.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="4" class="no-results">No speakers found matching your filters.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="5" class="no-results">No speakers found matching your filters.</td></tr>';
                 resultsCount.textContent = '';
                 return;
             }
@@ -527,14 +595,17 @@
             const rows = filteredData.map(speaker => {
                 const confidenceClass = `confidence-${speaker.confidence_level}`;
                 const confidenceLabel = speaker.confidence_level.charAt(0).toUpperCase() + speaker.confidence_level.slice(1);
-                const variantsText = speaker.variants.length > 0 ? speaker.variants.slice(0, 3).join(', ') + (speaker.variants.length > 3 ? '...' : '') : '-';
+                const role = speaker.primary_role || 'unknown';
+                const roleLabel = role.charAt(0).toUpperCase() + role.slice(1);
+                const affiliation = speaker.affiliation || '-';
 
                 return `
                     <tr>
                         <td><strong>${speaker.name}</strong></td>
                         <td>${speaker.frequency}</td>
+                        <td><span class="role-badge role-${role}">${roleLabel}</span></td>
+                        <td class="affiliation">${affiliation}</td>
                         <td><span class="confidence-badge ${confidenceClass}">${confidenceLabel}</span></td>
-                        <td class="variants">${variantsText}</td>
                     </tr>
                 `;
             }).join('');
@@ -545,6 +616,7 @@
 
         // Event listeners
         document.getElementById('search-input').addEventListener('input', applyFilters);
+        document.getElementById('role-filter').addEventListener('change', applyFilters);
         document.getElementById('confidence-filter').addEventListener('change', applyFilters);
         document.getElementById('sort-by').addEventListener('change', applyFilters);
 
